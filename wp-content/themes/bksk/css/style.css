@@ -144,7 +144,7 @@ body {
   line-height: 170%;
   overflow-x: hidden;
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
   min-width: 600px;
   max-width: 1500px; }
 
@@ -472,6 +472,8 @@ h6 {
   height: auto;
   padding-bottom: 16.5% !important;
   width: 53.5% !important; }
+  .grid-item--lg .text {
+    bottom: -9px !important; }
 
 .rect2 .text {
   bottom: -9px; }

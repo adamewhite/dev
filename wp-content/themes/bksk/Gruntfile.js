@@ -25,21 +25,15 @@ module.exports = function(grunt) {
 */
 		},
 		uglify: {
-/*
-		    build_home: {
-		        src: 'js/home.min.js',
-		        dest: 'js/home.min.js'
-		    },
-		    build_responsive: {
-		        src: 'js/responsive.min.js',
-		        dest: 'js/responsive.min.js'
+		    build_theme: {
+		        src: 'js/theme.js',
+		        dest: 'js/theme.min.js'
 		    }
-*/
 		},
 		
 		sass: {
 	        options: {
-
+				style: 'compressed',
 	        },
 	        dist: {		        
 		        files: {
@@ -59,21 +53,31 @@ module.exports = function(grunt) {
 		        } 
 			},
 */
-		
+		cssmin: { // Begin CSS Minify Plugin
+			target: {
+			files: [{
+				expand: true,
+				cwd: 'css',
+				src: ['*.css', '!*.min.css'],
+				dest: 'css',
+				ext: '.min.css'
+			}]
+  		}
+		},
 		watch: {
 			options: {
 				livereload: true
 			},
 		    scripts: {
 		        files: ['js/*.js'],
-		        tasks: ['concat', 'uglify'],
+		        tasks: ['uglify'],
 		        options: {
 		            spawn: false,
 		        },
 		    },
 		    css: {
 			    files: ['css/*.scss'],
-			    tasks: ['sass'],
+			    tasks: ['sass', 'cssmin'],
 			    options: {
 			        spawn: false,
 			    },
@@ -88,6 +92,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['watch']);
 

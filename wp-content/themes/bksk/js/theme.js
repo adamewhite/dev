@@ -12,9 +12,9 @@ $(document).ready(function(){
 	});
 });
 } else if($('.content').hasClass('grid-team')) {
-	$('.grid-team').animate({opacity: 1});
 	var $grid = $('.grid-team');
 $grid.imagesLoaded(function(){
+	$('.grid-team').animate({opacity: 1});
 	$grid.isotope({ 
 	  percentPosition: true,
 	  itemSelector: '.grid-item',
@@ -79,18 +79,25 @@ $('#project_type a').on( 'click', function(e) {
 	
 	var filterValue = $(this).attr('data-filter');
 	if(filterValue == '.Architecture') {
-	  filterValue = '.Specialty,.filter.Architecture';
+	  $('.filter').fadeOut();
+	  $('.filter'+filterValue).delay(400).fadeIn();
   	}
-  	$('.filter'+filterValue).delay(400).fadeIn();
-  	if($(this).parents().hasClass('Preservation')) {
-		console.log("YUP");
+  	else if(filterValue == '.Interiors') {
+		$('.filter').fadeOut();
+		$('.filter'+filterValue).delay(400).fadeIn();
 	}
 	else if($(this).hasClass('Preservation')) {
-		$('.filter.Architecture').fadeOut(100);
-		$('.filter.Preservation').delay(400).fadeIn();
-	} else {
+		console.log('true');
+		$('.filter--three.Architecture').fadeOut(100);
+		$('.filter--three.Preservation').delay(400).fadeIn();
+	}
+/*
+	else if($(this).hasClass('')) {
 		$('.filter.Preservation').fadeOut(100);
 	}
+*/
+//   	$('.filter'+filterValue).delay(400).fadeIn();
+//   	console.log(filterValue);
   	
 	if($this.parents('li').hasClass('selected')) {
 		delete filters[ name ];

@@ -15,7 +15,7 @@
 		</ul>
 	</div>
 	<div class="fourcol">
-		<div class="project_type filter Interiors" style="display:none">
+		<div class="project_type filter filter--two Interiors" style="display:none">
 			<h3>Project Type</h3>
 			<ul id="project_type">			
 				<li><a href="#filter=.interiors-living" data-filter-name="int_type1" class="interiors-living" data-filter-value=".interiors-living" data-filter=".interiors-living"><label class="control control--checkbox">Living Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
@@ -23,7 +23,7 @@
 				<li><a href="#filter=.interiors-community" class="interiors-community" data-filter-name="int_type3" data-filter-value=".interiors-community" data-filter=".interiors-community"><label class="control control--checkbox">Community Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 			</ul>
 		</div>
-		<div class="filter Specialty">
+		<div class="filter filter--two Architecture">
 			<h3>Specialty</h3>
 			<ul id="project_type">
 				<li><a href="#filter=.Preservation" class="Preservation" data-filter=".Preservation"><label class="control control--checkbox">Preservation+<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<div class="fourcol">
-	<div class="project_type filter Architecture">
+	<div class="project_type filter filter--three Architecture">
 		<h3>Project Type</h3>
 	<ul id="filter project_type">
 	<?php $terms = get_terms( array(
@@ -47,7 +47,7 @@
 	} ?>
 	</ul>
 	</div>	
-	<div class="project_type filter Preservation">
+	<div class="project_type filter filter--three Preservation">
 		<h3>Project Type</h3>
 	<ul id="project_type">
 	<?php 
@@ -107,7 +107,7 @@ $terms = get_the_terms( get_the_ID(), 'project_type' );
 		<?php } ?>
 		<div class="text">
 		   <a href="<?php the_permalink(' ') ?>">
-				<h3><?php the_title(); ?> <?php echo $small_count; ?></h3>		  	
+				<h3><?php the_title(); ?></h3>		  	
 		    </a>
 		</div>
 </div><!-- item -->

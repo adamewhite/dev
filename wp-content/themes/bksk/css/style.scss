@@ -117,7 +117,7 @@ body {
 // 	height: 100%;
 // 	width: 100%;
 	margin: 0 auto;
-	width: 90%;
+	width: 80%;
 	min-width: 600px;
 	max-width: 1500px;
 }
@@ -563,6 +563,9 @@ $divider: 12px;
 	height: auto;
 	padding-bottom: 16.5% !important;
 	width: 53.5% !important;
+	.text {
+		bottom: -9px !important;
+	}
 }
 
 .rect2 {
