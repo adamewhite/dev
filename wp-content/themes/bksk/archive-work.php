@@ -6,35 +6,35 @@
 ?>
 <?php get_header(); ?>
 
-<div class="work__search">
+<div id="filters" class="work__search">
 	<div class="fourcol"><h3>Search By:</h3></div>
 	<div class="fourcol"><h3>Discipline</h3>
-		<ul id="discipline" class="">
-			<li><a href="#filter=.Architecture" class="Architecture active" data-filter=".Architecture"><label class="control control--checkbox">Architecture<input type="checkbox" checked="checked"/><div class="control__indicator"></div></label></a></li>
-			<li><a href="#filter=.Interiors" class="Interiors" data-filter=".Interiors"><label class="control control--checkbox">Interiors<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+		<ul class="discipline">
+			<li><a href="#filter=.Architecture" class="Architecture" data-filter-name="discipline" data-filter-value=".Architecture" data-filter=".Architecture"><label class="control control--checkbox">Architecture<input type="checkbox" checked="checked"/><div class="control__indicator"></div></label></a></li>
+			<li><a href="#filter=.Interiors" class="Interiors" data-filter-name="discipline" data-filter-value=".Interiors" data-filter=".Interiors"><label class="control control--checkbox">Interiors<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 		</ul>
 	</div>
 	<div class="fourcol">
 		<div class="project_type filter Interiors" style="display:none">
 			<h3>Project Type</h3>
 			<ul id="project_type">			
-				<li><a href="#filter=.interiors-living" class="interiors-living" data-filter=".interiors-living">Living Environments</a></li>
-				<li><a href="#filter=.interiors-work" class="interiors-work" data-filter=".interiors-work">Work Environments</a></li>
-				<li><a href="#filter=.interiors-community" class="interiors-community" data-filter=".interiors-community">Community Environments</a></li>
+				<li><a href="#filter=.interiors-living" data-filter-name="int_type1" class="interiors-living" data-filter-value=".interiors-living" data-filter=".interiors-living"><label class="control control--checkbox">Living Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+				<li><a href="#filter=.interiors-work" class="interiors-work" data-filter-name="int_type2" data-filter-value=".interiors-work" data-filter=".interiors-work"><label class="control control--checkbox">Work Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+				<li><a href="#filter=.interiors-community" class="interiors-community" data-filter-name="int_type3" data-filter-value=".interiors-community" data-filter=".interiors-community"><label class="control control--checkbox">Community Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 			</ul>
 		</div>
 		<div class="filter Specialty">
 			<h3>Specialty</h3>
 			<ul id="project_type">
-				<li><a href="#filter=.Preservation" class="Preservation" data-filter=".Preservation">Preservation+</a></li>
-				<li><a href="#filter=.Sustainability" class="Sustainability" data-filter=".Sustainability">Sustainability</a></li>
+				<li><a href="#filter=.Preservation" class="Preservation" data-filter=".Preservation"><label class="control control--checkbox">Preservation+<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+				<li><a href="#filter=.Sustainability" class="Sustainability" data-filter=".Sustainability"><label class="control control--checkbox">Sustainability<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="fourcol">
 	<div class="project_type filter Architecture">
 		<h3>Project Type</h3>
-	<ul id="project_type">
+	<ul id="filter project_type">
 	<?php $terms = get_terms( array(
 		'taxonomy' => 'project_type',
 		'hide_empty' => false,
@@ -55,14 +55,14 @@
 		$field = get_field_object($field_key);
 		$preservations = $field['choices'];
 	foreach($field['choices'] as $k => $v) {
-		echo '<li><a href="#filter=.'.$k.'" class="'.$k.'" data-filter=".'.$k.'">'.$v.'</a></li>';
+		echo '<li><a href="#filter=.'.$k.'" class="'.$k.'" data-filter=".'.$k.'"><label class="control control--checkbox">'.$v.'<input type="checkbox"/><div class="control__indicator"></div></label></a></li>';
 	} ?>
 	</ul>
 	</div>	
 </div>
 </div>
 		
-<div class="grid-work">
+<div id="grid" class="grid-work">
 <!-- 	<div class="grid-sizer"></div> -->
 <?php 
 $count = 0;

@@ -98,7 +98,7 @@ wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/css/style.css'
 	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.3.0.1.min.js', array( 'jquery' ), '20170102', true );
 		wp_enqueue_script( 'packery', get_template_directory_uri() . '/js/packery.1.3.2.min.js', array( 'jquery', 'isotope', 'images' ), '20170102', true );
 	wp_enqueue_script( 'bbq', get_template_directory_uri() . '/js/bbq.1.2.1.min.js', array( 'jquery' ), '20161201', true );
-	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), '20161201', true );
+	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), '20170104', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
