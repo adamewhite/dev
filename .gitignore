@@ -16,9 +16,10 @@
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
-/*
 !*
 !wp-content/
+!wp-content/uploads/
+wp-config.php
 wp-content/uploads/
 wp-content/themes/bksk/node_modules/
 wp-content/themes/twentysixteen/
