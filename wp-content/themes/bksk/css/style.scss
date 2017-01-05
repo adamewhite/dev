@@ -135,7 +135,8 @@ p, a {
 }
 
 a {
-	color: #05beff;
+	color: #595959;
+	font-weight: 300;
 	text-decoration: none;
 }
 
@@ -223,16 +224,8 @@ h6 {
 /* Boxes */
 .block {
 	background-color: $gray;
-}
-// .home {
-.block, .sq1, .sq2 {
-	float: left;
-	h1, h2, h3 {
-		color: #F2F2F2;
+	h1, h2 {
 		margin-bottom: 0;
-	}
-	h2, h3 {
-		text-align: center;
 	}
 	&:hover a {
 		background-color: #bcbcbc;
@@ -241,6 +234,17 @@ h6 {
         -o-transition: background-color 400ms linear;
         -ms-transition: background-color 400ms linear;
         transition: background-color 400ms linear;
+	}
+}
+// .home {
+.block, .sq1, .sq2 {
+	float: left;
+	h1, h2, h3 {
+		color: #F2F2F2;
+// 		margin-bottom: 0;
+	}
+	h2, h3 {
+		text-align: center;
 	}
 }	
 // }
@@ -311,11 +315,18 @@ $divider: 12px;
 }
 
 .sq1 {
-	.text {
+	.grad-bg {
 		bottom: 0px;
 		padding-top: 4%;
 		h3 {
 			padding-bottom: 2%;
+		}
+	}
+	.grad-bg--top {
+		top: 0;
+		padding-bottom: 6%;
+		h3 {
+			padding-top: 6%;
 		}
 	}	
 }
@@ -787,7 +798,7 @@ $divider: 12px;
 	img {
 		margin: 4% auto 0;
 		height: auto;
-		width: 90% !important;
+		width: 84% !important;
 	}
 }
 
@@ -895,6 +906,10 @@ $divider: 12px;
 			display: none;
 		}
 	}
+}
+
+.selected a {
+	font-weight: 500;
 }
 
 a.active {
@@ -1027,6 +1042,17 @@ a.active {
 }
 
 .page {
+	.item {
+		overflow: hidden;
+		img {
+			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+		}
+		&:hover img {
+			-webkit-transform: scale(1.05);
+			transform: scale(1.05);
+		}
+	}
 	.rect1 {
 		h1 {
 			font-size: 60px;
@@ -1040,11 +1066,12 @@ a.active {
 		&.historic {
 			overflow: hidden;
 			.text {
-				bottom: 15px;
-				width: 100%;
+				bottom: 0px;
+// 				width: 100%;
 				h3 {
 					text-align: center;
 					text-transform: none;
+					margin-bottom: 2%;
 				}
 			}
 			img {
@@ -1062,10 +1089,53 @@ a.active {
 		.text {
 			position: absolute;
 			h1, h3 {
-				color: #FFF;
-				margin-bottom: 0;
+// 				color: #FFF;
+// 				margin-bottom: 0;
 			}
 		}
+	}
+}
+
+.back {
+	background: $gray;
+	color: #FFF;
+	display: block;
+	position: relative;
+	padding: 10% 6% 8% 8%;
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+/*
+	img {
+		opacity: 0 !important;
+		position: absolute;
+		top: 0;
+	}
+*/
+	&.back--lab {
+		padding-bottom: 3%;
+		padding-top: 7%;
+	}
+	span {
+		background: $gray;
+		padding-bottom: 50%;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	h3 {
+		color: #FFF;
+		font-size: 1.2vw;
+		margin-bottom: 4%;
+		text-align: left;
+	}
+	p, a {
+		color: #FFF;
+		line-height: 145%;
+		margin-bottom: 3%;
+	}
+	a {
+		font-weight: 500;
 	}
 }
 
@@ -1078,12 +1148,6 @@ a.active {
 	}
 }
 
-.page {
-	.block.sq1 {
-// 		margin-right: 0 !important;
-	}
-}
-
 .float {
 	float: left;
 	margin-right: 2%;
@@ -1092,6 +1156,9 @@ a.active {
 .page {
 	.rect1 {
 // 		margin-bottom: 4%;
+	}
+	img {
+		vertical-align: top;
 	}
 	.sq1 {
 		position: relative;
@@ -1117,7 +1184,7 @@ a.active {
 		h3 {
 			color: #FFF;
 			font-size: 17px;
-			margin-bottom: 0;
+// 			margin-bottom: 0;
 			text-align: center;
 		}
 	}
@@ -1129,7 +1196,8 @@ a.active {
 		bottom: -28px;
 	}
 	.sq2 .text {
-		bottom: 15px !important;
+		bottom: 0px !important;
+		padding-top: 5%;
 		width: 100%;
 	}
 }
@@ -1183,6 +1251,50 @@ a.active {
 
 .twocol.last {
 	margin-right: 0;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flip, .flip-container.hover .flip {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	height: auto;
+// 	padding-bottom: 40%;
+	width: 100%;
+}
+
+/* flip speed goes here */
+.flip {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
 
 /* Alignment */

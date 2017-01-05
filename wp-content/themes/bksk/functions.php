@@ -142,7 +142,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 	$the_query->the_post();
 		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
-	return '<a href="'.work_url($url).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	return '<a href="'.work_url($url).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /><div class="text grad-bg"><h3>'.$title.'</h3></div></a>';
 	}
 } 	
 }

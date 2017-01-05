@@ -163,7 +163,7 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.get_site_url().'/work/#filter=.modern-home"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.work_url('interiors-living').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
 <div class="text grad-bg--top">	
@@ -191,7 +191,7 @@ if ( $the_query->have_posts() ) {
 
 <div class="item item--contact grid-item--sm sq1 bw">
 <a href="<?php echo get_site_url(); ?>/contact">
-	<?php $img = wp_get_attachment_image(4992, 'sq1'); 
+	<?php $img = wp_get_attachment_image(4908, 'sq1'); 
 	echo $img; ?>
 <div class="text grad-bg">	
 	<h3>Contact</h3>

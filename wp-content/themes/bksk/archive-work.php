@@ -10,7 +10,7 @@
 	<div class="fourcol"><h3>Search By:</h3></div>
 	<div class="fourcol"><h3>Discipline</h3>
 		<ul class="discipline">
-			<li><a href="#filter=.Architecture" class="Architecture" data-filter-name="discipline" data-filter-value=".Architecture" data-filter=".Architecture"><label class="control control--checkbox">Architecture<input type="checkbox" checked="checked"/><div class="control__indicator"></div></label></a></li>
+			<li><a href="#filter=.Architecture" class="Architecture" data-filter-name="discipline" data-filter-value=".Architecture" data-filter=".Architecture"><label class="control control--checkbox">Architecture<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 			<li><a href="#filter=.Interiors" class="Interiors" data-filter-name="discipline" data-filter-value=".Interiors" data-filter=".Interiors"><label class="control control--checkbox">Interiors<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 		</ul>
 	</div>

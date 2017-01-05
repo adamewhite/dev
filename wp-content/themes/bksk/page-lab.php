@@ -16,17 +16,19 @@
 	</div>
 </div>
 
-<div class="bg float sq2">
+<div class="item float sq2">
 <?php echo disciplineImage('specialty', 'sustainability','Sustainability','projects we\'ve done'); ?>
+<!--
 <div class="text">	
 	<h3>projects we've done</h3>
 </div>	
+-->
 </div>
 
 </div>
 
 <div class="twocol">
-	<div class="bg sq2">
+	<div class="item sq2">
 <?php $args = array(
 	'post_type' => 'work',
 	'orderby' => 'rand',
@@ -57,15 +59,15 @@ if ( $the_query->have_posts() ) {
 	echo '<a href="'.get_site_url().'/work"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text grad-bg">	
 	<h3>what we're thinking</h3>
 </div>	
 </div>
 
-<div class="link bg sq1">
+<div class="sq1 bw">
 <?php $img = wp_get_attachment_image(4909, 'sq2'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>About</h3>
 </div>
 </div>
@@ -78,30 +80,47 @@ if ( $the_query->have_posts() ) {
 <div class="clearfix"></div>
 <div class="twocol first">
 
-<div class="rect1 historic bg block">
+<div class="rect1 historic item block">
 <?php echo disciplineImage('preservation_project_type', 'historic','preservation-historic','historic resource analyses'); ?>
+<!--
 <div class="text">	
 	<h3>NYC Design Strategy Tool</h3>
-</div>	
+</div>
+-->	
 </div>
 
 <div class="block float sq1"></div>
 
-<div class="link float bg sq1 last bw">
-<?php $img = wp_get_attachment_image(5089, 'sq1'); 
-	echo $img; ?>
-<div class="text">	
-	<h3>Contact</h3>
-</div>
+<div class="float sq1 last bw flip-container">
+	<div class="flip">
+	<div class="front">
+	<?php $img = wp_get_attachment_image(4992, 'sq1'); 
+		echo $img; ?>
+	<div class="text grad-bg--top">	
+		<h3>Contact</h3>
+	</div>
+	</div>
+	<div class="back back--lab">
+		<h3>Contact</h3>
+		<p>BKSK Architects LLP<br />
+		28 West 25th Street,<br />
+		4th floor New York, NY 10010<br />
+		Phone:  212.807.9600<br /></p>
+		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p>
+		<p>Sustain-ability Lab: <a href="mailto:lab@bksk.com" target="_blank">lab@bksk.com</a></p>
+		<p><a href="twitter.com/bksk_lab" target="_blank">twitter.com/bksk_lab</a></p>
+	</div>
+	</div>
 </div>
 
 </div>
+
 
 <div class="twocol last">
 	<div class="sq2 block tools">
 <?php $img = wp_get_attachment_image(5065, 'sq2'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg">	
 	<h3>tools we use</h3>
 </div>	
 </div>

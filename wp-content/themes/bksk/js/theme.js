@@ -87,15 +87,17 @@ $('#project_type a').on( 'click', function(e) {
 		$('.filter'+filterValue).delay(400).fadeIn();
 	}
 	else if($(this).hasClass('Preservation')) {
-		console.log('true');
+// 		console.log('true');
 		$('.filter--three.Architecture').fadeOut(100);
 		$('.filter--three.Preservation').delay(400).fadeIn();
 	}
-/*
-	else if($(this).hasClass('')) {
-		$('.filter.Preservation').fadeOut(100);
+	else if($(this).parents('.filter').hasClass('Interiors')) {
+// 		console.log('tr2ue');
+		$('a.Interiors input').prop('checked', true);
+		$('a.Interiors').parent('li').addClass('selected');
+		$('.filter.Architecture').fadeOut(100);
+		$('.filter.Interiors').fadeIn();
 	}
-*/
 //   	$('.filter'+filterValue).delay(400).fadeIn();
 //   	console.log(filterValue);
   	
@@ -126,6 +128,7 @@ $('#project_type a').on( 'click', function(e) {
 
   // if there was a filter, trigger click on corresponding option
   if ( filterSelector ) {
+	  console.log(filterSelector);
     var selectorClasses = filterSelector.split('.').slice(1);
     $.each( selectorClasses, function( i, selectorClass ) {
       $('#filters a[data-filter-value=".' + selectorClass + '"]').click();

@@ -16,25 +16,29 @@
 	</div>
 </div>
 
-<div class="bg float sq2">
+<div class="float item sq2">
 <?php echo disciplineImage('interiors_project_type', 'living','interiors-living','living environments'); ?>
-<div class="text">	
+<!--
+<div class="text grad-bg">	
 	<h3>living environments</h3>
 </div>	
+-->
 </div>
 
 </div>
 
 <div class="twocol">
-	<div class="bg sq2">
+	<div class="sq2 item">
 	<?php echo disciplineImage('interiors_project_type', 'work','interiors-work','work environments'); ?>
-	<div class="text">
+<!--
+	<div class="text grad-bg">
 		<h3>work environments</h3>
 	</div>
+-->
 </div>
 
-<div class="sq1 bw">
-<a class="link bg" href="<?php echo get_site_url(); ?>/interiors/about">
+<div class="sq1 bw bg item">
+<a class="" href="<?php echo get_site_url(); ?>/interiors/about">
 	<?php $img = wp_get_attachment_image(4909, 'sq2'); 
 	echo $img; ?>
 <div class="text">	
@@ -51,26 +55,42 @@
 <div class="fourcol">
 <div class="block sq1"></div>
 
-<div class="link bg sq1 bw">
-<?php $img = wp_get_attachment_image(4990, 'sq2'); 
-	echo $img; ?>
-<div class="text">	
-	<h3>Contact</h3>
+<div class="sq1 bw flip-container" onclick="this.classList.toggle('hover');">
+<div class="flip">
+	<div class="front">
+	<?php $img = wp_get_attachment_image(4990, 'sq2'); 
+		echo $img; ?>
+	<div class="text">	
+		<h3>Contact</h3>
+	</div>
+	</div>
+	<div class="back">
+		<h3>Contact</h3>
+		<p>BKSK Architects LLP<br />
+		28 West 25th Street,<br />
+		4th floor New York, NY 10010<br />
+		Phone:  212.807.9600<br /></p>
+		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p>
+		<p>Interiors: <a href="mailto:interiors@bksk.com" target="_blank">interiors@bksk.com</a></p>
+		<p><a href="https://instagram.com/bkskinteriors" target="_blank">instagram.com/bkskinteriors</a></p>
+	</div>
 </div>
 </div>
 </div>
 
 <div class="twocol first">
-	<div class="bg sq2">
+	<div class="sq2 item">
 	<?php echo disciplineImage('interiors_project_type', 'community', 'interiors-community','community environments'); ?>
-<div class="text">	
+<!--
+<div class="text grad-bg">	
 	<h3>community environments</h3>
-</div>	
+</div>
+-->	
 </div>
 </div>
 
 <div class="fourcol last">
-<div class="link bg sq1 bw">
+<div class="link bg sq1 bw item">
 <?php $img = wp_get_attachment_image(4991, 'sq2'); 
 	echo $img; ?>
 <div class="text">	
