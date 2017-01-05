@@ -51,11 +51,13 @@
 		<h3>Project Type</h3>
 	<ul id="project_type">
 	<?php 
+		$count = 0;
 		$field_key = 'field_586675d92359a';
 		$field = get_field_object($field_key);
 		$preservations = $field['choices'];
 	foreach($field['choices'] as $k => $v) {
-		echo '<li><a href="#filter=.'.$k.'" class="'.$k.'" data-filter=".'.$k.'"><label class="control control--checkbox">'.$v.'<input type="checkbox"/><div class="control__indicator"></div></label></a></li>';
+		$count++;
+		echo '<li><a href="#filter=.'.$k.'" class="'.$k.'" data-filter-name="type'.$count.'" data-filter-value=".'.$k.'" data-filter=".'.$k.'"><label class="control control--checkbox">'.$v.'<input type="checkbox"/><div class="control__indicator"></div></label></a></li>';
 	} ?>
 	</ul>
 	</div>	
