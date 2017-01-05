@@ -38,10 +38,10 @@
 </div>
 
 <div class="sq1 bw">
-<a class="link bg" href="<?php echo get_site_url(); ?>/preservation/about">
+<a class="" href="<?php echo get_site_url(); ?>/preservation/about">
 <?php $img = wp_get_attachment_image(4992, 'sq1'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>About</h3>
 </div>
 </a>
@@ -57,10 +57,10 @@
 
 <div class="block float sq1"></div>
 
-<div class="link float item sq1 last bw">
+<div class="float item sq1 last bw">
 <?php $img = wp_get_attachment_image(5089, 'sq1'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>Preservation Dialogue</h3>
 </div>
 </div>

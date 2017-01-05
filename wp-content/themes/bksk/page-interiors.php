@@ -37,11 +37,11 @@
 -->
 </div>
 
-<div class="sq1 bw bg item">
+<div class="sq1 bw item">
 <a class="" href="<?php echo get_site_url(); ?>/interiors/about">
 	<?php $img = wp_get_attachment_image(4909, 'sq2'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>About</h3>
 </div>
 </a>
@@ -60,7 +60,7 @@
 	<div class="front">
 	<?php $img = wp_get_attachment_image(4990, 'sq2'); 
 		echo $img; ?>
-	<div class="text">	
+	<div class="text grad-bg--top">	
 		<h3>Contact</h3>
 	</div>
 	</div>
@@ -90,10 +90,10 @@
 </div>
 
 <div class="fourcol last">
-<div class="link bg sq1 bw item">
+<div class="sq1 bw item">
 <?php $img = wp_get_attachment_image(4991, 'sq2'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>Inspiration</h3>
 </div>
 </div>
