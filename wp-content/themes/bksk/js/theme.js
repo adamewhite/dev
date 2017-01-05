@@ -99,6 +99,11 @@ $('#project_type a').on( 'click', function(e) {
 		$('.filter.Architecture').fadeOut(100);
 		$('.filter.Interiors').fadeIn();
 	}
+	else if($(this).parents('.filter').hasClass('Architecture')) {
+// 		console.log('tr2ue');
+		$('a.Architecture input').prop('checked', true);
+		$('a.Architecture').parent('li').addClass('selected');
+	}
 	else if($(this).parents('.filter').hasClass('Preservation')) {
 		$('a.Preservation input, a.Architecture input').prop('checked', true);
 		$('a.Preservation, a.Architecture').parent('li').addClass('selected');
@@ -152,7 +157,7 @@ $grid.imagesLoaded(function(){
 		layoutMode: 'packery',
 		filter: filterSelector,
 		packery: {
-			gutter: 16,
+			gutter: 18,
 		},
 	});
 });
