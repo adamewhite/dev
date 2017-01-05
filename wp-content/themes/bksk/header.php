@@ -1,9 +1,5 @@
 <?php
 /**
- * The Header for our theme
- *
- * Displays all of the <head> section and everything up till <div id="main">
- *
  * @package WordPress
  * @subpackage Theme
  * @since 1.0
@@ -47,7 +43,7 @@
 	<?php if(!is_home()) { 
 		echo '<div class="nav__divider"></div>';
 	} ?>
-<!-- <?php include('analytics.php'); ?> -->
+	
 <div id="wrapper">
 <header class="nav">
 		<div class="nav__logo">
@@ -58,6 +54,9 @@
 			wp_nav_menu( array('menu' => 'Navigation' )); 
 			echo '</nav>';
 		} ?>
+		<div class="nav__search">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Search</a>
+		</div>
 	</header>
 </div>
 

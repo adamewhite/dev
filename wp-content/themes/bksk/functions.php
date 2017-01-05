@@ -115,7 +115,7 @@ add_image_size( 'sq2', 260, 260, true );
 add_image_size( 'sq500', 500, 500, true );
 
 function work_url($slug) {
-	return get_site_url().'/work/#filter=.'.$slug;
+	return get_site_url().'/work/#.'.$slug;
 }
 
 function disciplineImage($type, $slug, $url, $title) { 

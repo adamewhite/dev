@@ -21,7 +21,7 @@
 		$image = get_sub_field('image');
 		$image = wp_get_attachment_image_url( $image, 'full' );
 		$link = get_sub_field('link');
-		echo '<a href="'.$link.'"><img src="'.$image.'" /></a>';
+		echo '<a href="'.$link.'" target="_blank"><img src="'.$image.'" /></a>';
 	endwhile; echo '</div>'; endif;
 endwhile; endif; ?>
 <div class="clearfix"></div>

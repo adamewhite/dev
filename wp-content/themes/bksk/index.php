@@ -10,18 +10,7 @@
 $iPhone  = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
 $iPod    = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
 $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
-<!--
 
-<div class="container">
-	<div class="test test1"><div class="thing long"></div></div>
-	<div class="test test2"><div class="thing small"></div><div class="thing small"></div>
-	<div class="test test3"><div class="thing big"></div></div>
-</div>
--->
-
-<!-- <div class="masonry"> -->
-
-<!-- <div class="masonry-layout"> -->
 <?php $exclude_array = array(); ?>
 <div class="col30">
 <div class="item block rect2">
@@ -33,11 +22,11 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 </div>
 
 <div class="col sm">
-<div class="item sq1 bg bw">
+<div class="item sq1 bw">
 <a href="<?php echo get_site_url(); ?>/practice">
 	<?php $img = wp_get_attachment_image(4909, 'sq1'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg">	
 	<h3>Practice</h3>
 </div>
 </a>
@@ -77,14 +66,14 @@ if ( $the_query->have_posts() ) {
 	echo '<a href="'.work_url('cultural-civic').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text  grad-bg--top">	
 	<h3>cultural & civic</h3>
 </div>	
 </div>
 </div>
 
 <div class="col lg first">
-<div class="item bg work-link sq2">
+<div class="item work-link sq2">
 <?php 
 	$exclude_ids = array(implode(",", $exclude_array));
 	$args = array(
@@ -117,19 +106,20 @@ if ( $the_query->have_posts() ) {
 	echo '<a href="'.work_url('commercial').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text  grad-bg--top">	
 	<h3>commercial</h3>
 </div>
 </div>
 </div>
 
 <div class="col sm last">
-	<div class="item block sq1"></div>
-<div class="item sq1 bg bw">
+<div class="item block block--last sq1"></div>
+
+<div class="item sq1 bw">
 <a href="<?php echo get_site_url(); ?>/careers">
 	<?php $img = wp_get_attachment_image(4906, 'sq1'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg">	
 	<h3>Careers</h3>
 </div>
 </a>
@@ -143,7 +133,7 @@ if ( $the_query->have_posts() ) {
 	<div class="grid">
 		<div class="grid-sizer"></div>
 		<div class="gutter-sizer"></div>
-<div class="item grid-item--med grid-item bg work-link sq2">
+<div class="item grid-item--med grid-item work-link sq2">
 <?php 
 	$exclude_ids = array(implode(",", $exclude_array));
 	$args = array(
@@ -176,7 +166,7 @@ if ( $the_query->have_posts() ) {
 	echo '<a href="'.get_site_url().'/work/#filter=.modern-home"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>residential</h3>
 </div>
 </div>
@@ -189,27 +179,27 @@ if ( $the_query->have_posts() ) {
 </a>
 </div>
 
-<div class="item grid-item--sm sq1 bg bw last">
+<div class="item grid-item--sm sq1 bw last">
+<a href="<?php echo get_site_url(); ?>/post">
 <?php $img = wp_get_attachment_image(4907, 'sq1'); 
 	echo $img; ?>
-<a class="link" href="<?php echo get_site_url(); ?>/post">
-	<div class="text">	
+	<div class="text grad-bg">	
 		<h3>(PO)ST</h3>
 	</div>
 </a>
 </div>
 
-<div class="item item--contact grid-item--sm sq1 bg bw">
+<div class="item item--contact grid-item--sm sq1 bw">
 <a href="<?php echo get_site_url(); ?>/contact">
 	<?php $img = wp_get_attachment_image(4992, 'sq1'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg">	
 	<h3>Contact</h3>
 </div>
 </a>
 </div>
 
-<div class="item grid-item--med bg work-link sq2">
+<div class="item grid-item--med work-link sq2">
 <?php 
 	$exclude_ids = array(implode(",", $exclude_array));
 	$args = array(
@@ -240,7 +230,7 @@ if ( $the_query->have_posts() ) {
 	echo '<a href="'.get_site_url().'/preservation"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>preservation+</h3>
 </div>
 </div>
@@ -259,22 +249,20 @@ if ( $the_query->have_posts() ) {
 <div class="clearfix"></div>
 <div class="col lg first">
 
-<div class="item grid-item bg work-link sq2">
+<div class="item grid-item work-link sq2">
 <?php 
 	$exclude_ids = array(implode(",", $exclude_array));
 	$args = array(
 	'post_type' => 'work',
 	'orderby' => 'rand',
 	'post__not_in' => $exclude_array,
-	'tax_query' => array(
+	'meta_query' => array(
 		'relation' => 'AND',
 		array(
-			'taxonomy' => 'project_type',
-			'field'    => 'slug',
-			'terms'    => array( 'multi-family', 'traditional-home' )
-		)
-	),
-	'meta_query' => array(
+			'key' => 'discipline',
+			'compare' => 'LIKE',
+			'value' => 'Interiors'
+		),
 		array(
 			'key' => 'featured',
 			'compare' => '==',
@@ -291,7 +279,7 @@ if ( $the_query->have_posts() ) {
 	echo '<a href="'.get_site_url().'/interiors"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>interiors</h3>
 </div>
 </a>
@@ -299,11 +287,11 @@ if ( $the_query->have_posts() ) {
 </div>
 
 <div class="col sm">
-<div class="item sq1 bg bw">
+<div class="item sq1 bw">
 <a href="<?php echo get_site_url(); ?>/press">
 	<?php $img = wp_get_attachment_image(4910, 'sq1'); 
 	echo $img; ?>
-<div class="text">	
+<div class="text grad-bg">	
 	<h3>Recognition</h3>
 </div>
 </a>
@@ -312,7 +300,7 @@ if ( $the_query->have_posts() ) {
 </div>
 
 <div class="col lg last">
-<div class="item bg work-link sq2">
+<div class="item work-link sq2">
 <?php 
 	$exclude_ids = array(implode(",", $exclude_array));
 	$args = array(
@@ -343,7 +331,7 @@ if ( $the_query->have_posts() ) {
 	echo '<a href="'.work_url('Sustainability').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>sustainability</h3>
 </div>
 </div>
@@ -353,7 +341,7 @@ if ( $the_query->have_posts() ) {
 </div>
 
 <div class="col20">
-<div class="item bg work-link sq2">
+<div class="item work-link sq2">
 <?php 
 	$exclude_ids = array(implode(",", $exclude_array));
 	$args = array(
@@ -386,18 +374,14 @@ if ( $the_query->have_posts() ) {
 	echo '<a href="'.work_url('education').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>education</h3>
 </div>
 </div>
 
-<!--
-<?php var_dump($exclude_array);
-	echo implode(',', $exclude_array); ?>
--->
-
-<div class="item bg work-link sq2">
+<div class="item work-link sq2">
 <?php 
+	$exclude_ids = array(implode(",", $exclude_array));
 	$args = array(
 	'post_type' => 'work',
 	'orderby' => 'rand',
@@ -423,11 +407,12 @@ $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 	$the_query->the_post();
+	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
 	echo '<a href="'.work_url('community').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
-<div class="text">	
+<div class="text grad-bg--top">	
 	<h3>community</h3>
 </div>
 </div>

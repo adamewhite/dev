@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('.grid').masonry({
 		percentPosition: true,
 		columnWidth: '.grid-sizer',
-		gutter: 14,
+		gutter: '.gutter-sizer',
 		itemSelector: '.item'
 	});	
 	$('#main').delay(0).animate({opacity: 1});
@@ -140,7 +140,7 @@ $grid.imagesLoaded(function(){
 		layoutMode: 'packery',
 		filter: filterSelector,
 		packery: {
-			gutter: 14,
+			gutter: 16,
 		},
 	});
 });

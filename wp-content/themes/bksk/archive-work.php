@@ -63,7 +63,7 @@
 </div>
 		
 <div id="grid" class="grid-work">
-<!-- 	<div class="grid-sizer"></div> -->
+<!-- 	<div class="gutter-sizer"></div> -->
 <?php 
 $count = 0;
 $small_count = 0;
@@ -99,16 +99,14 @@ $terms = get_the_terms( get_the_ID(), 'project_type' );
 
 	    
 	    <?php if($feat_img) { ?>
-	    <a href="<?php the_permalink(' ') ?>" class="">
+	    <a href="<?php the_permalink(' ') ?>">
 		    <img src="<?php echo $feat_img[0]; ?>" alt="<?php echo the_title(); ?>" />
 		</a>
 		<?php } else { ?>
 		<a href="<?php the_permalink(' ') ?>" class="block"></a>
 		<?php } ?>
-		<div class="text">
-		   <a href="<?php the_permalink(' ') ?>">
+		<div class="text grad-bg">
 				<h3><?php the_title(); ?></h3>		  	
-		    </a>
 		</div>
 </div><!-- item -->
 
