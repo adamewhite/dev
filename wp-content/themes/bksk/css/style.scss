@@ -809,11 +809,11 @@ $divider: 12px;
 	opacity: 0;
 	width: 100%;
 	.grid-sizer, .grid-item {
-		width: 24%;
+		width: 23.5%;
 	}
 	.grid-item {
 		float: left;
-		margin-bottom: .5%;
+// 		margin-bottom: .5%;
 		img {
 			position: relative;
 			height: auto;
@@ -821,7 +821,7 @@ $divider: 12px;
 		}
 	}
 	.grid-item--partner {
-		width: 49%;
+		width: 48.8%;
 	}
 }
 

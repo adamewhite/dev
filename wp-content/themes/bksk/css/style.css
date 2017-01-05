@@ -675,16 +675,15 @@ h6 {
   opacity: 0;
   width: 100%; }
   .grid-team .grid-sizer, .grid-team .grid-item {
-    width: 24%; }
+    width: 23.5%; }
   .grid-team .grid-item {
-    float: left;
-    margin-bottom: .5%; }
+    float: left; }
     .grid-team .grid-item img {
       position: relative;
       height: auto;
       width: 100%; }
   .grid-team .grid-item--partner {
-    width: 49%; }
+    width: 48.8%; }
 
 .grid-team .text, .grid-work .text {
   bottom: 0;

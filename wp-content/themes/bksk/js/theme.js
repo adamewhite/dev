@@ -15,14 +15,15 @@ $(document).ready(function(){
 	var $grid = $('.grid-team');
 $grid.imagesLoaded(function(){
 	$('.grid-team').animate({opacity: 1});
-	$grid.isotope({ 
-	  percentPosition: true,
-	  itemSelector: '.grid-item',
-	    masonry: {
-			columnWidth: '.grid-sizer',
-			gutter: 12
-  		}
-  	});
+	$grid.isotope({
+		percentPosition: true,
+		itemSelector: '.grid-item',
+		layoutMode: 'packery',
+		filter: filterSelector,
+		packery: {
+			gutter: 16,
+		},
+	});
 });
 
 $('.grid-item--staff').hover(

@@ -25,7 +25,7 @@ $i = 0;
 $staff_args = array(
     'post_type' =>'team',
     'post_status'=>'publish', 
-    'orderby' => 'title',
+    'orderby' => 'rand',
     'posts_per_page' => -1,
     'meta_key' => 'partner',
     'meta_value' => 0
@@ -59,12 +59,12 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 */
 		echo '<div class="grid-item grid-item--staff bw">';
 		echo '<img src="'.$img.'" />';
-		echo '<div class="text"><h3>'.get_the_title().'</h3></div>';
+		echo '<div class="text grad-bg"><h3>'.get_the_title().'</h3></div>';
 		echo '</div>';
-	}
+	} 
 	if($staff_count == 4 || $staff_count == 6 || $staff_count == 8 || $staff_count == 10 || $staff_count == 12) {
 // 		setup_postdata($partners[$i]); 
-		if($i <= 4) {
+		if($i <= 5) {
 		$partner_image = get_field('image1', $partners[$i]->ID);
 		$title = get_field('title', $partners[$i]->ID);
 		if($partner_image['url'] != '') {
@@ -72,7 +72,7 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 			$class = 'grid-item--partner';
 			echo '<div class="grid-item grid-item--partner">';
 			echo '<a href="'.get_permalink($partners[$i]->ID).'"><img src="'.$img.'" />';
-			echo '<div class="text"><h3>'.get_the_title($partners[$i]->ID).'</h3></div>';
+			echo '<div class="text grad-bg"><h3>'.get_the_title($partners[$i]->ID).'</h3></div>';
 			echo '</a></div>';
 			$i++;
 		}
