@@ -19,7 +19,9 @@
 <?php if(is_page(4962)) {
 	if(get_field('approach') != '') {
 		echo '<h4>Our Approach</h4>';
+		echo '<div class="page__intro">';
 		the_field('approach');
+		echo '</div>';
 	} 	
 	if( have_rows('sections') ):
 		while( have_rows('sections') ): the_row(); 

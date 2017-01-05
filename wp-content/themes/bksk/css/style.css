@@ -580,8 +580,8 @@ h6 {
     display: block;
     float: right;
     text-indent: -9999px;
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     vertical-align: middle; }
 
 .home .nav__search {
@@ -595,7 +595,7 @@ h6 {
   width: 76%; }
   .nav__menu ul {
     float: right;
-    margin-top: 15px;
+    margin-top: 1.5%;
     text-align: right;
     width: 100%; }
     .nav__menu ul li {
@@ -605,10 +605,20 @@ h6 {
       .nav__menu ul li a {
         color: #595959;
         font-size: 14px;
+        font-weight: 100;
         text-decoration: none; }
 
+.menu-item-4975 {
+  padding-right: .5% !important; }
+
+.menu-item-4971 {
+  padding-left: 0 !important; }
+  .menu-item-4971:before {
+    content: '|';
+    margin-right: 12%; }
+
 .current-menu-item a {
-  font-weight: 500; }
+  font-weight: 500 !important; }
 
 .page-template-page-team-php .menu-item-4973 a {
   font-weight: 500; }
@@ -629,16 +639,17 @@ h6 {
   .page__header strong {
     font-weight: 500; }
 
-.page-template-page-practice #main {
+.page__intro {
   width: 95%; }
-  .page-template-page-practice #main .fourcol {
-    margin-top: 1%; }
-    .page-template-page-practice #main .fourcol img {
-      margin-bottom: 3%;
-      max-width: 100%; }
+
+.page-template-page-practice #main .fourcol {
+  margin-top: 1%; }
+  .page-template-page-practice #main .fourcol img {
+    margin-bottom: 5%;
+    max-width: 100%; }
 
 .page__subnav {
-  margin-bottom: 4%; }
+  margin-bottom: 3%; }
   .page__subnav li {
     display: inline-block;
     padding: 0 12px;
@@ -648,8 +659,9 @@ h6 {
     .page__subnav li a {
       color: #595959;
       font-size: 14px;
+      font-weight: 100;
       text-decoration: none;
-      text-tranform: uppercase; }
+      text-transform: uppercase; }
 
 .small.text {
   bottom: -18px !important;
@@ -1081,7 +1093,7 @@ a.active {
   margin-right: 2%;
   width: 23%;
   vertical-align: top; }
-  .fourcol:nth-child(4n + 5) {
+  .fourcol:nth-child(4n + 4) {
     margin-right: 0; }
 
 .clearfix {
