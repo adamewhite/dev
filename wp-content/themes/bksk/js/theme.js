@@ -99,6 +99,14 @@ $('#project_type a').on( 'click', function(e) {
 		$('.filter.Architecture').fadeOut(100);
 		$('.filter.Interiors').fadeIn();
 	}
+	else if($(this).parents('.filter').hasClass('Preservation')) {
+		$('a.Preservation input, a.Architecture input').prop('checked', true);
+		$('a.Preservation, a.Architecture').parent('li').addClass('selected');
+		$('.filter.Interiors, .filter--three.Architecture').fadeOut(100);
+		$('.filter.Preservation').fadeIn();
+		
+	}
+
 //   	$('.filter'+filterValue).delay(400).fadeIn();
 //   	console.log(filterValue);
   	
