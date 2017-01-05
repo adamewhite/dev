@@ -62,9 +62,9 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 		echo '<div class="text grad-bg"><h3>'.get_the_title().'</h3></div>';
 		echo '</div>';
 	} 
-	if($staff_count == 4 || $staff_count == 6 || $staff_count == 8 || $staff_count == 10 || $staff_count == 12) {
+	if($staff_count == 4 || $staff_count == 6 || $staff_count == 8 || $staff_count == 10 || $staff_count == 12 || $staff_count == 14) {
 // 		setup_postdata($partners[$i]); 
-		if($i <= 5) {
+		if($i <= 6) {
 		$partner_image = get_field('image1', $partners[$i]->ID);
 		$title = get_field('title', $partners[$i]->ID);
 		if($partner_image['url'] != '') {

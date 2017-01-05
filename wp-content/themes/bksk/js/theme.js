@@ -21,7 +21,7 @@ $grid.imagesLoaded(function(){
 		layoutMode: 'packery',
 		filter: filterSelector,
 		packery: {
-			gutter: 16,
+			gutter: 20,
 		},
 	});
 });
