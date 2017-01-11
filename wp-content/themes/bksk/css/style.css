@@ -144,14 +144,14 @@ body {
   line-height: 170%;
   overflow-x: hidden;
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
   min-width: 600px;
   max-width: 1500px; }
 
 body.home {
   width: 94%;
   min-width: 800px;
-  max-width: 1600px; }
+  max-width: 1500px; }
 
 p, a {
   font-family: "sweet-sans", Helvetica, sans-serif;
