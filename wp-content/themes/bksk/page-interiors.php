@@ -91,8 +91,15 @@
 
 <div class="fourcol last">
 <div class="sq1 bw item">
-<?php $img = wp_get_attachment_image(4991, 'sq2'); 
-	echo $img; ?>
+<?php $jsonurl = "https://api.instagram.com/v1/users/self/media/recent/?access_token=3323346110.1677ed0.8bdb4bc04ff14e0793eac97a159dddb2&count=1";	
+	$json = file_get_contents($jsonurl,0,null,null);
+	$json_output = json_decode($json, true);
+	foreach($json_output['data'] as $item) {
+		$title = str_replace(' & ', ' &amp; ', $item['caption']['text']);
+	    $link = $item['link'];
+	    $image = $item['images']['low_resolution']['url']; 
+		echo '<img src="'.$image.'" alt="'.$title.'" />';
+	} ?>
 <div class="text grad-bg--top">	
 	<h3>Inspiration</h3>
 </div>

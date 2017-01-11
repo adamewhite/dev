@@ -77,8 +77,9 @@ $('#project_type a').on( 'click', function(e) {
 	} else {
 		$(checkBox).prop('checked', true);
 	}
-	
+
 	var filterValue = $(this).attr('data-filter');
+		console.log(filterValue);
 	if(filterValue == '.Architecture') {
 	  $('.filter').fadeOut();
 	  $('.filter'+filterValue).delay(400).fadeIn();
@@ -86,7 +87,11 @@ $('#project_type a').on( 'click', function(e) {
   	else if(filterValue == '.Interiors') {
 		$('.filter').fadeOut();
 		$('.filter'+filterValue).delay(400).fadeIn();
-	}
+	} else if(filterValue == '.Sustainability') {
+		$('.filter--three.Architecture').fadeOut(100);
+	  	$('a.Sustainability input, a.Architecture input').prop('checked', true);
+		$('a.Sustainability, a.Architecture').parent('li').addClass('selected');
+  	}
 	else if($(this).hasClass('Preservation')) {
 // 		console.log('true');
 		$('.filter--three.Architecture').fadeOut(100);

@@ -89,22 +89,27 @@ function theme_scripts() {
 // 	wp_enqueue_style( 'twentyfourteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style', 'genericons' ), '20131205' );
 // 	wp_style_add_data( 'twentyfourteen-ie', 'conditional', 'lt IE 9' );
 	if(is_home()) {
+	wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );	
 	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20161201', true );
 	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.4.1.1.min.js', array( ), false, true );
 	}
-	wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );
 	if(is_post_type_archive('work') || is_page('team')) {
 // 	wp_enqueue_script( 'migrate', 'http://code.jquery.com/jquery-migrate-1.2.1.js', array( 'jquery' ), '20161230', true );
+	wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );
 	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.3.0.1.min.js', array( 'jquery' ), '20170102', true );
 		wp_enqueue_script( 'packery', get_template_directory_uri() . '/js/packery.1.3.2.min.js', array( 'jquery', 'isotope', 'images' ), '20170102', true );
 // 	wp_enqueue_script( 'bbq', get_template_directory_uri() . '/js/bbq.1.2.1.min.js', array( 'jquery' ), '20161201', true );
 	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
 	}
+	if(is_page('team')) {
+		wp_enqueue_script( 'modernizer', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '20170104', true );
+		wp_enqueue_script( 'grid', get_template_directory_uri() . '/js/grid.js', array( 'jquery' ), '20170111', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
 function remove_menus(){
-	remove_menu_page( 'edit.php' ); //Posts
+// 	remove_menu_page( 'edit.php' ); 
 }
 
 add_action( 'admin_menu', 'remove_menus' );

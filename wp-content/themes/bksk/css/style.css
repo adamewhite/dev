@@ -568,7 +568,6 @@ h6 {
   float: left;
   width: 20%; }
   .nav__logo a {
-    background: url("../img/bksk-logo.png") no-repeat left center;
     background-size: 100% 100%;
     display: block;
     float: left;
@@ -938,8 +937,8 @@ a.active {
 	}
 */ }
   .back.back--lab {
-    padding-bottom: 3%;
-    padding-top: 7%; }
+    padding-bottom: 2%;
+    padding-top: 5%; }
   .back span {
     background: #cccccc;
     padding-bottom: 50%;
@@ -1075,6 +1074,36 @@ a.active {
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg); }
+
+/*-----------------------------------------------------------------------------------*
+/* = Post
+/*-----------------------------------------------------------------------------------*/
+#content {
+  display: flex; }
+
+#post, #sidebar {
+  align-items: stretch;
+  flex: 1; }
+
+#post {
+  float: left;
+  width: 70%; }
+
+#sidebar {
+  float: right;
+  width: 28%; }
+  #sidebar .sidebar-box {
+    margin: 0 0 8% 0; }
+  #sidebar .twocol:nth-child(2n+2) {
+    margin-right: 2%; }
+  #sidebar .twocol:nth-child(2n+1) {
+    margin-right: 0; }
+  #sidebar .instagram img, #sidebar .instagram video {
+    height: auto;
+    max-width: 100%; }
+  #sidebar h3 {
+    font-size: 15px;
+    font-weight: 500; }
 
 /* Alignment */
 .alignleft {
