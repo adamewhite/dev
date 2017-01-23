@@ -143,7 +143,7 @@ $types = array();
 ?>  
 <?php if($feat_img) { ?>
 
-	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; if($specialties) foreach($specialties as $specialty) echo strtolower($specialty).' '; if($interiors) foreach($interiors as $interior) echo $interior.'-environments '; if($preservations) foreach($preservations as $preservation) echo ''.$preservation.' '; if($terms) foreach ($terms as $term) echo $term->slug .' '; if($featured == 1) : echo 'grid-item--featured '; endif; if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
+	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; if($specialties) foreach($specialties as $specialty) echo strtolower($specialty).' '; if($interiors) foreach($interiors as $interior) echo $interior.'-environments '; if($preservations) foreach($preservations as $preservation) echo ''.$preservation.' '; if($terms) foreach ($terms as $term) echo $term->slug .' '; if($featured == 1) : echo 'featured_Architecture '; endif; if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
 
 	    
 	    <?php if($feat_img) { ?>

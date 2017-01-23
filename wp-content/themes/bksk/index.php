@@ -14,7 +14,7 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 <?php $exclude_array = array(); ?>
 <div class="col30">
 <div class="item block rect2">
-<a class="link" href="<?php echo get_site_url(); ?>/work">
+<a class="link" href="<?php echo get_site_url(); ?>/work/#.Architecture">
 	<div class="text">
 		<h1>Architecture</h1>
 	</div>

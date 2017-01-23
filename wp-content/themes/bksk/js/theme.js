@@ -278,8 +278,8 @@ $( "input" ).on( "click", function() {
 		console.log('filterDisplay: Preservation');
 		$('a.preservation input, a.Architecture input').prop('checked', true);
 // 		$('a.preservation, a.Architecture').parent('li').addClass('selected');
-		$('.filter.Interiors, .filter--three.Architecture').fadeOut(100);
-		$('.filter--three.Preservation').delay(400).fadeIn();
+		$('.filter.Interiors, .filter--three.Architecture').fadeOut(0);
+		$('.filter--two.Architecture,.filter--three.Preservation').delay(400).fadeIn();
 	} else if(filterValue.search('.sustainability') == -1 && filterValue.search('.preservation') == -1 && !selected.parents('ul').hasClass('Interiors')) {
 		$('.filter--three').fadeOut(100);
 		$('.filter--three.Architecture').delay(400).fadeIn();
@@ -317,6 +317,7 @@ $( "input" ).on( "click", function() {
 		$('.filter li').removeClass('selected');
 	} else {
 		$('#filters a').find(':input').prop('checked', false);	
+		$('#filters li').removeClass('selected');
 	}
 	$('.filter--two,.filter--three').fadeOut();
   }

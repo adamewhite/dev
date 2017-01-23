@@ -17,7 +17,7 @@
 </div>
 
 <div class="item float sq2">
-<?php echo disciplineImage('preservation_project_type', 'adaptive','adaptive','adaptive reuse/restoration'); ?>
+<?php echo disciplineImage('preservation_project_type', 'adaptive','preservation.adaptive','adaptive reuse/restoration'); ?>
 <!--
 <div class="text">	
 	<h3>adaptive reuse/restoration</h3>
@@ -29,7 +29,7 @@
 
 <div class="twocol">
 	<div class="item sq2">
-<?php echo disciplineImage('preservation_project_type', 'new','new','new buildings in landmark'); ?>
+<?php echo disciplineImage('preservation_project_type', 'new','preservation.new','new buildings in landmark'); ?>
 <!--
 <div class="text">	
 	<h3>new buildings in landmark</h3>
@@ -66,7 +66,7 @@
 </div>
 
 <div class="item rect1 historic block">
-<?php echo disciplineImage('preservation_project_type', 'historic','historic','historic resource analyses'); ?>
+<?php echo disciplineImage('preservation_project_type', 'historic','preservation.historic','historic resource analyses'); ?>
 <!--
 <div class="text">	
 	<h3>historic resource analyses</h3>
@@ -78,7 +78,7 @@
 
 <div class="twocol last">
 	<div class="item sq2">
-	<?php echo disciplineImage('preservation_project_type', 'extending','extending','expanding our preservation ethos'); ?>
+	<?php echo disciplineImage('preservation_project_type', 'extending','preservation.extending','expanding our preservation ethos'); ?>
 <!--
 <div class="text">	
 	<h3>expanding our preservation ethos</h3>
