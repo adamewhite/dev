@@ -98,11 +98,11 @@
 		$title = str_replace(' & ', ' &amp; ', $item['caption']['text']);
 	    $link = $item['link'];
 	    $image = $item['images']['low_resolution']['url']; 
-		echo '<img src="'.$image.'" alt="'.$title.'" />';
+		echo '<a href="'.get_site_url().'/interiors/inspiration"><img src="'.$image.'" alt="'.$title.'" />';
 	} ?>
 <div class="text grad-bg--top">	
 	<h3>Inspiration</h3>
-</div>
+</div></a>
 </div>
 
 <div class="block sq1"></div>

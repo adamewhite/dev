@@ -63,12 +63,13 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('cultural-civic').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.work_url('cultural-civic').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text  grad-bg--top">	
 	<h3>cultural & civic</h3>
 </div>	
+</a>
 </div>
 </div>
 
@@ -103,12 +104,13 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('commercial').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.work_url('commercial').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text  grad-bg--top">	
 	<h3>commercial</h3>
 </div>
+</a>
 </div>
 </div>
 
@@ -163,12 +165,13 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('interiors-living').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.work_url('interiors-living').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg--top">	
 	<h3>residential</h3>
 </div>
+</a>
 </div>
 
 <div class="item grid-item--med grid-item block h1-small rect2">
@@ -227,12 +230,13 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.get_site_url().'/preservation"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.get_site_url().'/preservation"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg--top">	
 	<h3>preservation+</h3>
 </div>
+</a>
 </div>
 
 <div class="item grid-item--lg block clear rect2">
@@ -276,7 +280,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.get_site_url().'/interiors"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.get_site_url().'/interiors"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg--top">	
@@ -288,7 +292,7 @@ if ( $the_query->have_posts() ) {
 
 <div class="col sm">
 <div class="item sq1 bw">
-<a href="<?php echo get_site_url(); ?>/press">
+<a href="<?php echo get_site_url(); ?>/recognition">
 	<?php $img = wp_get_attachment_image(4910, 'sq1'); 
 	echo $img; ?>
 <div class="text grad-bg">	
@@ -328,12 +332,13 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('Sustainability').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.work_url('Sustainability').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg--top">	
 	<h3>sustainability</h3>
 </div>
+</a>
 </div>
 </div>
 
@@ -371,12 +376,13 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('education').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.work_url('education').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg--top">	
 	<h3>education</h3>
 </div>
+</a>
 </div>
 
 <div class="item work-link sq2">
@@ -409,12 +415,13 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('community').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.work_url('community').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg--top">	
 	<h3>community</h3>
 </div>
+</a>
 </div>
 
 <div class="item block med">

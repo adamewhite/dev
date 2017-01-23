@@ -94,17 +94,20 @@ function theme_scripts() {
 	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.4.1.1.min.js', array( ), false, true );
 	}
 	if(is_post_type_archive('work') || is_page('team')) {
-// 	wp_enqueue_script( 'migrate', 'http://code.jquery.com/jquery-migrate-1.2.1.js', array( 'jquery' ), '20161230', true );
 	wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );
 	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.3.0.1.min.js', array( 'jquery' ), '20170102', true );
 		wp_enqueue_script( 'packery', get_template_directory_uri() . '/js/packery.1.3.2.min.js', array( 'jquery', 'isotope', 'images' ), '20170102', true );
-// 	wp_enqueue_script( 'bbq', get_template_directory_uri() . '/js/bbq.1.2.1.min.js', array( 'jquery' ), '20161201', true );
-	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
-	}
 	if(is_page('team')) {
 		wp_enqueue_script( 'modernizer', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '20170104', true );
-		wp_enqueue_script( 'grid', get_template_directory_uri() . '/js/grid.js', array( 'jquery' ), '20170111', true );
+		wp_enqueue_script( 'grid', get_template_directory_uri() . '/js/grid.js', array( 'jquery'), '20170111', true );
+		wp_enqueue_script( 'classie', get_template_directory_uri() . '/js/classie.js', array( 'jquery'), '20170116', true );
 	}
+	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
+	}
+	if(is_page(2)) {
+		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
+		wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?keyAIzaSyBoNAm7T3ov5Yy_6TeL7ijFqb-IDyMrE3Q&callback=initMap', array( 'jquery', 'theme' ), '20170104', true );
+		}
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
@@ -118,6 +121,7 @@ add_image_size( 'sq1', 125, 125, true );
 // add_image_size( 'sq250', 250, 250, true );
 add_image_size( 'sq2', 260, 260, true );
 add_image_size( 'sq500', 500, 500, true );
+add_image_size( 'loop', 1024, 512, true );
 
 function work_url($slug) {
 	return get_site_url().'/work/#.'.$slug;
@@ -169,3 +173,32 @@ function set_custom_post_types_admin_order($wp_query) {
   }  
 }  
 add_filter('pre_get_posts', 'set_custom_post_types_admin_order');  
+
+function recursive_array_search($needle,$haystack) {
+   $keys = '';
+    foreach($haystack as $key=>$value) {
+        $current_key=$key;
+        if($needle===$value OR (is_array($value) && recursive_array_search($needle,$value) !== false)) {
+            $keys .= $current_key;
+        } else {
+	        
+        }
+    }
+    return $keys;
+}
+
+function search($array, $key, $value) 
+{ 
+    $results = array(); 
+
+    if (is_array($array)) 
+    { 
+        if (isset($array[$key]) && $array[$key] == $value) 
+            $results[] = $array; 
+
+        foreach ($array as $subarray) 
+            $results = array_merge($results, search($subarray, $key, $value)); 
+    } 
+
+    return $results; 
+}

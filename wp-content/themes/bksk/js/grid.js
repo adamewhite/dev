@@ -166,7 +166,7 @@ var Grid = (function() {
 		// list of items
 	var $grid = $( '#grid-team' ),
 		// the items
-		$items = $grid.children( 'div' ),
+		$items = $grid.find( '.grid-item' ),
 		// current expanded item's index
 		current = -1,
 		// position (top) of the expanded item
@@ -197,7 +197,6 @@ var Grid = (function() {
 		};
 
 	function init( config ) {
-		
 		// the settings..
 		settings = $.extend( true, {}, settings, config );
 
@@ -247,6 +246,7 @@ var Grid = (function() {
 
 	function initEvents() {
 		
+		
 		// when clicking an item, show the preview with the item´s info and large image.
 		// close the item if already expanded.
 		// also close if clicking on the item´s cross
@@ -282,6 +282,7 @@ var Grid = (function() {
 			return false;
 
 		} );
+		
 	}
 
 	function getWinSize() {
@@ -337,6 +338,7 @@ var Grid = (function() {
 		this.expandedIdx = this.$item.index();
 		this.create();
 		this.update();
+
 	}
 
 	Preview.prototype = {
@@ -344,8 +346,8 @@ var Grid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$link = $( '<p>Learn more at <a href="#"></a></p>' );
+			//this.$href = $( '<a href="#">Visit website</a>' );
+			//this.$link = $( '<p>Learn more at <a href="#"></a></p>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$link );
 			this.$loading = $( '<div class="og-loading"></div>' );
 // 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
@@ -360,7 +362,6 @@ var Grid = (function() {
 			}
 		},
 		update : function( $item ) {
-
 			if( $item ) {
 				this.$item = $item;
 			}
@@ -380,19 +381,19 @@ var Grid = (function() {
 			// update preview´s content
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
-					href : $itemEl.attr( 'href' ),
+					//href : $itemEl.attr( 'href' ),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' ),
-					link : $itemEl.data( 'link' )
+					//link : $itemEl.data( 'link' )
 				};
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
 // 			this.$link.html( eldata.link );
-			this.$link.attr( 'href', eldata.link );
-			this.$href.attr( 'href', eldata.href );
-			this.$link.find('a').html(eldata.link);
+			//this.$link.attr( 'href', eldata.link );
+			//this.$href.attr( 'href', eldata.href );
+			//this.$link.find('a').html(eldata.link);
 			
 			var self = this;
 			
@@ -427,7 +428,6 @@ var Grid = (function() {
 				// scroll to position the preview in the right place
 				this.positionPreview();
 			}, this ), 25 );
-
 		},
 		close : function() {
 

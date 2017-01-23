@@ -17,7 +17,7 @@
 </header>
 <?php endwhile; endif; ?>
 
-<div class="content grid-team">
+<div id="grid-team" class="content grid-team">
 	<div class="grid-sizer"></div>
 <?php 
 $staff_count = 0;
@@ -44,6 +44,9 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 	$image = get_field('image1');
 	$title = get_field('title');
 	$partner = get_field('partner');
+	$bio = get_field('bio');
+	$bio = preg_replace("/'/", "&#39;", $bio);
+	$bio = preg_replace("/\"/", "&quot;", $bio);
 // 	echo $image;
 	if($image['url'] != '') {
 		$staff_count++;
@@ -58,21 +61,23 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 		}
 */
 		echo '<div class="grid-item grid-item--staff bw">';
-		echo '<img src="'.$img.'" />';
-		echo '<div class="text grad-bg"><h3>'.get_the_title().'</h3></div>';
+		echo '<a href="#" data-title="'.get_the_title().'" data-description="'.$bio.'" data-largesrc="'.$img.'"><img src="'.$img.'" />';
+		echo '<div class="text"><h3>'.get_the_title().'</h3></div></a>';
 		echo '</div>';
 	} 
 	if($staff_count == 4 || $staff_count == 6 || $staff_count == 8 || $staff_count == 10 || $staff_count == 12 || $staff_count == 14) {
 // 		setup_postdata($partners[$i]); 
-		if($i <= 6) {
+		if($i <= 7) {
 		$partner_image = get_field('image1', $partners[$i]->ID);
 		$title = get_field('title', $partners[$i]->ID);
+		$prebio = get_field('bio', $partners[$i]->ID);
+		$bio = preg_replace("/<\/?div[^>]*\>/i", "", $prebio); 
 		if($partner_image['url'] != '') {
 			$img = $partner_image['sizes']['sq500'];
 			$class = 'grid-item--partner';
-			echo '<div class="grid-item grid-item--partner">';
-			echo '<a href="'.get_permalink($partners[$i]->ID).'"><img src="'.$img.'" />';
-			echo '<div class="text grad-bg"><h3>'.get_the_title($partners[$i]->ID).'</h3></div>';
+			echo '<div class="grid-item grid-item--partner" data-id="'.$partners[$i]->ID.'">';
+			echo '<a href="#" data-name="'.get_the_title($partners[$i]->ID).'" data-title="'.$title.'" data-bio="'.$bio.'" data-largesrc="'.$img.'"><img src="'.$img.'" />';
+			echo '<div class="text"><h3>'.get_the_title($partners[$i]->ID).'</h3></div>';
 			echo '</a></div>';
 			$i++;
 		}

@@ -5,7 +5,9 @@
  */
 ?>
 </div><!-- /main -->
+<!-- <?php if(!is_page(5361)) { ?> -->
 <div class="clearfix"></div>
+<!-- <?php } ?> -->
 <footer>
 <?php if(!is_home()) { ?>	
 <?php echo '<nav class="footer__subnav" role="navigation">';
@@ -28,7 +30,10 @@ endwhile; endif; ?>
 <!-- ©2016 BKSK ARCHITECTS. ALL RIGHTS RESERVED. TERMS & CONDITIONS. PRIVACY POLICY. -->
 </footer>
 </div><!-- wrapper --> 
-
+<?php 
+	echo '<div class="overlay"><button class="close">X</button><button class="prev"><</button><button class="next">></button><div class="content"></div></div>';
+ ?>
 <?php wp_footer(); ?>
+
 </body>
 </html>

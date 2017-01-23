@@ -6,11 +6,11 @@
 ?>
 <aside id="sidebar" class="clearfix">
 
-<?php if(is_page(5361)) { 
+<?php if(is_page(5361) || is_archive()) { 
 
 // (Po)st Categories 
-	echo '<div class="sidebar-box"><h3>Categories</h3>';
-	$args = array(  'taxonomy' => 'category', 'hide_empty'=> false, 'orderby' => 'title'
+	echo '<div class="sidebar-box"><h3>Tags</h3>';
+	$args = array(  'taxonomy' => 'post_tag', 'hide_empty'=> false, 'orderby' => 'title', 'include' => array( 25, 45, 21, 54, 53, 26, 64, 111, 44, 29)
 	);
 	$cats = get_terms($args);
 	if($cats) {
@@ -51,5 +51,26 @@
 	echo '</div>';
 
 }	?>
+
+<?php if(is_page(5061)) { 
+	echo '<div class="sidebar-box"><h3>Awards</h3>';
+	$args = array(
+            'post_type' =>'post',
+            'post_status'=>'publish', 
+            'orderby' => 'date',
+            'posts_per_page' => 10,
+            'tag' => 'awards'
+        ); 
+		query_posts ($args);
+		if (have_posts()) :
+		while (have_posts()) : the_post(); 
+			echo '<p><a href="'.get_the_permalink().'">'.get_the_title().'</a></p>';
+		endwhile; endif;
+	echo '</div>';
+
+	echo '<div class="sidebar-box"><h3>Press Inquiries</h3>';
+	echo '<p>Contact <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p>';
+	echo '</div>';
+} ?>
 
 </aside><!-- /sidebar -->
