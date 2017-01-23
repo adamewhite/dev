@@ -14,8 +14,7 @@ $(document).ready(function(){
 } else if($('.content').hasClass('grid-team')) {
 	var $grid = $('.grid-team');
 $grid.imagesLoaded(function(){
-	$('.grid-team').animate({opacity: 1});
-	var $stamp = $grid.find('.og-expander');
+// 	var $stamp = $grid.find('.og-expander');
 	$grid.isotope({
 		percentPosition: true,
 		itemSelector: '.grid-item',
@@ -24,8 +23,9 @@ $grid.imagesLoaded(function(){
 		packery: {
 			gutter: 16,
 		},
-		stamp: $stamp
+// 		stamp: $stamp
 	});
+	$('.grid-team').animate({opacity: 1});
 });
 
 /*
@@ -258,17 +258,22 @@ $( "input" ).on( "click", function() {
 			$('.filter').fadeOut();
 			$('.filter.Architecture').delay(100).fadeIn();	
 		}
-	} else if(filterValue.search('interiors') != -1) {
+	} else if(filterValue.search('interiors') != -1 || filterValue.search('environments') != -1) {
 		if($('.filter.Interiors').is(':visible')) {
 		} else {
 			console.log('ya1');
 			$('.filter').fadeOut();
 			$('.filter.Interiors').fadeIn();	
 		}
+		if(!$('a.Interiors').hasClass('selected')) {
+			$('a.Interiors input').prop('checked', true);
+			$('a.Interiors').parents('li').addClass('selected');
+		}
 	} else if(filterValue.search('.sustainability') != -1) {
 		$('.filter--three').fadeOut(100);
 	  	$('a.sustainability input, a.Architecture input').prop('checked', true);
 		$('a.sustainability, a.Architecture').parent('li').addClass('selected');
+		$('.filter--two.Architecture').delay(100).fadeIn();
   	} else if(filterValue.search('.preservation') != -1) {
 		console.log('filterDisplay: Preservation');
 		$('a.preservation input, a.Architecture input').prop('checked', true);
@@ -324,7 +329,7 @@ $grid.imagesLoaded(function(){
 		layoutMode: 'packery',
 		filter: filterSelector,
 		packery: {
-			gutter: 18,
+			gutter: 16,
 		},
 	});
 

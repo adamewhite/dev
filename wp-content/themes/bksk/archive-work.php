@@ -22,9 +22,9 @@
 		<div class="project_type filter filter--two Interiors">
 			<h3>Project Type</h3>
 			<ul id="project_type" class="project_type Interiors">			
-				<li><a href="#filter=.interiors-living" data-filter-name="int_type1" class="interiors-living" data-filter-value=".interiors-living" data-filter=".interiors-living"><label class="control control--checkbox">Living Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
-				<li><a href="#filter=.interiors-work" class="interiors-work" data-filter-name="int_type2" data-filter-value=".interiors-work" data-filter=".interiors-work"><label class="control control--checkbox">Work Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
-				<li><a href="#filter=.interiors-community" class="interiors-community" data-filter-name="int_type3" data-filter-value=".interiors-community" data-filter=".interiors-community"><label class="control control--checkbox">Community Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+				<li><a href="#filter=.living-environments" data-filter-name="int_type1" class="interiors-living" data-filter-value=".living-environments" data-filter=".living-environments"><label class="control control--checkbox">Living Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+				<li><a href="#filter=.work-environments" class="interiors-work" data-filter-name="int_type2" data-filter-value=".work-environments" data-filter=".work-environments"><label class="control control--checkbox">Work Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+				<li><a href="#filter=.community-environments" class="interiors-community" data-filter-name="int_type3" data-filter-value=".community-environments" data-filter=".community-environments"><label class="control control--checkbox">Community Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 			</ul>
 		</div>
 		<div class="filter filter--two Architecture">
@@ -143,7 +143,7 @@ $types = array();
 ?>  
 <?php if($feat_img) { ?>
 
-	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; if($specialties) foreach($specialties as $specialty) echo strtolower($specialty).' '; if($interiors) foreach($interiors as $interior) echo 'interiors-'.$interior.' '; if($preservations) foreach($preservations as $preservation) echo ''.$preservation.' '; if($terms) foreach ($terms as $term) echo $term->slug .' '; if($featured == 1) : echo 'grid-item--featured '; endif; if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
+	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; if($specialties) foreach($specialties as $specialty) echo strtolower($specialty).' '; if($interiors) foreach($interiors as $interior) echo $interior.'-environments '; if($preservations) foreach($preservations as $preservation) echo ''.$preservation.' '; if($terms) foreach ($terms as $term) echo $term->slug .' '; if($featured == 1) : echo 'grid-item--featured '; endif; if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
 
 	    
 	    <?php if($feat_img) { ?>

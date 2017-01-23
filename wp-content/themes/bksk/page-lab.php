@@ -17,7 +17,7 @@
 </div>
 
 <div class="item float sq2">
-<?php echo disciplineImage('specialty', 'sustainability','Sustainability','projects we\'ve done'); ?>
+<?php echo disciplineImage('specialty', 'sustainability','sustainability','projects we\'ve done'); ?>
 <!--
 <div class="text">	
 	<h3>projects we've done</h3>
@@ -56,7 +56,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 	$the_query->the_post();
 		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
-	echo '<a href="'.get_site_url().'/work"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.get_site_url().'/tag/sustainability"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
 <div class="text grad-bg">	
@@ -65,11 +65,11 @@ if ( $the_query->have_posts() ) {
 </div>
 
 <div class="sq1 bw">
-<?php $img = wp_get_attachment_image(4909, 'sq2'); 
+<a href="<?php get_site_url(); ?>/lab/about"><?php $img = wp_get_attachment_image(4909, 'sq2'); 
 	echo $img; ?>
 <div class="text grad-bg--top">	
 	<h3>About</h3>
-</div>
+</div></a>
 </div>
 
 <div class="block sq1 last">
@@ -77,16 +77,14 @@ if ( $the_query->have_posts() ) {
 </div>
 </div>
 
-<div class="clearfix"></div>
+<!-- <div class="clearfix"></div> -->
 <div class="twocol first">
 
-<div class="rect1 historic item block">
-<?php echo disciplineImage('preservation_project_type', 'historic','preservation-historic','historic resource analyses'); ?>
-<!--
-<div class="text">	
+<div class="rect1 historic item block item--strategy">
+<a href="http://www.bkskarch.com/lab/strategy/map.php">
+<div class="text top">	
 	<h3>NYC Design Strategy Tool</h3>
-</div>
--->	
+</div></a>	
 </div>
 
 <div class="block float sq1"></div>
@@ -103,11 +101,11 @@ if ( $the_query->have_posts() ) {
 	<div class="back back--lab">
 		<h3>Contact</h3>
 		<p>BKSK Architects LLP<br />
-		28 West 25th Street,<br />
-		4th floor New York, NY 10010<br />
+		28 West 25th Street, 4th Fl<br />
+		New York, NY 10010<br />
 		Phone:  212.807.9600<br /></p>
-		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p>
-		<p>Sustain-ability Lab: <a href="mailto:lab@bksk.com" target="_blank">lab@bksk.com</a></p>
+<!-- 		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p> -->
+		<p><a href="mailto:lab@bksk.com" target="_blank">lab@bksk.com</a></p>
 		<p><a href="twitter.com/bksk_lab" target="_blank">twitter.com/bksk_lab</a></p>
 	</div>
 	</div>

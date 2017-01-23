@@ -137,7 +137,7 @@ body.home {
 
 #wrapper {
 	margin: 0 auto;
-	width: 70%;
+	width: 65%;
 	min-width: 600px;
 	max-width: 1500px;
 	&:after { 
@@ -157,6 +157,10 @@ a {
 	color: #595959;
 	font-weight: 300;
 	text-decoration: none;
+}
+
+strong {
+	font-weight: 500;
 }
 
 .bw img {
@@ -199,14 +203,14 @@ h2 {
 }
 
 h3 {
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 300;
 	line-height: 140%;
 	margin: 0px 0 2%;
 }
 
 h4 {
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 300;
 	line-height: 130%;
 	margin-bottom: 2%;
@@ -228,6 +232,7 @@ h6 {
 
 #main {
 	margin: 4% 0 5%;
+	padding: 1% 0;
 }
 
 .home #main {
@@ -832,6 +837,7 @@ $divider: 12px;
 	}
 }
 
+/*
 .small {
 	&.text {
 		bottom: -18px !important;
@@ -842,6 +848,7 @@ $divider: 12px;
 		text-align: center;
 	}
 }
+*/
 
 .tools {
 	text-align: center;
@@ -936,8 +943,8 @@ $divider: 12px;
 // 	    opacity: 1 !important;
 	    height: auto;
 	    margin: 0 auto;
-	    padding: 2% 3% 55%;
-	    width: 75%;
+	    padding: 5% 3% 55%;
+	    width: 70%;
 	    img {
 		    max-width: 100%;
 	    }
@@ -968,7 +975,7 @@ $divider: 12px;
 	    font-weight: 100;
 	    position: fixed;
 	    top: 10%;
-	    right: 14%;
+	    right: 16%;
 	    text-indent: -9999px;
 	    height: 50px;
 	    width: 50px;
@@ -976,18 +983,18 @@ $divider: 12px;
 	     stroke-width: 20;
     }
     .prev, .next {
-	    top: 60%;
+	    top: 40%;
 	    height: 40px;
 	    width: 40px;
 	    text-indent: -9999px;
     }
     .prev {
 	    background: url('../img/prev.svg') no-repeat left center;
-	    left: 8%;
+	    left: 10%;
     }
     .next {
 	    background: url('../img/next.svg') no-repeat left center;
-	    right: 8%;
+	    right: 10%;
     }
 }
 
@@ -1252,7 +1259,7 @@ $divider: 12px;
 		&.selected a {
 			font-weight: 500;
 		}
-		.filter.Preservation, .filter.Interiors {
+		.filter {
 			display: none;
 		}
 	}
@@ -1405,14 +1412,17 @@ a.active {
 /* = Interiors
 /*-----------------------------------------------------------------------------------*/
 .page-id-4964 .rect1 h2 {
-	font-size: 3.3vw!important;
-	letter-spacing: 0px;
-	padding-left: 2px;
-	margin-bottom: 10px !important;
+	font-size: 2.6vw!important;
+	letter-spacing: 0px !important;
+	padding-left: 0px;
+	line-height: 60%;
+	margin-bottom: 0px !important;
 }
 
 .page-id-4968 .rect1 h2 {
-	font-size: 4.2vw !important;
+	font-size: 3.2vw !important;
+	margin-bottom: 0% !important;
+	line-height: 60%;
 }
 
 .page {
@@ -1429,9 +1439,11 @@ a.active {
 	}
 	.rect1 {
 		h1 {
-			font-size: 60px;
-			letter-spacing: 2px;
-			padding-left: 5px;
+			font-size: 4.7vw;
+			letter-spacing: 1px;
+			padding-left: 2%;
+			line-height: 60%;
+			margin-bottom: 0;
 		}
 		h2 {
 			font-size: 52px;
@@ -1475,7 +1487,7 @@ a.active {
 	color: #FFF;
 	display: block;
 	position: relative;
-	padding: 9% 6% 4% 8%;
+	padding: 9% 4% 18% 8%;
 	height: auto;
 	width: 100%;
 	overflow: hidden;
@@ -1487,8 +1499,8 @@ a.active {
 	}
 */
 	&.back--lab {
-		padding-bottom: 2%;
-		padding-top: 5%;
+		padding-bottom: 18%;
+		padding-top: 9%;
 	}
 	span {
 		background: $gray;
@@ -1510,6 +1522,15 @@ a.active {
 	}
 	a {
 		font-weight: 500;
+	}
+}
+
+.item--strategy {
+	background: #FFFFFF;
+	border: 1px solid $gray;
+	h3 {
+		color: $gray !important;
+		text-trasform: uppercase;
 	}
 }
 
@@ -1567,7 +1588,7 @@ a.active {
 		width: 100%;
 	}
 	.rect1 .text {
-		bottom: -28px;
+		bottom: 0px;
 	}
 	.sq2 .text {
 		bottom: 0px !important;
@@ -1759,7 +1780,7 @@ a.active {
 	}
 	.page__header {
 		border-bottom: none;
-		padding-top: 2%;
+		padding: 2% 0 0;
 		margin: 2% 0 0%;
 	}
 }
@@ -1794,6 +1815,10 @@ a.active {
 		p a {
 			font-weight: 500;
 		}
+		p {
+			line-height: 175%;
+			margin-bottom: 3%;
+		}
 	}
 }
 
@@ -1808,7 +1833,7 @@ a.active {
 	}
 	p {
 		font-weight: 100;
-		line-height: 145%;
+		line-height: 155%;
 		margin-bottom: 3%;
 	}
 	.twocol:nth-child(2n+2) {
@@ -1816,6 +1841,9 @@ a.active {
 	}
 	.twocol:nth-child(2n+1) {
 		margin-right: 0;
+	}
+	.sidebar--careers p {
+		color: #f4642b;
 	}
 	.instagram {
 		a {
@@ -1917,7 +1945,7 @@ footer {
 .footer__subnav {
 	float: left;
 	margin: 1% 0 4%;
-	width: 20%;
+	width: 40%;
 	li {
 		display: inline-block;
 		padding: 0 10px;
@@ -1963,9 +1991,9 @@ footer {
     to   { opacity: 1; }
 }
 
-.fadein, .page-template #main div {
+.fadein, .page-template #main > div:not(.grid-team), .page-template article > div {
 	opacity: 0;
-	display: block;
+// 	display: block;
 	-webkit-animation: fadein .8s linear; /* Safari, Chrome and Opera > 12.1 */
 	-moz-animation: fadein .8s linear; /* Firefox < 16 */
 	-ms-animation: fadein .8s linear; /* Internet Explorer */
@@ -1976,7 +2004,7 @@ footer {
 	animation-fill-mode:forwards;        
 }
 
-.page-template #main div {
+.page-template #main > div, .page-template article > div {
 	-webkit-animation-delay: .2s;
 	-moz-animation-delay: .2s;
 	animation-delay: .2s;

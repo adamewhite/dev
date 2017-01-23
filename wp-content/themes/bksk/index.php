@@ -165,7 +165,7 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('interiors-living').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
+	echo '<a href="'.work_url('living-environments').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg--top">	
@@ -332,7 +332,7 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('Sustainability').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
+	echo '<a href="'.work_url('sustainability').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg--top">	

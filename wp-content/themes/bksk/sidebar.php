@@ -73,4 +73,11 @@
 	echo '</div>';
 } ?>
 
+<?php if(is_page(5059)) {
+	echo '<div class="sidebar-box sidebar--careers">';
+	echo '<p>BKSK endeavors to use staff in a studio-type format as opposed to a tiered job-specific format, so we value employees who are strong in—and have an interest in—all phases of putting a building together. We will always consider an applicant who is ready to step up to the next level of responsibility irrespective of years of experience keeping in mind that experience counts for a great deal.</p>';
+	echo '<p>Resumes may be submitted via email to bkskinfo[at]bksk.com. Due to the high volume of emails that we receive, responses are not guaranteed. Emails with attachments larger than 5MB will be deleted.</p>';
+	echo '</div>';
+} ?>
+
 </aside><!-- /sidebar -->

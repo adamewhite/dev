@@ -17,7 +17,7 @@
 </div>
 
 <div class="float item sq2">
-<?php echo disciplineImage('interiors_project_type', 'living','interiors-living','living environments'); ?>
+<?php echo disciplineImage('interiors_project_type', 'living','living-environments','living environments'); ?>
 <!--
 <div class="text grad-bg">	
 	<h3>living environments</h3>
@@ -29,7 +29,7 @@
 
 <div class="twocol">
 	<div class="sq2 item">
-	<?php echo disciplineImage('interiors_project_type', 'work','interiors-work','work environments'); ?>
+	<?php echo disciplineImage('interiors_project_type', 'work','work-environments','work environments'); ?>
 <!--
 	<div class="text grad-bg">
 		<h3>work environments</h3>
@@ -67,11 +67,11 @@
 	<div class="back">
 		<h3>Contact</h3>
 		<p>BKSK Architects LLP<br />
-		28 West 25th Street,<br />
-		4th floor New York, NY 10010<br />
+		28 West 25th Street, 4th Fl<br />
+		New York, NY 10010<br />
 		Phone:  212.807.9600<br /></p>
-		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p>
-		<p>Interiors: <a href="mailto:interiors@bksk.com" target="_blank">interiors@bksk.com</a></p>
+<!-- 		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p> -->
+		<p><a href="mailto:interiors@bksk.com" target="_blank">interiors@bksk.com</a></p>
 		<p><a href="https://instagram.com/bkskinteriors" target="_blank">instagram.com/bkskinteriors</a></p>
 	</div>
 </div>
@@ -80,7 +80,7 @@
 
 <div class="twocol first">
 	<div class="sq2 item">
-	<?php echo disciplineImage('interiors_project_type', 'community', 'interiors-community','community environments'); ?>
+	<?php echo disciplineImage('interiors_project_type', 'community', 'community-environments','community environments'); ?>
 <!--
 <div class="text grad-bg">	
 	<h3>community environments</h3>

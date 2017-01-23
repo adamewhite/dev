@@ -52,7 +52,7 @@
 </div>
 </div>
 
-<div class="clearfix"></div>
+<!-- <div class="clearfix"></div> -->
 <div class="twocol first">
 
 <div class="block float sq1"></div>
