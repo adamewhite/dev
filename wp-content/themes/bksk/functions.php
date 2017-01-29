@@ -168,7 +168,8 @@ function set_custom_post_types_admin_order($wp_query) {
       $wp_query->set('orderby', 'title');  
   
       // 'order' value can be ASC or DESC  
-      $wp_query->set('order', 'ASC');  
+      $wp_query->set('order', 'ASC');
+//       $wp_query->set('post_status', 'publish');   
     }  
   }  
 }  

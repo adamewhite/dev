@@ -69,7 +69,7 @@
 </div>
 		
 <div id="grid" class="grid-work">
-<!-- 	<div class="gutter-sizer"></div> -->
+	<div class="gutter-sizer"></div>
 <?php 
 $f_types = array(
 	
@@ -145,17 +145,13 @@ $types = array();
 
 	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; if($specialties) foreach($specialties as $specialty) echo strtolower($specialty).' '; if($interiors) foreach($interiors as $interior) echo $interior.'-environments '; if($preservations) foreach($preservations as $preservation) echo ''.$preservation.' '; if($terms) foreach ($terms as $term) echo $term->slug .' '; if($featured == 1) : echo 'featured_Architecture '; endif; if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
 
-	    
-	    <?php if($feat_img) { ?>
-	    <a href="<?php the_permalink(' ') ?>">
+	    <a href="<?php the_permalink(); ?>">
 		    <img src="<?php echo $feat_img[0]; ?>" alt="<?php echo the_title(); ?>" />
-		</a>
-		<?php } else { ?>
-		<a href="<?php the_permalink(' ') ?>" class="block"></a>
-		<?php } ?>
 		<div class="text grad-bg">
-				<h3><?php the_title(); ?></h3>		  	
+			<h3><?php the_title(); ?></h3>		  	
 		</div>
+	    </a>
+	    
 </div><!-- item -->
 
 <?php if($featured == 0) {

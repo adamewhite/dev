@@ -742,6 +742,7 @@ h6 {
   left: 0;
   padding-top: 5%; }
   .grid-team .text h3, .grid-work .text h3 {
+    font-size: 1.2vw;
     text-align: left !important;
     margin-bottom: 4%;
     padding-left: 4%;
@@ -1095,6 +1096,8 @@ a.active {
       vertical-align: top; }
     .grid-work .grid-item .text h3 {
       margin: 0 0 4% 4%; }
+  .grid-work .gutter-sizer {
+    width: 2%; }
   .grid-work .text {
     position: absolute; }
     .grid-work .text h3 {
@@ -1170,6 +1173,45 @@ a.active {
 
 .control--checkbox input:disabled ~ .control__indicator:after {
   border-color: #7b7b7b; }
+
+/*-----------------------------------------------------------------------------------*
+/* = Single Work
+/*-----------------------------------------------------------------------------------*/
+.single-work .twocol:nth-child(2n+2) {
+  margin-right: 2%; }
+
+.single-work .fourcol {
+  width: 23.5%; }
+
+.single-work .fourcol:nth-child(3) {
+  margin: 0 !important; }
+
+.single-work h2 {
+  margin-bottom: 0; }
+
+.single-work h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 3% !important; }
+
+.single-work p {
+  margin-bottom: 4%;
+  line-height: 190%; }
+
+.single-work .quote {
+  color: #ff6600; }
+  .single-work .quote p:first-child {
+    font-size: 115%;
+    line-height: 175%; }
+  .single-work .quote .quote-source {
+    margin-top: 3%; }
+
+.work-box {
+  margin-bottom: 18%; }
+  .work-box a {
+    display: block;
+    margin-bottom: 3%; }
 
 /*-----------------------------------------------------------------------------------*
 /* = Interiors
