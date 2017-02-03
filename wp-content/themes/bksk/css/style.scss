@@ -139,7 +139,7 @@ body.home {
 
 #wrapper {
 	margin: 0 auto;
-	width: 65%;
+	width: 64%;
 	min-width: 600px;
 	max-width: 1500px;
 	&:after { 
@@ -871,7 +871,7 @@ $divider: 12px;
 			font-size: 1.2vw;
 			text-align: left !important;
 			margin-bottom: 4%;
-			padding-left: 4%;
+			padding-left: 3%;
 			line-height: 130%;
 		}
 	}
@@ -1267,7 +1267,7 @@ a.active {
 			vertical-align: top;
 		}
 		.text h3 {
-			margin: 0 0 4% 4%;
+			margin: 0 0 4% 2%;
 		}
 	}
 	.gutter-sizer {
@@ -1277,13 +1277,14 @@ a.active {
 		position: absolute;
 		h3 {
 			color: #FFF;
-			font-size: 1vw;
+			font-size: .9vw;
 		}
 	}
 	.grid-item--featured {
 // 		width: 48.8%;
 		width: 39%;
 		.text h3 {
+			font-size: 1vw;
 			margin: 0 0 2% 1%;
 		}
 	}

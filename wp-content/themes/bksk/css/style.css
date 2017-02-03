@@ -160,7 +160,7 @@ body.home {
 
 #wrapper {
   margin: 0 auto;
-  width: 65%;
+  width: 64%;
   min-width: 600px;
   max-width: 1500px; }
   #wrapper:after {
@@ -710,7 +710,7 @@ h6 {
     font-size: 1.2vw;
     text-align: left !important;
     margin-bottom: 4%;
-    padding-left: 4%;
+    padding-left: 3%;
     line-height: 130%; }
 
 /* Effects */
@@ -1059,17 +1059,18 @@ a.active {
       width: 100%;
       vertical-align: top; }
     .grid-work .grid-item .text h3 {
-      margin: 0 0 4% 4%; }
+      margin: 0 0 4% 2%; }
   .grid-work .gutter-sizer {
     width: 1.5%; }
   .grid-work .text {
     position: absolute; }
     .grid-work .text h3 {
       color: #FFF;
-      font-size: 1vw; }
+      font-size: .9vw; }
   .grid-work .grid-item--featured {
     width: 39%; }
     .grid-work .grid-item--featured .text h3 {
+      font-size: 1vw;
       margin: 0 0 2% 1%; }
   .grid-work .grid-item--block {
     display: block;
