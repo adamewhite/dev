@@ -21,6 +21,7 @@
 	<div class="grid-sizer"></div>
 <?php 
 $staff_count = 0;
+$partner_count = 0;
 $i = 0;
 $staff_args = array(
     'post_type' =>'team',
@@ -42,6 +43,7 @@ $staff_query = new WP_Query($staff_args);
 if ($staff_query->have_posts()) :
 while ($staff_query->have_posts()) : $staff_query->the_post();
 	$image = get_field('image1');
+	$image2 = get_field('image2');
 	$title = get_field('title');
 	$partner = get_field('partner');
 	$bio = get_field('bio');
@@ -51,6 +53,7 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 	if($image['url'] != '') {
 		$staff_count++;
 		$img = $image['sizes']['sq2'];
+		$img2 = $image['sizes']['sq2'];
 /*
 		if($partner == 0) {
 			$img = $image['sizes']['sq2'];
@@ -68,15 +71,18 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 	if($staff_count == 4 || $staff_count == 6 || $staff_count == 8 || $staff_count == 10 || $staff_count == 12 || $staff_count == 14) {
 // 		setup_postdata($partners[$i]); 
 		if($i <= 7) {
+		$partner_count++;
 		$partner_image = get_field('image1', $partners[$i]->ID);
+		$partner_image2 = get_field('image2', $partners[$i]->ID);
 		$title = get_field('title', $partners[$i]->ID);
 		$prebio = get_field('bio', $partners[$i]->ID);
 		$bio = preg_replace("/<\/?div[^>]*\>/i", "", $prebio); 
 		if($partner_image['url'] != '') {
 			$img = $partner_image['sizes']['sq500'];
+			$img2 = $partner_image2['sizes']['sq500'];
 			$class = 'grid-item--partner';
-			echo '<div class="grid-item grid-item--partner" data-id="'.$partners[$i]->ID.'">';
-			echo '<a href="#" data-name="'.get_the_title($partners[$i]->ID).'" data-title="'.$title.'" data-bio="'.$bio.'" data-largesrc="'.$img.'"><img src="'.$img.'" />';
+			echo '<div class="grid-item grid-item--partner" data-slide-id="'.$partner_count.'" data-id="'.$partners[$i]->ID.'">';
+			echo '<a href="#" data-name="'.get_the_title($partners[$i]->ID).'" data-title="'.$title.'" data-bio="'.$bio.'" data-largesrc="'.$img2.'"><img src="'.$img.'" />';
 			echo '<div class="text"><h3>'.get_the_title($partners[$i]->ID).'</h3></div>';
 			echo '</a></div>';
 			$i++;

@@ -753,7 +753,8 @@ h6 {
     background-color: transparent;
     outline: none;
     border: none;
-    position: fixed; }
+    position: fixed;
+    cursor: pointer; }
   .overlay .close {
     background: url("../img/close.svg") no-repeat left center;
     color: #595959;
