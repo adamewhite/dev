@@ -66,6 +66,10 @@
 	</ul>
 	</div>	
 </div>
+<div class="keyword--work">
+<h3>Keyword Search</h3>
+<input type="text" class="quicksearch" placeholder="" />
+</div>
 </div>
 		
 <div id="grid" class="grid-work">

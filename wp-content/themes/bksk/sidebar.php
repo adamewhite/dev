@@ -6,7 +6,7 @@
 ?>
 <aside id="sidebar" class="clearfix">
 
-<?php if(is_page(5361) || is_archive()) { 
+<?php if(is_page(5361) || is_post_type_archive('post')) { 
 
 // (Po)st Categories 
 	echo '<div class="sidebar-box"><h3>Tags</h3>';
@@ -78,6 +78,25 @@
 	echo '<p>BKSK endeavors to use staff in a studio-type format as opposed to a tiered job-specific format, so we value employees who are strong in—and have an interest in—all phases of putting a building together. We will always consider an applicant who is ready to step up to the next level of responsibility irrespective of years of experience keeping in mind that experience counts for a great deal.</p>';
 	echo '<p>Resumes may be submitted via email to bkskinfo[at]bksk.com. Due to the high volume of emails that we receive, responses are not guaranteed. Emails with attachments larger than 5MB will be deleted.</p>';
 	echo '</div>';
+} ?>
+
+<?php if(is_post_type_archive('lab')) { 
+	echo '<div class="sidebar-box"><h3>Syntax</h3>';
+	$args = array(  'taxonomy' => 'syntax', 'hide_empty'=> false, 'orderby' => 'title'	);
+	$cats = get_terms($args);
+	if($cats) {
+		echo '<ul>';
+		foreach( $cats as $cat ) {    
+			echo '<li><a href="'.get_term_link($cat->term_id).'">'.$cat->name.'</a></li>';
+		}
+		echo '</ul>';	
+	}
+	echo '</div>';
+
+	echo '<div class="sidebar-box"><h3>Tools</h3>';
+	echo '<a href="http://www.bkskarch.com/lab/strategy/map.php">NYC Strategy Field</a>';
+	echo '</div>';
+
 } ?>
 
 </aside><!-- /sidebar -->

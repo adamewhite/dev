@@ -1,16 +1,24 @@
 if($('body').hasClass('home')) {
-$(document).ready(function(){
 	var $grid = $('.grid');
 	$grid.imagesLoaded(function(){
-	$('.grid').masonry({
-		percentPosition: true,
-		columnWidth: '.grid-sizer',
-		gutter: '.gutter-sizer',
-		itemSelector: '.item'
-	});	
-	$('#main').delay(0).animate({opacity: 1});
+		$('.grid').masonry({
+			percentPosition: true,
+			columnWidth: '.grid-sizer',
+			gutter: '.gutter-sizer',
+			itemSelector: '.item'
+		});	
+		$('#main').delay(0).animate({opacity: 1});
 	});
-});
+} else if($('body').hasClass('post-type-archive-lab')) {
+	var $grid = $('.grid-lab');
+	$grid.imagesLoaded(function(){
+		$grid.masonry({
+			percentPosition: true,
+			columnWidth: '.grid-sizer',
+			itemSelector: '.threecol'
+		});	
+		console.log('grid');
+	});
 } else if($('.content').hasClass('grid-team')) {
 	var $grid = $('.grid-team');
 $grid.imagesLoaded(function(){
@@ -211,7 +219,8 @@ $( "input" ).on( "click", function() {
 	$(class).addClass('grid-item--featured');	
     
     if ( $grid.data('isotope') ) {
-      $grid.isotope({ filter: filterSelector });
+	  buttonFilter = filterSelector;
+      $grid.isotope();
     }
 
     window.location.hash = filterSelector;
@@ -220,10 +229,35 @@ $( "input" ).on( "click", function() {
 
   });
 
+  // quick search regex
+	var qsRegex;
+	var buttonFilter;
+	
+	// use value of search field to filter
+var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+  qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+  $grid.isotope();
+}) );
+	
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+  var timeout;
+  return function debounced() {
+    if ( timeout ) {
+      clearTimeout( timeout );
+    }
+    function delayed() {
+      fn();
+      timeout = null;
+    }
+    setTimeout( delayed, threshold || 100 );
+  };
+}
 
   // if there was a filter, trigger click on corresponding option
   if ( filterSelector ) {
 // 	  console.log(filterSelector);
+	buttonFilter = filterSelector;
     var selectorClasses = filterSelector.split('.').slice(1);
     $.each( selectorClasses, function( i, selectorClass ) {
       $('#filters a[data-filter-value=".' + selectorClass + '"]').click();
@@ -309,9 +343,11 @@ $( "input" ).on( "click", function() {
   
   function reset(all) {
 	console.log('reset & all: '+all);
-	filters = {};
+	$('.quicksearch').val('');
+	buttonFilter = '';
+	qsRegex = '';
 	window.location.hash = '';
-	$grid.isotope({ filter: '*' });
+	$grid.isotope();
 	if(all == false) {
 		$('.filter a').find(':input').prop('checked', false);
 		$('.filter li').removeClass('selected');
@@ -328,7 +364,13 @@ $grid.imagesLoaded(function(){
 		percentPosition: true,
 		itemSelector: '.grid-item',
 		layoutMode: 'packery',
-		filter: filterSelector,
+// 		filter: filterSelector,
+		filter: function() {
+	    	var $this = $(this);
+			var searchResult = qsRegex ? $this.find('h3').text().match( qsRegex ) : true;
+			var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+			return searchResult && buttonResult;
+	  },
 		packery: {
 			gutter: '.gutter-sizer',
 		},
@@ -337,6 +379,7 @@ $grid.imagesLoaded(function(){
 });
 
 $grid.on( 'arrangeComplete', function( event, filteredItems ) {
+	console.log(filter);
 if (filteredItems.length <= 0) {
   	$('#empty').fadeIn();
 } else {

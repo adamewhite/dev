@@ -88,7 +88,7 @@ function theme_scripts() {
 	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/css/style.min.css', array(), '2.2', 'all');
 // 	wp_enqueue_style( 'twentyfourteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style', 'genericons' ), '20131205' );
 // 	wp_style_add_data( 'twentyfourteen-ie', 'conditional', 'lt IE 9' );
-	if(is_home()) {
+	if(is_home() || is_post_type_archive('lab')) {
 	wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );	
 	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20161201', true );
 	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.4.1.1.min.js', array( ), false, true );

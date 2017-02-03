@@ -223,12 +223,12 @@ h1, h2, h3 {
 }
 
 h5 {
-	font-size: 18px;
+	font-size: 12px;
 	line-height: 1.3333333333;
 }
 
 h6 {
-	font-size: 16px;
+	font-size: 9px;
 	line-height: 1.5;
 }
 
@@ -562,46 +562,6 @@ $divider: 12px;
 	}
 }
 
-/*
-.grid {
-	margin-top: 0;
-	width: 110% !important;
-	.item {
-// 		position: relative;
-// 		background: #000;
-		float: left;
-// 		margin: 0 1% 2% 0;
-// 		width: 18%;
-// 		max-width: 480px;
-		img {
-			max-width: 100%;
-			width: 100%;
-// 			opacity: .85;
-			vertical-align: top;
-		}
-		.text {
-// 			position: absolute;
-// 			bottom: 5px;
-// 			width: 100%;
-			h3 {
-// 				padding-left: 15px;
-// 				text-align: left;
-			}
-		}
-		.block {
-			display: block;
-			height: 125px;
-			width: 125px;
-		}
-		a {
-			color: #FFF;
-			text-align: center;
-			text-decoration: none;
-		}
-	}
-}
-*/
-
 .grid-item--med {
 	float: left;
 	height: auto !important;
@@ -638,10 +598,7 @@ $divider: 12px;
 	width: 53.7% !important;
 }
 
-.rect2 {
-	.text {
-		bottom: -9px;
-	}	
+.rect2 {	
 	h1 {
 		line-height: 100%;
 		margin-bottom: 0;
@@ -1242,6 +1199,9 @@ $divider: 12px;
 	h3, label {
 // 		text-indent: -9999px;
 	}
+	h3 {
+		font-size: 14px !important;
+	}
 	&:after {
 	   content: " ";
 	   display: block; 
@@ -1282,7 +1242,7 @@ a.active {
 
 .grid-work {
 	opacity: 0;
-	margin-top: 4%;
+	margin-top: 2%;
 	width: 100%;
 	a {
 		vertical-align: top;
@@ -1335,6 +1295,40 @@ a.active {
 	margin-top: 2%;
 	font-weight: 500;
 // 	text-transform: uppercase;
+}
+
+.keyword--work {
+	display: block;
+	clear: both;
+	padding-top: 3%;
+	&:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
+	h3, input {
+		float: left;
+	}
+	h3 {
+		width: 22%;
+		line-height: 200%;
+	}
+	input {
+		border: 1px solid #CCC;
+		color: #595959;
+		font-family: "sweet-sans", Arial, sans-serif;
+		margin-left: 3%;
+		padding: 5px 10px;
+		width: 75%;
+		vertical-align: middle;
+		&:focus {
+			border: 1px solid #595959;
+			color: #595959;
+		}
+	}
 }
 
 #empty {
@@ -1486,6 +1480,9 @@ a.active {
 		}
 	}
 	.rect1 {
+		.text {
+			bottom: 0px;
+		}
 		h1 {
 			font-size: 4.7vw;
 			letter-spacing: 1px;
@@ -1493,15 +1490,10 @@ a.active {
 			line-height: 60%;
 			margin-bottom: 0;
 		}
-		h2 {
-			font-size: 52px;
-			margin-bottom: 17px;
-		}
 		&.historic {
 			overflow: hidden;
 			.text {
 				bottom: 0px;
-// 				width: 100%;
 				h3 {
 					text-align: center;
 					text-transform: none;
@@ -1513,20 +1505,48 @@ a.active {
 			}
 		}
 	}
-	.block, .sq2 {
+	.block, .sq1, .sq2 {
 		position: relative;
 		margin-bottom: 4%;
 		width: 100%;
-		img {
+	}
+}
+
+.page {
+	.block {
+		height: 0;
+		float: left;
+		margin-right: 0;
+		padding-bottom: 48%;
+	}
+	img {
+		height: auto;
+		vertical-align: top;
+		width: 100%;
+	}
+	.sq1 {
+		vertical-align: top;
+		.link {
+			position: absolute;
+			height: auto;
 			width: 100%;
 		}
-		.text {
-			position: absolute;
-			h1, h3 {
-// 				color: #FFF;
-// 				margin-bottom: 0;
-			}
+	}
+	.text {
+		position: absolute;
+		width: 100%;
+		h3 {
+			color: #FFF;
+			font-size: 1.4vw;
+			text-align: center;
 		}
+	}
+	.link .text {
+		top: 15px;
+	}
+	.sq2 .text {
+		bottom: 0px !important;
+		padding-top: 5%;
 	}
 }
 
@@ -1582,73 +1602,12 @@ a.active {
 	}
 }
 
-.page {
-	.block {
-		height: 0;
-		float: left;
-		margin-right: 0;
-		padding-bottom: 48%;
-	}
-}
-
 .float {
 	float: left;
 	margin-right: 2%;
 }
 
 .page {
-	.rect1 {
-// 		margin-bottom: 4%;
-	}
-	img {
-		vertical-align: top;
-	}
-	.sq1 {
-		position: relative;
-		margin-bottom: 4%;
-		height: auto;
-		float: left;
-		vertical-align: top;
-// 		margin-right: 3%;
-// 		width: 48%;
-		.link {
-			position: absolute;
-			height: auto;
-			width: 100%;
-		}
-		img {
-			height: auto;
-			width: 100%;
-		}
-	}
-	.text {
-		position: absolute;
-		width: 100%;
-		h3 {
-			color: #FFF;
-// 			font-size: 17px;
-// 			margin-bottom: 0;
-			text-align: center;
-		}
-	}
-	.link .text {
-		top: 15px;
-		width: 100%;
-	}
-	.rect1 .text {
-		bottom: 0px;
-	}
-	.sq2 .text {
-		bottom: 0px !important;
-		padding-top: 5%;
-		width: 100%;
-	}
-}
-
-.page {
-	img {
-		width: 100%;
-	}
 	.twocol.first {
 		margin-right: 2%;
 		width: 49%;
@@ -1841,7 +1800,7 @@ a.active {
 
 #post {
 	float: left;
-	width: 68%;
+	width: 70%;
 	.loop-entry {
 		border-bottom: 1px solid $gray;
 		padding-bottom: 4%;
@@ -1853,6 +1812,12 @@ a.active {
 			font-size: 22px;
 			line-height: 140%;
 			margin: 0 0 2%;
+			text-transform: none;
+		}
+		h3 { 
+			font-size: 18px;
+			line-height: 140%;
+			margin: 4% 0 5%;
 			text-transform: none;
 		}
 		img {
@@ -1867,6 +1832,12 @@ a.active {
 			line-height: 175%;
 			margin-bottom: 3%;
 		}
+		.read-more {
+			text-transform: uppercase;
+		}
+		.read-more:hover {
+			color: $orange;
+		}
 	}
 }
 
@@ -1874,7 +1845,7 @@ a.active {
 // Sidebar 
 #sidebar {
 	float: right;
-	width: 28%;
+	width: 26%;
 	.sidebar-box {
 // 		border-bottom: 1px solid #999;
 		margin: 0 0 10% 0;
@@ -1909,6 +1880,34 @@ a.active {
 	}
 }
 
+.grid-lab {
+	.threecol {
+		margin-bottom: 10%;
+		img {
+			margin-bottom: 2%;
+		}
+		p, .lab-copy {
+// 			color: #999;
+		}
+		span {
+
+		}
+	}
+	.lab-quote {
+		background: $gray;
+		color: #FFF;
+		font-size: 130%;
+// 		line-height: 170%;
+		padding: 4% 2% 0;
+		span {
+			font-size: 65%;
+			margin-top: 6%;
+			display: block;
+			text-transform: uppercase;
+		}
+	}
+}
+
 /* Alignment */
 .alignleft {
 	float: left;
@@ -1935,10 +1934,10 @@ a.active {
 }
 
 
-.threecol {
-	display: inline-block;
-	margin-right: 2%;
-	width: 32%;
+.threecol, .grid-lab .grid-sizer {
+	float: left;
+	margin-right: 3.5%;
+	width: 29.5%;
 	vertical-align: top;
 	&:nth-child(3n+3) {
 		margin-right: 0;

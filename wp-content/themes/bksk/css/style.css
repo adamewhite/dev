@@ -232,11 +232,11 @@ h1, h2, h3 {
   text-transform: uppercase; }
 
 h5 {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.3333333333; }
 
 h6 {
-  font-size: 16px;
+  font-size: 9px;
   line-height: 1.5; }
 
 #main {
@@ -475,45 +475,6 @@ h6 {
   line-height: 62% !important;
   text-transform: none; }
 
-/*
-.grid {
-	margin-top: 0;
-	width: 110% !important;
-	.item {
-// 		position: relative;
-// 		background: #000;
-		float: left;
-// 		margin: 0 1% 2% 0;
-// 		width: 18%;
-// 		max-width: 480px;
-		img {
-			max-width: 100%;
-			width: 100%;
-// 			opacity: .85;
-			vertical-align: top;
-		}
-		.text {
-// 			position: absolute;
-// 			bottom: 5px;
-// 			width: 100%;
-			h3 {
-// 				padding-left: 15px;
-// 				text-align: left;
-			}
-		}
-		.block {
-			display: block;
-			height: 125px;
-			width: 125px;
-		}
-		a {
-			color: #FFF;
-			text-align: center;
-			text-decoration: none;
-		}
-	}
-}
-*/
 .grid-item--med {
   float: left;
   height: auto !important;
@@ -541,9 +502,6 @@ h6 {
   height: auto;
   padding-bottom: 16.5% !important;
   width: 53.7% !important; }
-
-.rect2 .text {
-  bottom: -9px; }
 
 .rect2 h1 {
   line-height: 100%;
@@ -1049,6 +1007,8 @@ h6 {
 
 .work__search {
   margin-top: 5px; }
+  .work__search h3 {
+    font-size: 14px !important; }
   .work__search:after {
     content: " ";
     display: block;
@@ -1078,7 +1038,7 @@ a.active {
 
 .grid-work {
   opacity: 0;
-  margin-top: 4%;
+  margin-top: 2%;
   width: 100%; }
   .grid-work a {
     vertical-align: top; }
@@ -1115,6 +1075,34 @@ a.active {
 .filter--remove {
   margin-top: 2%;
   font-weight: 500; }
+
+.keyword--work {
+  display: block;
+  clear: both;
+  padding-top: 3%; }
+  .keyword--work:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
+  .keyword--work h3, .keyword--work input {
+    float: left; }
+  .keyword--work h3 {
+    width: 22%;
+    line-height: 200%; }
+  .keyword--work input {
+    border: 1px solid #CCC;
+    color: #595959;
+    font-family: "sweet-sans", Arial, sans-serif;
+    margin-left: 3%;
+    padding: 5px 10px;
+    width: 75%;
+    vertical-align: middle; }
+    .keyword--work input:focus {
+      border: 1px solid #595959;
+      color: #595959; }
 
 #empty {
   display: none;
@@ -1237,16 +1225,15 @@ a.active {
     -webkit-transform: scale(1.05);
     transform: scale(1.05); }
 
+.page .rect1 .text {
+  bottom: 0px; }
+
 .page .rect1 h1 {
   font-size: 4.7vw;
   letter-spacing: 1px;
   padding-left: 2%;
   line-height: 60%;
   margin-bottom: 0; }
-
-.page .rect1 h2 {
-  font-size: 52px;
-  margin-bottom: 17px; }
 
 .page .rect1.historic {
   overflow: hidden; }
@@ -1259,14 +1246,43 @@ a.active {
   .page .rect1.historic img {
     margin-top: -100px; }
 
-.page .block, .page .sq2 {
+.page .block, .page .sq1, .page .sq2 {
   position: relative;
   margin-bottom: 4%;
   width: 100%; }
-  .page .block img, .page .sq2 img {
+
+.page .block {
+  height: 0;
+  float: left;
+  margin-right: 0;
+  padding-bottom: 48%; }
+
+.page img {
+  height: auto;
+  vertical-align: top;
+  width: 100%; }
+
+.page .sq1 {
+  vertical-align: top; }
+  .page .sq1 .link {
+    position: absolute;
+    height: auto;
     width: 100%; }
-  .page .block .text, .page .sq2 .text {
-    position: absolute; }
+
+.page .text {
+  position: absolute;
+  width: 100%; }
+  .page .text h3 {
+    color: #FFF;
+    font-size: 1.4vw;
+    text-align: center; }
+
+.page .link .text {
+  top: 15px; }
+
+.page .sq2 .text {
+  bottom: 0px !important;
+  padding-top: 5%; }
 
 .back {
   background: #cccccc;
@@ -1312,54 +1328,9 @@ a.active {
     color: #cccccc !important;
     text-trasform: uppercase; }
 
-.page .block {
-  height: 0;
-  float: left;
-  margin-right: 0;
-  padding-bottom: 48%; }
-
 .float {
   float: left;
   margin-right: 2%; }
-
-.page img {
-  vertical-align: top; }
-
-.page .sq1 {
-  position: relative;
-  margin-bottom: 4%;
-  height: auto;
-  float: left;
-  vertical-align: top; }
-  .page .sq1 .link {
-    position: absolute;
-    height: auto;
-    width: 100%; }
-  .page .sq1 img {
-    height: auto;
-    width: 100%; }
-
-.page .text {
-  position: absolute;
-  width: 100%; }
-  .page .text h3 {
-    color: #FFF;
-    text-align: center; }
-
-.page .link .text {
-  top: 15px;
-  width: 100%; }
-
-.page .rect1 .text {
-  bottom: 0px; }
-
-.page .sq2 .text {
-  bottom: 0px !important;
-  padding-top: 5%;
-  width: 100%; }
-
-.page img {
-  width: 100%; }
 
 .page .twocol.first {
   margin-right: 2%;
@@ -1512,7 +1483,7 @@ a.active {
 
 #post {
   float: left;
-  width: 68%; }
+  width: 70%; }
   #post .loop-entry {
     border-bottom: 1px solid #cccccc;
     padding-bottom: 4%;
@@ -1524,6 +1495,11 @@ a.active {
       line-height: 140%;
       margin: 0 0 2%;
       text-transform: none; }
+    #post .loop-entry h3 {
+      font-size: 18px;
+      line-height: 140%;
+      margin: 4% 0 5%;
+      text-transform: none; }
     #post .loop-entry img {
       height: auto;
       margin: 1% 0 3%;
@@ -1533,10 +1509,14 @@ a.active {
     #post .loop-entry p {
       line-height: 175%;
       margin-bottom: 3%; }
+    #post .loop-entry .read-more {
+      text-transform: uppercase; }
+    #post .loop-entry .read-more:hover {
+      color: #ff6600; }
 
 #sidebar {
   float: right;
-  width: 28%; }
+  width: 26%; }
   #sidebar .sidebar-box {
     margin: 0 0 10% 0; }
   #sidebar p {
@@ -1556,6 +1536,22 @@ a.active {
     font-size: 15px;
     font-weight: 500;
     margin: 0 0 3% 0; }
+
+.grid-lab .threecol {
+  margin-bottom: 10%; }
+  .grid-lab .threecol img {
+    margin-bottom: 2%; }
+
+.grid-lab .lab-quote {
+  background: #cccccc;
+  color: #FFF;
+  font-size: 130%;
+  padding: 4% 2% 0; }
+  .grid-lab .lab-quote span {
+    font-size: 65%;
+    margin-top: 6%;
+    display: block;
+    text-transform: uppercase; }
 
 /* Alignment */
 .alignleft {
@@ -1577,12 +1573,12 @@ a.active {
   .twocol:nth-child(2n+2) {
     margin-right: 0; }
 
-.threecol {
-  display: inline-block;
-  margin-right: 2%;
-  width: 32%;
+.threecol, .grid-lab .grid-sizer {
+  float: left;
+  margin-right: 3.5%;
+  width: 29.5%;
   vertical-align: top; }
-  .threecol:nth-child(3n+3) {
+  .threecol:nth-child(3n+3), .grid-lab .grid-sizer:nth-child(3n+3) {
     margin-right: 0; }
 
 .fourcol {

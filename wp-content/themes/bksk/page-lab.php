@@ -56,7 +56,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 	$the_query->the_post();
 		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
-	echo '<a href="'.get_site_url().'/tag/sustainability"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
+	echo '<a href="'.get_site_url().'/lab"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
 	}
 } ?>
 <div class="text grad-bg">	
