@@ -106,7 +106,7 @@ if ( $the_query->have_posts() ) {
 		Phone:  212.807.9600<br /></p>
 <!-- 		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p> -->
 		<p><a href="mailto:lab@bksk.com" target="_blank">lab@bksk.com</a></p>
-		<p><a href="twitter.com/bksk_lab" target="_blank">twitter.com/bksk_lab</a></p>
+<!-- 		<p><a href="twitter.com/bksk_lab" target="_blank">twitter.com/bksk_lab</a></p> -->
 	</div>
 	</div>
 </div>

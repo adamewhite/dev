@@ -156,6 +156,26 @@ if ( $the_query->have_posts() ) {
 } 	
 }
 
+function disciplineImageFeat($type, $slug, $url, $title) { 
+	if($slug == 'featured_adaptive') {
+		$ids = array(3324, 1221,1682);
+	}
+	$args = array(
+	'post_type' => 'work',
+	'orderby' => 'rand',
+	'post__in' => $ids,
+	'posts_per_page' => 1
+);
+$the_query = new WP_Query( $args );
+if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) {
+	$the_query->the_post();
+		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
+	return '<a href="'.work_url($url).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /><div class="text grad-bg"><h3>'.$title.'</h3></div></a>';
+	}
+} 	
+}
+
 function set_custom_post_types_admin_order($wp_query) {  
   if (is_admin()) {  
   

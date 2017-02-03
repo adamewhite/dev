@@ -19,6 +19,7 @@
 
 <div id="grid-team" class="content grid-team">
 	<div class="grid-sizer"></div>
+	<div class="gutter-sizer"></div>
 <?php 
 $staff_count = 0;
 $partner_count = 0;
@@ -65,10 +66,10 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 */
 		echo '<div class="grid-item grid-item--staff bw">';
 		echo '<a href="#" data-title="'.get_the_title().'" data-description="'.$bio.'" data-largesrc="'.$img.'"><img src="'.$img.'" />';
-		echo '<div class="text"><h3>'.get_the_title().'</h3></div></a>';
+		echo '<div class="text grad-bg"><h3>'.get_the_title().'</h3></div></a>';
 		echo '</div>';
 	} 
-	if($staff_count == 4 || $staff_count == 6 || $staff_count == 8 || $staff_count == 10 || $staff_count == 12 || $staff_count == 14) {
+	if($staff_count == 4 || $staff_count == 6 || $staff_count == 8 || $staff_count == 10 || $staff_count == 12 || $staff_count == 14 || $staff_count == 16) {
 // 		setup_postdata($partners[$i]); 
 		if($i <= 7) {
 		$partner_count++;
@@ -77,13 +78,14 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 		$title = get_field('title', $partners[$i]->ID);
 		$prebio = get_field('bio', $partners[$i]->ID);
 		$bio = preg_replace("/<\/?div[^>]*\>/i", "", $prebio); 
+		$resume = get_field('partner_resume_pdf', $partners[$i]->ID);
 		if($partner_image['url'] != '') {
 			$img = $partner_image['sizes']['sq500'];
 			$img2 = $partner_image2['sizes']['sq500'];
 			$class = 'grid-item--partner';
 			echo '<div class="grid-item grid-item--partner" data-slide-id="'.$partner_count.'" data-id="'.$partners[$i]->ID.'">';
-			echo '<a href="#" data-name="'.get_the_title($partners[$i]->ID).'" data-title="'.$title.'" data-bio="'.$bio.'" data-largesrc="'.$img2.'"><img src="'.$img.'" />';
-			echo '<div class="text"><h3>'.get_the_title($partners[$i]->ID).'</h3></div>';
+			echo '<a href="#" data-name="'.get_the_title($partners[$i]->ID).'" data-title="'.$title.'" data-bio="'.$bio.'" data-largesrc="'.$img2.'" data-resume="'.$resume.'"><img src="'.$img.'" />';
+			echo '<div class="text grad-bg"><h3>'.get_the_title($partners[$i]->ID).'</h3></div>';
 			echo '</a></div>';
 			$i++;
 		}

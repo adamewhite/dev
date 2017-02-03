@@ -828,7 +828,13 @@ $divider: 12px;
 	opacity: 0;
 	width: 100%;
 	.grid-sizer, .grid-item {
-		width: 23.4%;
+		width: 23.3%;
+		h3 {
+			font-size: 1.1vw !important;
+		}
+	}
+	.gutter-sizer {
+		width: 2%;
 	}
 	.grid-item {
 		float: left;
@@ -838,14 +844,18 @@ $divider: 12px;
 			height: auto;
 			width: 100%;
 		}
+		a {
+			margin-bottom: 0;
+		}
 	}
 	.grid-item--partner {
-		width: 48.9%;
+		width: 48.7%;
 		.text {
 			padding-top: 8%;
 		}
 		h3 {
-			margin-bottom: 2% !important;
+			font-size: 1.3vw !important;
+			margin-bottom: 1.5% !important;
 			padding-left: 2% !important;
 		}
 	}
@@ -965,13 +975,6 @@ $divider: 12px;
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
-}
-
-.grid-team .grid-item {
-	display: inline-block;
-// 	margin: 10px 5px 0 5px;
-	vertical-align: top;
-// 	height: 250px;
 }
 
 .grid-team .grid-item > a,
@@ -1249,7 +1252,8 @@ a.active {
 		vertical-align: top;
 	}
 	.grid-sizer, .grid-item {
-		width: 23.5%;
+// 		width: 23.5%;
+		width: 18.8%;
 	}
 	.grid-item {
 		float: left;
@@ -1267,16 +1271,18 @@ a.active {
 		}
 	}
 	.gutter-sizer {
-		width: 2%;
+		width: 1.5%;
 	}
 	.text {
 		position: absolute;
 		h3 {
 			color: #FFF;
+			font-size: 1vw;
 		}
 	}
 	.grid-item--featured {
-		width: 48.8%;
+// 		width: 48.8%;
+		width: 39%;
 		.text h3 {
 			margin: 0 0 2% 1%;
 		}
@@ -1285,7 +1291,8 @@ a.active {
 		display: block;
 		background-color: $gray;
 		height: auto;
-		padding-bottom: 23.5%;
+// 		padding-bottom: 23.5%;
+		padding-bottom: 18.8%;
 // 		width: 100%;
 	}
 }
@@ -1538,7 +1545,7 @@ a.active {
 		width: 100%;
 		h3 {
 			color: #FFF;
-			font-size: 1.4vw;
+			font-size: 1.3vw;
 			text-align: center;
 		}
 	}

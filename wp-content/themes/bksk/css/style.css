@@ -680,19 +680,26 @@ h6 {
   opacity: 0;
   width: 100%; }
   .grid-team .grid-sizer, .grid-team .grid-item {
-    width: 23.4%; }
+    width: 23.3%; }
+    .grid-team .grid-sizer h3, .grid-team .grid-item h3 {
+      font-size: 1.1vw !important; }
+  .grid-team .gutter-sizer {
+    width: 2%; }
   .grid-team .grid-item {
     float: left; }
     .grid-team .grid-item img {
       position: relative;
       height: auto;
       width: 100%; }
+    .grid-team .grid-item a {
+      margin-bottom: 0; }
   .grid-team .grid-item--partner {
-    width: 48.9%; }
+    width: 48.7%; }
     .grid-team .grid-item--partner .text {
       padding-top: 8%; }
     .grid-team .grid-item--partner h3 {
-      margin-bottom: 2% !important;
+      font-size: 1.3vw !important;
+      margin-bottom: 1.5% !important;
       padding-left: 2% !important; }
 
 .grid-team .text, .grid-work .text {
@@ -785,10 +792,6 @@ h6 {
   margin: 0 auto;
   text-align: center;
   width: 100%; }
-
-.grid-team .grid-item {
-  display: inline-block;
-  vertical-align: top; }
 
 .grid-team .grid-item > a,
 .grid-team .grid-item > a img {
@@ -1044,7 +1047,7 @@ a.active {
   .grid-work a {
     vertical-align: top; }
   .grid-work .grid-sizer, .grid-work .grid-item {
-    width: 23.5%; }
+    width: 18.8%; }
   .grid-work .grid-item {
     float: left;
     margin-bottom: 0;
@@ -1058,20 +1061,21 @@ a.active {
     .grid-work .grid-item .text h3 {
       margin: 0 0 4% 4%; }
   .grid-work .gutter-sizer {
-    width: 2%; }
+    width: 1.5%; }
   .grid-work .text {
     position: absolute; }
     .grid-work .text h3 {
-      color: #FFF; }
+      color: #FFF;
+      font-size: 1vw; }
   .grid-work .grid-item--featured {
-    width: 48.8%; }
+    width: 39%; }
     .grid-work .grid-item--featured .text h3 {
       margin: 0 0 2% 1%; }
   .grid-work .grid-item--block {
     display: block;
     background-color: #cccccc;
     height: auto;
-    padding-bottom: 23.5%; }
+    padding-bottom: 18.8%; }
 
 .filter--remove {
   margin-top: 2%;
@@ -1275,7 +1279,7 @@ a.active {
   width: 100%; }
   .page .text h3 {
     color: #FFF;
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     text-align: center; }
 
 .page .link .text {

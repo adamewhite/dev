@@ -17,7 +17,7 @@
 </div>
 
 <div class="item float sq2">
-<?php echo disciplineImage('preservation_project_type', 'adaptive','preservation.adaptive','adaptive reuse/restoration'); ?>
+<?php echo disciplineImageFeat('preservation_project_type', 'featured_adaptive','preservation.adaptive','adaptive reuse/restoration'); ?>
 <!--
 <div class="text">	
 	<h3>adaptive reuse/restoration</h3>
@@ -29,7 +29,7 @@
 
 <div class="twocol">
 	<div class="item sq2">
-<?php echo disciplineImage('preservation_project_type', 'new','preservation.new','new buildings in landmark'); ?>
+<?php echo disciplineImage('preservation_project_type', 'new','preservation.new','new buildings in landmark districts'); ?>
 <!--
 <div class="text">	
 	<h3>new buildings in landmark</h3>
@@ -37,7 +37,7 @@
 -->	
 </div>
 
-<div class="sq1 bw">
+<div class="item sq1 bw">
 <a class="" href="<?php echo get_site_url(); ?>/preservation/about">
 <?php $img = wp_get_attachment_image(4992, 'sq1'); 
 	echo $img; ?>

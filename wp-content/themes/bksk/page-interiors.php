@@ -58,7 +58,7 @@
 <div class="sq1 bw flip-container" onclick="this.classList.toggle('hover');">
 <div class="flip">
 	<div class="front">
-	<?php $img = wp_get_attachment_image(4990, 'sq2'); 
+	<?php $img = wp_get_attachment_image(5536, 'sq2'); 
 		echo $img; ?>
 	<div class="text grad-bg--top">	
 		<h3>Contact</h3>

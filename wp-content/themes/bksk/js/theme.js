@@ -29,12 +29,14 @@ $grid.imagesLoaded(function(){
 		layoutMode: 'packery',
 		filter: filterSelector,
 		packery: {
-			gutter: 16,
+			gutter: '.gutter-sizer',
 		},
 // 		stamp: $stamp
 	});
 	$('.grid-team').animate({opacity: 1});
 });
+
+
 
 /*
 $('.grid-item--staff a').on('click', function(){
@@ -67,9 +69,11 @@ function overlay(slideID) {
 	var title = $(slide).find('a').data('title');
 	var bio = $(slide).find('a').data('bio');
 	var img = $(slide).find('a').data('largesrc');
+	var resume = $(slide).find('a').data('resume');
 	console.log(id);
+	partnerSub(id);
 	$('.overlay').addClass('open');
-	$('.overlay .content').html('<header><h2>'+name+'</h2><h3>'+title+'</h3></header><article><div class="left">'+bio+'</div><div class="right"><img src="'+img+'" /></div></article>');
+	$('.overlay .content').html('<header><h2>'+name+'</h2><h3>'+title+'</h3></header><article><div class="left">'+bio+'<a href="'+resume+'">Resume</a></div><div class="right"><img src="'+img+'" /></div><div class="sub"></div></article>');
 }
 
 $('.close').on('click', function(){
@@ -77,8 +81,16 @@ $('.close').on('click', function(){
 	$('.overlay').removeClass('open');
 });
 
-function overlayNext() {
-
+function partnerSub(currentID) {
+    $.ajax({
+        type: "POST",
+        url: "/overlay.php",
+        data: {
+            id: currentID
+        }
+    }).done(function(msg) {
+	    $('.sub').append(msg);
+	});
 }
 
 $(".prev, .next").click(function() {
