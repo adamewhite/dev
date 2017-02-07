@@ -130,7 +130,7 @@ var expandLink = $('.accordion-expand-all');
 
 // add the accordion functionality
 headers.click(function() {
-	console.log('click');
+	var arrow = $(this).find('.arrow');
     var panel = $(this).next();
     var isOpen = panel.is(':visible');
  
@@ -138,6 +138,8 @@ headers.click(function() {
     panel[isOpen? 'slideUp': 'slideDown']()
         // trigger the correct custom event
         .trigger(isOpen? 'hide': 'show');
+    
+    arrow.toggleClass('open');
 
     // stop the link from causing a pagescroll
     return false;

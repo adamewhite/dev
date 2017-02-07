@@ -1524,6 +1524,71 @@ a.active {
     #post .loop-entry .read-more:hover {
       color: #ff6600; }
 
+.page-template-page-recognition #post {
+  width: 72%; }
+
+.page-template-page-recognition #sidebar {
+  width: 23.5%; }
+
+.page-template-page-recognition h3 {
+  font-weight: 500 !important; }
+
+.arrow {
+  margin: 8px 1% 0 0;
+  float: right;
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-top: 0;
+  border-bottom-color: #595959;
+  border-width: 8px;
+  border-right-width: 7px;
+  border-left-width: 7px; }
+  .arrow::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-top: 0;
+    border-bottom-color: white;
+    bottom: -8px;
+    left: -6px;
+    border-width: 7px;
+    border-right-width: 6px;
+    border-left-width: 6px; }
+
+.arrow.open {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom: 0;
+  border-top-color: #595959;
+  border-width: 8px;
+  border-right-width: 7px;
+  border-left-width: 7px; }
+  .arrow.open::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom: 0;
+    border-top-color: white;
+    top: -8px;
+    left: -6px;
+    border-width: 7px;
+    border-right-width: 6px;
+    border-left-width: 6px; }
+
 .awards-header {
   margin-bottom: 5%; }
   .awards-header:after {

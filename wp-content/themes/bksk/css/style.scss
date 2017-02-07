@@ -102,6 +102,86 @@ $gray: #cccccc;
 
 $orange: #ff6600;
 
+@mixin inline_pointer($direction, $height, $width, $fill, $stroke, $stroke-width) {
+	position: relative;
+	display: inline-block; // Takes up space in the DOM
+
+	// Standard triangle sheinagans 
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent;
+
+	// Nuke the border depending on direction
+	border-#{$direction}: 0;
+
+	// Since the border is nuked, now color the oposite border
+	// STROKE
+	@if $direction == 'top' {
+		border-bottom-color: $stroke;
+	}
+	@if $direction == 'bottom' {
+		border-top-color: $stroke;
+	}
+	@if $direction == 'left' {
+		border-right-color: $stroke;
+	}
+	@if $direction == 'right' {
+		border-left-color: $stroke;
+	}
+
+	// Height of the pointer
+	border-width: $height;
+	// Width of the pointer
+	border-right-width: $width / 2;
+	border-left-width: $width / 2;
+
+	// Fill 
+	&::after {
+		// Standart pesudo element stuff
+		content: "";
+		position: absolute;
+
+		// Standard triangle sheinagans 
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-color: transparent;
+
+		// Nuke the border depending on direction
+		border-#{$direction}: 0;
+
+		// Color the opposite diirection
+		// Postioning for the after state
+		@if $direction == 'top' {
+			border-bottom-color: $fill;
+			bottom: -$height;
+			left: (-$width / 2) + $stroke-width;
+		}
+		@if $direction == 'bottom' {
+			border-top-color: $fill;
+			top: -$height;
+			left: (-$width / 2) + $stroke-width;
+		}
+		@if $direction == 'left' {
+			border-right-color: $fill;
+      left: $stroke-width;
+			bottom: -$height + $stroke-width;
+		}
+		@if $direction == 'right' {
+			border-left-color: $fill;
+			right: $stroke-width;
+			bottom: -$height + $stroke-width;
+		}
+
+		// Width of the after state 
+		// something bellow is calcuated wrong #TODO
+		border-width: $height - $stroke-width;
+		border-right-width: (($width / 2) - $stroke-width);
+		border-left-width: (($width / 2) - $stroke-width);
+	}
+}
+
 * {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -1855,10 +1935,26 @@ a.active {
 	}
 }
 
-.page-template-recognition {
-	h3 {
-// 		margin-bottom: 1%;
+.page-template-page-recognition {
+	#post {
+		width: 72%;
 	}
+	#sidebar {
+		width: 23.5%;
+	}
+	h3 {
+		font-weight: 500 !important;
+	}
+}
+
+.arrow {
+	margin: 8px 1% 0 0;
+	float: right;
+	@include inline_pointer(top, 8px, 14px, white, #595959, 1px);
+}
+
+.arrow.open {
+	@include inline_pointer(bottom, 8px, 14px, white, #595959, 1px);
 }
 
 .awards-header {

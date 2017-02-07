@@ -70,7 +70,7 @@ $link = get_field('website_link');
 	    if($count != 0) {
 		    echo '</div>';
 	    }
-        echo '<div class="accordion-header">' . $post_year . '</div><div class="accordion-content">';
+        echo '<div class="accordion-header">' . $post_year . '<span class="arrow"></span></div><div class="accordion-content">';
     }
     $year_variable = $post_year;
 ?>
@@ -150,7 +150,7 @@ foreach($post_array as $post) {
 	    if($year_int == 2012) {
 		    $post_year = '2012 and earlier';
 	    }
-        echo '<div class="accordion-header">' . $post_year . '</div><div class="accordion-content">';
+        echo '<div class="accordion-header">' . $post_year . '<span class="arrow"></span></div><div class="accordion-content">';
     }
     if($year_variable !== $post_year && $year_int < 2012) {
 	    if($year_int != 2011) {
