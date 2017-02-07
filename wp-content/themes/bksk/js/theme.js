@@ -124,7 +124,6 @@ $('.grid-item--staff').hover(
  );	
 
 } else if($('body').hasClass('page-template-page-recognition')) {
-	console.log('recognition');
 var headers = $('.accordion-header');
 var contentAreas = $('.accordion-content').hide();
 var expandLink = $('.accordion-expand-all');
@@ -172,6 +171,44 @@ contentAreas.on({
             .data('isAllOpen', false);
         } 
     }
+});
+
+function replaceMentions ( text ) {
+    return text.replace(/@([a-z\d_]+)/ig, '<a href="http://twitter.com/$1">@$1</a>'); 
+}
+
+function replaceHash( text ) {
+    return text.replace(/#([a-zA-Z0-9]+)/g, '<a href="http://twitter.com/hashtag/$1">#$1</a>'); 
+}
+
+var user = 'bkskarchitects';
+$.ajax({
+	url: '/twitterproxy.php?url='+encodeURIComponent('statuses/user_timeline.json?screen_name='+user+'&count=4'), 
+	type: 'GET',
+	success: function(data) {
+		var tweet_array = [];
+		for(i in data) {
+			console.log(data);
+			var tweet_data = data[i]
+			var tweet = tweet_data.text;
+			tweet = tweet.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, function(url) {
+				return '<a href="'+url+'">'+url+'</a>';
+			}).replace(/B@([_a-z0-9]+)/ig, function(reply) {
+				return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+			});
+			tweet = replaceMentions(tweet);
+			tweet = replaceHash(tweet);
+			var date = tweet_data.created_at,
+			split = date.split(' '),
+			newDate = split[1]+' '+split[2];
+			name = tweet_data.user.screen_name;
+			var text = '<span class="gray"><a href="http://twitter.com/'+name+'">@'+name+'</a> - '+newDate+'</span><p>'+tweet+'</p>';
+			tweet_array.push(text);
+			var tweet_display = tweet_array.join('');
+			$(".twitter").html(tweet_array);
+		}
+	},
+	error: function(data) { console.log(data); }
 });
 	
 } else if($('body').hasClass('page-id-2')) {

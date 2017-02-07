@@ -645,17 +645,15 @@ $divider: 12px;
 }
 
 .nav {
-// 	display: none;
+	display: none;
 	height: 58px;
 	margin: 9px 0 4%;
 	padding: 10px 0;
 }
 
-/*
 .page__header {
 	display: none;
 }
-*/
 
 .nav__logo {
 	float: left;
@@ -1937,6 +1935,17 @@ a.active {
 		font-size: 15px;
 		font-weight: 500;
 		margin: 0 0 3% 0;
+	}
+	.twitter {
+		p {
+			margin-bottom: 6%;
+		}
+		a {
+			color: $orange;
+		}
+		.gray, .gray a {
+			color: #afafaf;
+		}
 	}
 }
 

@@ -538,15 +538,14 @@ h6 {
   width: 100%; }
 
 .nav {
+  display: none;
   height: 58px;
   margin: 9px 0 4%;
   padding: 10px 0; }
 
-/*
 .page__header {
-	display: none;
-}
-*/
+  display: none; }
+
 .nav__logo {
   float: left;
   width: 20%; }
@@ -1577,6 +1576,12 @@ a.active {
     font-size: 15px;
     font-weight: 500;
     margin: 0 0 3% 0; }
+  #sidebar .twitter p {
+    margin-bottom: 6%; }
+  #sidebar .twitter a {
+    color: #ff6600; }
+  #sidebar .twitter .gray, #sidebar .twitter .gray a {
+    color: #afafaf; }
 
 .grid-lab .threecol {
   margin-bottom: 10%; }

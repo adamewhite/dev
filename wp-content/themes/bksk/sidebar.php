@@ -54,11 +54,11 @@
 
 <?php if(is_page(5061)) { 
 	echo '<div class="sidebar-box"><h3>Twitter</h3>';
-		echo 'TK';
+		echo '<div class="twitter"></div>';
 	echo '</div>';
 
 	echo '<div class="sidebar-box"><h3>Press Inquiries</h3>';
-	echo '<p>Contact <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p>';
+	echo '<p>Contact: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p>';
 	echo '</div>';
 } ?>
 
