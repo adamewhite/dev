@@ -43,7 +43,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<div class="fourcol"><a href="'.get_the_permalink($post->ID).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></div>';
+	echo '<div class="fourcol"><a href="'.get_the_permalink($post->ID).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a></div>';
 	} 
 } 
 echo '</div>'; ?>
@@ -74,8 +74,15 @@ $link = get_field('website_link');
     }
     $year_variable = $post_year;
 ?>
-		<span>
-			<p>[Project] - "<a href="<?php echo $link; ?>"><?php the_title(); ?></a>," <?php echo $source; ?>, <?php the_time('F'); ?> <?php the_time('Y'); ?></p>
+		<span><p>
+	<?php $terms = wp_get_object_terms($post->ID, 'work');
+    if($terms) {
+	    foreach($terms as $term) {
+		    echo $term->name;
+		}
+		echo ' - ';
+	} ?>
+		"<a href="<?php echo $link; ?>"><?php the_title(); ?></a>," <?php echo $source; ?>, <?php the_time('F'); ?> <?php the_time('Y'); ?></p>
 		</span>  
 	<?php $count++; ?>
 
