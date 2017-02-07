@@ -1,0 +1,59 @@
+post_date,post_title,award,_custom_post_type_onomies_relationship
+2016-01-01,AIANY COTE,Merit Award,1574
+2016-01-01,American Architecture Prize,Architectural Design / Recreational Architecture - Honorable Mention,4898
+2016-01-01,Society of American Registered Architects (National),Design Award of Honor,4898
+2016-01-01,Society of American Registered Architects (National),Design Award of Excellence,1574
+2016-01-01,Architect 50,#44 Ranking in Sustainability,
+2016-01-01,Building Design and Construction,#41 Multi-Family Residential,
+2016-01-01,Building Design and Construction,#131 Green Building Design,
+2016-01-01,Building Design and Construction,#94 Top Architecture Firms,
+2016-01-01,Center for Active Design,Active Design Excellence Awards,
+2015-01-01,Foundation for Landscape Studies,Place Maker Award,
+2015-01-01,Brick in Architecture Awards -Brick Industry Assoc.,Silver Award,
+2015-01-01,AIA New York State,Citation for Design,1574
+2015-01-01,Traditional Building Magazine,"Palladio Award for New Architecture, under 30,000 sf",1574
+2015-01-01,"Beverly Willis Foundation Built x Women NYC""""""everly Willis Foun""",,
+2014-01-01,Engineering News-Record,Best Projects Merit Award,1574
+2014-01-01,Center for Active Design,Active Design Excellence Awards,
+2012-01-01,Faith & Form Magazine/IFRAA Art & Architecture,Religious Architecture Merit,
+2011-01-01,New York Society of Architects,Distinguished Service Award,
+2011-01-01,Brick in Home Building Awards -Brick Industry Assoc.,"Silver Award for House of Worship""""""ilver Award for """"""""",
+2011-01-01,US Institute of Theater Technology (USITT),Honor Award for Architecture,
+2011-01-01,AIA Westchester+Hudson Valley,High Honor Award for Design Excellence,
+2010-01-01,"International Interior Design Assoc (IIDA), Mid-Atlantic Chapter (submitted by SmithGroup)","Gold Award, Educational/Institutional",1889
+2010-01-01,Northern Virginia AIA (submitted by SmithGroup),"Merit Award, Institutional Architecture",1889
+2010-01-01,Virginia Society AIA (submitted by SmithGroup),Award for Excellence in Architecture,1889
+2010-01-01,Greater New York Construction User Council,Outstanding Project Award,1889
+2009-01-01,PM Engineer,Excellence in Design,2776
+2009-01-01,Western Red Cedar Lumber Assoc.,Architectural Design Honor Award,2776
+2009-01-01,AIA Westchester/Mid-Hudson,Design Award for Mult-Family Residential Design,
+2009-01-01,Coverings - Prism,Prism Award for Stonework,394
+2008-01-01,Washington University in St. Louis,Distinguished Alumnus Award,
+2008-01-01,AIA COTE,Top Green Projects,2776
+2008-01-01,AIA NYS,Best in New York State,2776
+2008-01-01,AIA NYS,Award for Institutional Design,2776
+2008-01-01,AIA New York,Sustainable Design/Cultural Honor Award (Building Types Awards),2776
+2008-01-01,Chicago Athenaeum,American Architecture Award,2776
+2008-01-01,AIA National Housing Awards,Award for Multi-family Housing Design,394
+2008-01-01,Multi-Housing News,Design Excellence Award,394
+2008-01-01,Marble Institute of America (MIA),Pinnacle Award for Stonework,394
+2008-01-01,AIA New York,Education Facility Design Merit,774
+2008-01-01,Brick in Home Building Awards -Brick Industry Assoc.,Bronze Award,
+2007-01-01,Queens Chamber of Commerce,Building Award,2776
+2007-01-01,Applied Arts Award,Design & Advertising Award,
+2007-01-01,Palladio Awards,Palladio Award for Restoration & Renovation,
+2005-01-01,National AIA ,Honor Award for Interior Architecture,1682
+2005-01-01,Faith & Form Magazine/IFRAA ,Honor Award for Liturgical/Interior Design,1682
+2005-01-01,Faith & Form Magazine/IFRAA ,Merit Award for Custom Lamp,1682
+2005-01-01,AIA NY Housing Design Awards,Housing Design Citation,
+2005-01-01,Palladio Awards,Residential Design: Multi-unit category,
+2004-01-01,AIA New York,"Award for Excellence in Design, Interior Design category",1682
+2004-01-01,AIA NYS,Citation for Design,
+2004-01-01,Architectural Record/Business Week Design Competition,Finalist,
+2004-01-01,NYC Dept. of Environmental Protection / US EPA,Green Design Competition winner,2776
+2003-01-01,AIA New York,"Award for Excellence in Design, Interior Design category",
+2003-01-01,Preservation League of NY State,Excellence in Preservation Award,
+2002-01-01,NYC Art Commission,Award for Design,774
+1999-01-01,AIA ,Citation for Exemplary Learning Environment,
+1999-01-01,I.D. Annual Design Review,"Award for Design Distinction, environment category",
+1/1/993,I.D. Annual Design Review,"Award for Design Distinction, environment category",

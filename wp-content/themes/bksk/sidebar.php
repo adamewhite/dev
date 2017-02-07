@@ -53,19 +53,8 @@
 }	?>
 
 <?php if(is_page(5061)) { 
-	echo '<div class="sidebar-box"><h3>Awards</h3>';
-	$args = array(
-            'post_type' =>'post',
-            'post_status'=>'publish', 
-            'orderby' => 'date',
-            'posts_per_page' => 10,
-            'tag' => 'awards'
-        ); 
-		query_posts ($args);
-		if (have_posts()) :
-		while (have_posts()) : the_post(); 
-			echo '<p><a href="'.get_the_permalink().'">'.get_the_title().'</a></p>';
-		endwhile; endif;
+	echo '<div class="sidebar-box"><h3>Twitter</h3>';
+		echo 'TK';
 	echo '</div>';
 
 	echo '<div class="sidebar-box"><h3>Press Inquiries</h3>';

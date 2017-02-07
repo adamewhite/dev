@@ -650,6 +650,13 @@ $divider: 12px;
 	margin: 9px 0 4%;
 	padding: 10px 0;
 }
+
+/*
+.page__header {
+	display: none;
+}
+*/
+
 .nav__logo {
 	float: left;
 	width: 20%;
@@ -1850,6 +1857,50 @@ a.active {
 	}
 }
 
+.page-template-recognition {
+	h3 {
+// 		margin-bottom: 1%;
+	}
+}
+
+.awards-header {
+	margin-bottom: 5%;
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+#accordion {
+	margin-bottom: 8%;
+}
+
+.accordion-header {
+	border-bottom: 1px solid $gray;
+	margin: 5% 0 0%;
+	cursor: pointer;
+	&:first-of-type {
+		margin-top: 0%;
+	}
+}
+
+.accordion-content {
+	display: none;
+	margin: 2% 0;
+}
+
+.accordion-content span {
+	margin-bottom: 3%;
+}
+
+.accordion-content .group {
+	margin-bottom: 4%;
+	p {
+		margin-bottom: .5%;
+		padding-left: 8%;
+	}
+}
 
 // Sidebar 
 #sidebar {

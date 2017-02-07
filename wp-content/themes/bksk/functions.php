@@ -89,25 +89,25 @@ function theme_scripts() {
 // 	wp_enqueue_style( 'twentyfourteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style', 'genericons' ), '20131205' );
 // 	wp_style_add_data( 'twentyfourteen-ie', 'conditional', 'lt IE 9' );
 	if(is_home() || is_post_type_archive('lab')) {
-	wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );	
-	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20161201', true );
-	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.4.1.1.min.js', array( ), false, true );
+		wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );	
+		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20161201', true );
+		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.4.1.1.min.js', array( ), false, true );
 	}
 	if(is_post_type_archive('work') || is_page('team')) {
-	wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );
-	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.3.0.1.min.js', array( 'jquery' ), '20170102', true );
-		wp_enqueue_script( 'packery', get_template_directory_uri() . '/js/packery.1.3.2.min.js', array( 'jquery', 'isotope', 'images' ), '20170102', true );
-	if(is_page('team')) {
-		wp_enqueue_script( 'modernizer', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '20170104', true );
-		wp_enqueue_script( 'grid', get_template_directory_uri() . '/js/grid.js', array( 'jquery'), '20170111', true );
-		wp_enqueue_script( 'classie', get_template_directory_uri() . '/js/classie.js', array( 'jquery'), '20170116', true );
-	}
-	wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
-	}
-	if(is_page(2)) {
-		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
-		wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?keyAIzaSyBoNAm7T3ov5Yy_6TeL7ijFqb-IDyMrE3Q&callback=initMap', array( 'jquery', 'theme' ), '20170104', true );
+		wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );
+		wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.3.0.1.min.js', array( 'jquery' ), '20170102', true );
+			wp_enqueue_script( 'packery', get_template_directory_uri() . '/js/packery.1.3.2.min.js', array( 'jquery', 'isotope', 'images' ), '20170102', true );
+		if(is_page('team')) {
+			wp_enqueue_script( 'modernizer', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '20170104', true );
+			wp_enqueue_script( 'grid', get_template_directory_uri() . '/js/grid.js', array( 'jquery'), '20170111', true );
+			wp_enqueue_script( 'classie', get_template_directory_uri() . '/js/classie.js', array( 'jquery'), '20170116', true );
 		}
+		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
+	} if(is_page(2) || is_page('recognition')) {
+		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
+	} if(is_page(2)) {	
+		wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?keyAIzaSyBoNAm7T3ov5Yy_6TeL7ijFqb-IDyMrE3Q&callback=initMap', array( 'jquery', 'theme' ), '20170104', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
