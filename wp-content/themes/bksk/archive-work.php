@@ -127,8 +127,8 @@ $interiors = get_field('interiors_project_type');
 $preservations = get_field('preservation_project_type');
 // $feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq1');
 // $feat_img2 = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-// $feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
-$feat_img = 'http://localhost:8888/wp-content/uploads/2017/01/Reactive-Digital-Wall-500x500.jpg';
+$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
+// $feat_img = 'http://localhost:8888/wp-content/uploads/2017/01/Reactive-Digital-Wall-500x500.jpg';
 //get terms
 $terms = get_the_terms( get_the_ID(), 'project_type' );
 $types = array();
