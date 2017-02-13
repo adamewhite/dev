@@ -53,9 +53,9 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 // 	echo $image;
 	if($image['url'] != '') {
 		$staff_count++;
-// 		$img = $image['sizes']['sq2'];
+		$img = $image['sizes']['sq2'];
 		$img2 = $image['sizes']['sq2'];
-		$img = 'http://localhost:8888/wp-content/uploads/2017/01/20160919_Terrell_Place_0005_2_ScreenRes-170x170.jpg';
+// 		$img = 'http://localhost:8888/wp-content/uploads/2017/01/20160919_Terrell_Place_0005_2_ScreenRes-170x170.jpg';
 /*
 		if($partner == 0) {
 			$img = $image['sizes']['sq2'];
@@ -65,9 +65,9 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 			$class = 'grid-item--partner';
 		}
 */
-		echo '<div class="grid-item grid-item--staff bw">';
+		echo '<div class="grid-item grid-item--staff bw effect-caption">';
 		echo '<a href="#" data-title="'.get_the_title().'" data-description="'.$bio.'" data-largesrc="'.$img.'"><img src="'.$img.'" />';
-		echo '<div class="text grad-bg"><h3>'.get_the_title().'</h3></div></a>';
+		echo '<div class="text grad-bg"><h3>'.get_the_title().'</h3><caption><p class="caption">'.$title.'</p></caption></div></a>';
 		echo '</div>';
 	} 
 	if($staff_count == 4 || $staff_count == 6 || $staff_count == 8 || $staff_count == 10 || $staff_count == 12 || $staff_count == 14 || $staff_count == 16) {
@@ -81,8 +81,8 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 		$bio = preg_replace("/<\/?div[^>]*\>/i", "", $prebio); 
 		$resume = get_field('partner_resume_pdf', $partners[$i]->ID);
 		if($partner_image['url'] != '') {
-			$img = 'http://localhost:8888/wp-content/uploads/2017/01/20160919_Terrell_Place_0005_2_ScreenRes-170x170.jpg';
-// 			$img = $partner_image['sizes']['sq500'];
+// 			$img = 'http://localhost:8888/wp-content/uploads/2017/01/20160919_Terrell_Place_0005_2_ScreenRes-170x170.jpg';
+			$img = $partner_image['sizes']['sq500'];
 			$img2 = $partner_image2['sizes']['sq500'];
 			$class = 'grid-item--partner';
 			echo '<div class="grid-item grid-item--partner" data-slide-id="'.$partner_count.'" data-id="'.$partners[$i]->ID.'">';

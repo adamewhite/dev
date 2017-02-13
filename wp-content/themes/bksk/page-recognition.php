@@ -28,7 +28,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<div class="fourcol effect-caption"><a href="'.get_the_permalink($post->ID).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /><caption><h3>'.get_the_title().'</h3></caption></a></div>';
+	echo '<div class="fourcol effect-caption"><a href="'.get_the_permalink($post->ID).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /><caption><h3 class="caption">'.get_the_title().'</h3></caption></a></div>';
 	} 
 } 
 echo '</div>'; ?>

@@ -985,9 +985,23 @@ $divider: 12px;
 		h3 {
 			font-size: 1.3vw !important;
 			margin-bottom: 1.5% !important;
-			padding-left: 2% !important;
 		}
 	}
+	.caption {
+		font-weight: 100 !important;
+		line-height: 120%;
+		text-align: left;
+		padding-bottom: 11% !important;
+		padding-left: 3% !important;
+	}
+	.effect-caption h3 {
+		transition: transform 0.35s, color 0.35s;
+	// 	transform: translate3d(0,-50%,0);
+	}
+	.effect-caption:hover h3 {
+	// 	transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+	}	
+	
 }
 
 
@@ -996,11 +1010,12 @@ $divider: 12px;
 		bottom: 0;
 		left: 0;
 	    padding-top: 5%;
+		padding-left: 3% !important;
 		h3 {
 			font-size: 1.2vw;
 			text-align: left !important;
 			margin-bottom: 4%;
-			padding-left: 3%;
+			padding-left: 0%;
 			line-height: 130%;
 		}
 	}
@@ -2289,21 +2304,6 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 
-figure.effect-sadie figcaption::before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
-	background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
-	content: '';
-	opacity: 0;
-	-webkit-transform: translate3d(0,50%,0);
-	transform: translate3d(0,50%,0);
-}
-
-
 .effect-caption {
 	position: relative;
 	opacity: 1;
@@ -2348,11 +2348,11 @@ figure.effect-sadie figcaption::before {
 }
 
 .effect-caption caption::before,
-.effect-caption h3 {
+.effect-caption .caption {
 	transition: opacity 0.35s, transform 0.35s;
 }
 
-.effect-caption h3 {
+.effect-caption .caption {
 	position: absolute;
 	color: #FFF;
 	font-size: 13px;
@@ -2371,7 +2371,7 @@ figure.effect-sadie figcaption::before {
 }
 
 .effect-caption:hover caption::before ,
-.effect-caption:hover h3 {
+.effect-caption:hover .caption {
 	opacity: 1;
 	transform: translate3d(0,0,0);
 }
