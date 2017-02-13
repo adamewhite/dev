@@ -84,13 +84,9 @@ function default_menu() {
  * @since theme 1.0
  */
 function theme_scripts() {
-// 	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/css/style.css', array(), '1.6', 'all' );
 	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/css/style.min.css', array(), '2.2', 'all');
-// 	wp_enqueue_style( 'twentyfourteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style', 'genericons' ), '20131205' );
-// 	wp_style_add_data( 'twentyfourteen-ie', 'conditional', 'lt IE 9' );
 	if(is_home() || is_post_type_archive('lab')) {
 		wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );	
-		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20161201', true );
 		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.4.1.1.min.js', array( ), false, true );
 	}
 	if(is_post_type_archive('work') || is_page('team')) {
@@ -100,13 +96,15 @@ function theme_scripts() {
 		if(is_page('team')) {
 			wp_enqueue_script( 'modernizer', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '20170104', true );
 			wp_enqueue_script( 'grid', get_template_directory_uri() . '/js/grid.js', array( 'jquery'), '20170111', true );
-			wp_enqueue_script( 'classie', get_template_directory_uri() . '/js/classie.js', array( 'jquery'), '20170116', true );
+				wp_enqueue_script( 'classie', get_template_directory_uri() . '/js/classie.js', array( 'jquery'), '20170116', true );
 		}
-		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
-	} if(is_page(2) || is_page('recognition')) {
-		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170104', true );
 	} if(is_page(2)) {	
 		wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?keyAIzaSyBoNAm7T3ov5Yy_6TeL7ijFqb-IDyMrE3Q&callback=initMap', array( 'jquery', 'theme' ), '20170104', true );
+	} if(is_singular('work')) {
+		wp_enqueue_script( 'modernizer', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '20170104', true );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ), '20170112', true );
+	} if(is_page(2) || is_page('recognition') || is_home() || is_post_type_archive('work') || is_page('team') || is_single()) {
+		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170112', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );

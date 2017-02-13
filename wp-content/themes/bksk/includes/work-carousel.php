@@ -3,22 +3,6 @@
 
 $options = array();
 
-$options['intro'] = get_field('intro');
-if ($options['intro']){
-  $count = 0;
-  echo "var intro = [";
-  while(has_sub_field('intro')){
-    $count++;
-    $image = get_sub_field('image');
-    $image = $image['sizes']['carousel'];
-    echo "'" . $image . "'";
-    if ($count < count($options['intro'])){
-      echo  ",";
-    }
-  }
-  echo "];";
-}
-
 $options['photographs'] = get_field('photographs');
 if ($options['photographs']){
   $count = 0;
@@ -126,11 +110,7 @@ $selected = $keys[0];
                 $display = '';
               }
               $count = count($option);
-              if ($key != 'intro') {
                 echo "<li date-option='$key' $display>$title ($count)</li>";
-              } else {
-                echo "<li date-option='$key' $display>$title</li>";
-              }
             }
           ?>
         </ul><!-- Options -->

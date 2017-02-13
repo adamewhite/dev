@@ -47,7 +47,7 @@
 <div id="wrapper">
 <header class="nav">
 		<div class="nav__logo">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">BKSK</a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/img/bksk-logo.png" /></a>
 		</div>
 		<?php if(!is_home()) { 
 			echo '<nav class="nav__menu" role="navigation">';

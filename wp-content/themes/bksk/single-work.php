@@ -8,7 +8,31 @@
   $quote_source = get_field('quote_source');
 ?>
 
-<?php include_once(TEMPLATEPATH . '/includes/work-carousel.php'); ?>
+<?php 
+	$slides = array();
+	$types = array('photographs','drawings','process','data');
+	foreach($types as $type) {
+	if(have_rows($type)) :
+	while( have_rows($type) ): the_row(); 
+		$image = get_sub_field('image');
+		$image = $image['sizes']['large'];
+		if($image) {
+			array_push($slides, $image);	
+		}
+	endwhile; endif;
+	}
+// 	var_dump($slides);
+	if($slides) {
+		echo '<div id="slides">';
+	foreach($slides as $slide) {
+		if($slide != 'NULL' || $slide != 0) {
+// 			echo $slide;
+			echo '<img src="'.$slide.'" />';
+		}
+	}
+		echo '</div>';
+	}
+?>
 
 <header class="page__header">
   <h2><?php the_title(); ?></h2>
@@ -91,7 +115,7 @@
 				); 
 				$query = new WP_Query( $args );
 				if ( $query->have_posts() ) :
-				echo '<div class="work-box"><h4>Related<br /> Architecture Projects</h4>';
+				echo '<div class="work-box"><h4>Related Projects</h4>';
 				while ( $query->have_posts() ) :
 				$query->the_post();
 				echo '<a href="'.get_the_permalink().'">'.get_the_title().'</a>';
@@ -99,6 +123,7 @@
 				echo '</div>';
 				endif; wp_reset_query();
 			} 
+/*
 			$interior_types = get_the_terms($post->ID, 'interior_project_type');
 			if($interior_types) {
 				$interior_ids = array();
@@ -134,34 +159,10 @@
 				endwhile; 
 				echo '</div>';
 				endif; wp_reset_query();
-			} ?>
+			} 
+*/
+			?>
 	</div>
-<!--
-  <div class="fourcol">
-    <?php if (have_rows('related_posts')): ?>
-      <div class="sort work-sort">
-        <h4>Related Work</h4>
-        <?php while (have_rows('related_posts')): the_row(); ?>
-          <?php $p = get_sub_field('post'); ?>
-          <a href="<?php echo get_permalink( $p->ID ); ?>">
-            <?php echo get_the_title( $p->ID ); ?>
-          </a>
-        <?php endwhile; ?>
-      </div>
-    <?php endif; ?>
-    <?php if (have_rows('impact_posts')): ?>
-      <div class="sort work-sort">
-        <h4>Impact</h4>
-        <?php while (have_rows('impact_posts')): the_row(); ?>
-          <?php $p = get_sub_field('post'); ?>
-          <a href="<?php echo get_permalink( $p->ID ); ?>">
-            <?php the_sub_field('link_text'); ?>
-          </a>
-        <?php endwhile; ?>
-      </div>
-    <?php endif; ?>
-  </div>
--->
 
 
 </div><!-- Single Work -->

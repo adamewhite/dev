@@ -204,7 +204,7 @@ $.ajax({
 			split = date.split(' '),
 			newDate = split[1]+' '+split[2];
 			name = tweet_data.user.screen_name;
-			var text = '<span class="gray"><a href="http://twitter.com/'+name+'">@'+name+'</a> - '+newDate+'</span><p>'+tweet+'</p>';
+			var text = '<span class="gray"><a href="http://twitter.com/'+name+'" target="_blank">@'+name+'</a> - '+newDate+'</span><p>'+tweet+'</p>';
 			tweet_array.push(text);
 			var tweet_display = tweet_array.join('');
 			$(".twitter").html(tweet_array);
@@ -226,6 +226,51 @@ $.ajax({
 	map: map
 	});
 	}
+
+} else if($('body').hasClass('single-work')) {	
+
+$(document).on('ready', function(){
+	setMaxWidth();
+	
+    $( window ).bind( "resize", setMaxWidth );
+    
+    function setMaxWidth() {
+    	$( "#slides img" ).css( "maxWidth", ( $( window ).width() * 0.9 | 0 ) + "px" );
+    }
+    
+/*
+    function unifyHeights() {
+        var maxHeight = 0;
+        $('.slick-track').children('img').each(function() {
+            var height = $(this).outerHeight();
+            // alert(height);
+            if ( height > maxHeight ) {
+                maxHeight = height;
+            }
+        });
+        $('img').css('height', maxHeight);
+    }
+    unifyHeights();
+*/
+   
+});
+$('#slides').slick({
+  centerMode: true,
+  centerPadding: '3%',
+  slidesToShow: 1,
+  variableWidth: true,
+  draggable: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerPadding: '0'
+      }
+    }
+  ]
+});
+	
 } else {
 
 // init Isotope
