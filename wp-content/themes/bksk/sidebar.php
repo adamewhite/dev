@@ -50,7 +50,47 @@
 	}
 	echo '</div>';
 
-}	?>
+
+	echo '<div class="sidebar-box archive"><h3>Archive</h3>';
+	
+	$args = array(
+        'post_type' =>'post',
+        'post_status'=>'publish', 
+        'orderby' => 'date',
+        'posts_per_page' => -1
+    ); 
+	query_posts ($args);
+	if (have_posts()) :
+	$year_variable = '';
+	$count = 0;
+    $text = '';
+	while (have_posts()) : the_post(); 
+	$post_year = get_the_date( 'Y' );
+	$year_int = intval($post_year);
+    $year_int = intval($post_year);
+	if ($year_variable !== $post_year && $year_int >= 2012) {
+	    if($count != 0) {
+		    echo '</div>';
+	    }
+	    if($year_int == 2012) {
+		    $text = 'and earlier';
+	    }
+		echo '<div class="accordion-header">' . $post_year . ' '.$text.'<span class="arrow"></span></div><div class="accordion-content">';
+    }
+    $year_variable = $post_year;
+    echo '<a href="'.get_the_permalink($post->ID).'">'.get_the_title().'</a>';
+	$count++;
+	endwhile;
+	endif;
+	
+	echo '</div>';
+	
+
+}	
+
+
+
+?>
 
 <?php if(is_page(5061)) { 
 	echo '<div class="sidebar-box"><h3>Twitter</h3>';

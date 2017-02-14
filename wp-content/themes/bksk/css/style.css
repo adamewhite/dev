@@ -1724,6 +1724,10 @@ a.active {
       line-height: 140%;
       margin: 4% 0 5%;
       text-transform: none; }
+    #post .loop-entry figure {
+      height: auto;
+      margin-left: 0;
+      width: 98% !important; }
     #post .loop-entry img {
       height: auto;
       margin: 1% 0 3%;
@@ -1904,6 +1908,17 @@ a.active {
   width: 26%; }
   #sidebar .sidebar-box {
     margin: 0 0 10% 0; }
+    #sidebar .sidebar-box:after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both; }
+  #sidebar .archive {
+    margin-top: 3%; }
+    #sidebar .archive a {
+      display: block;
+      line-height: 140%;
+      margin-bottom: 3%; }
   #sidebar p {
     font-weight: 100;
     line-height: 155%;
@@ -2007,10 +2022,10 @@ footer {
 .footer__subnav {
   float: left;
   margin: 1% 0 4%;
-  width: 40%; }
+  width: 60%; }
   .footer__subnav li {
     display: inline-block;
-    padding: 0 10px;
+    padding: 0 2%;
     text-align: right; }
     .footer__subnav li:first-of-type {
       padding-left: 0; }
@@ -2019,6 +2034,8 @@ footer {
       font-size: 14px;
       font-weight: 300;
       text-decoration: none; }
+  .footer__subnav .social li {
+    padding: 0 10px; }
 
 @keyframes fadein {
   0% {
@@ -2091,7 +2108,9 @@ footer {
   .grid-work .text h3, .grid-work .grid-work .grid-item--featured .text h3, .grid-team .text h3, .grid-team .grid-work .grid-item--featured .text h3 {
     font-size: 12px !important; }
   .grid-work .grid-item--partner, .grid-team .grid-item--partner {
-    width: 48.7%; } }
+    width: 48.7%; }
+  .page .text h3 {
+    font-size: 12px; } }
 
 @media only screen and (max-width: 767px) {
   #wrapper {
@@ -2106,7 +2125,7 @@ footer {
     margin-bottom: 2% !important;
     width: 98% !important; }
   .work-box {
-    margin-bottom: 5%; }
+    margin-bottom: 6%; }
   .grid-work .grid-sizer, .grid-work .grid-item, .grid-team .grid-sizer, .grid-team .grid-item {
     width: 32%; }
   .grid-work .grid-item--block, .grid-team .grid-item--block {
@@ -2117,6 +2136,8 @@ footer {
     width: 65.5%; } }
 
 @media only screen and (max-width: 490px) {
+  #main {
+    padding-top: 4%; }
   .page__header {
     font-size: 18px; }
   .grid-work .grid-sizer, .grid-work .grid-item, .grid-team .grid-sizer, .grid-team .grid-item {

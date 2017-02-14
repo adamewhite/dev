@@ -144,7 +144,8 @@ $('.grid-item--staff').hover(
   }
  );	
 
-} else if($('body').hasClass('page-template-page-recognition')) {
+} else if($('body').hasClass('page-template-page-recognition') || $('body').hasClass('page-id-5361') || $('body').hasClass('archive')) {
+
 var headers = $('.accordion-header');
 var contentAreas = $('.accordion-content').hide();
 var expandLink = $('.accordion-expand-all');

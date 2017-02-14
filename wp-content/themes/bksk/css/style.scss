@@ -2262,6 +2262,11 @@ $slick-opacity-not-active: 0.25 !default;
 			margin: 4% 0 5%;
 			text-transform: none;
 		}
+		figure {
+			height: auto;
+			margin-left: 0;
+			width: 98% !important;
+		}
 		img {
 			height: auto;
 			margin: 1% 0 3%;
@@ -2420,6 +2425,20 @@ $slick-opacity-not-active: 0.25 !default;
 	.sidebar-box {
 // 		border-bottom: 1px solid #999;
 		margin: 0 0 10% 0;
+		&:after {
+		   content: " ";
+		   display: block; 
+		   height: 0; 
+		   clear: both;
+		}
+	}
+	.archive {
+		margin-top: 3%;
+		a {
+			display: block;
+			line-height: 140%;
+			margin-bottom: 3%;
+		}
 	}
 	p {
 		font-weight: 100;
@@ -2574,10 +2593,10 @@ footer {
 .footer__subnav {
 	float: left;
 	margin: 1% 0 4%;
-	width: 40%;
+	width: 60%;
 	li {
 		display: inline-block;
-		padding: 0 10px;
+		padding: 0 2%;
 		text-align: right;
 		&:first-of-type {
 			padding-left: 0;
@@ -2588,6 +2607,9 @@ footer {
 			font-weight: 300;
 			text-decoration: none;
 		}
+	}
+	.social li {
+		padding: 0 10px;
 	}
 }
 
@@ -2670,6 +2692,10 @@ footer {
 	}
 }
 
+.page .text h3 {
+	font-size: 12px;
+}
+
 }
 
 @media only screen and (max-width: 767px) {	
@@ -2696,7 +2722,7 @@ footer {
 }
 
 .work-box {
-	margin-bottom: 5%;
+	margin-bottom: 6%;
 }
 
 .grid-work, .grid-team {
@@ -2718,6 +2744,10 @@ footer {
 } 
 
 @media only screen and (max-width: 490px) {
+#main {
+	padding-top: 4%;
+}
+
 .page__header {
 	font-size: 18px;
 }

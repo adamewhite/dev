@@ -29,11 +29,15 @@
 <?php query_posts(
             array(
             'post_type'=> 'post',
-            'posts_per_page' => 15,
+            'posts_per_page' => 20,
             'paged'=>$paged
         )); ?>
 <aside id="post">
 		<?php get_template_part( 'loop' , 'entry') ?>   
+
+<div class="nav-previous alignleft"><?php next_posts_link( 'Older (Po)sts' ); ?></div>
+<div class="nav-next alignright"><?php previous_posts_link( 'Newer (Po)sts' ); ?></div>
+
 </aside>
 
 <?php wp_reset_query(); endif; ?>
