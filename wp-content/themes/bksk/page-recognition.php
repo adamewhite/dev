@@ -47,26 +47,33 @@ if (have_posts()) :
 echo '<div id="accordion">';
 $year_variable = '';
 $count = 0;
+$text = '';
 while (have_posts()) : the_post(); 
 $source = get_field('website');
 $link = get_field('website_link'); 
    $post_year = get_the_date( 'Y' );
-    if ($year_variable !== $post_year) {
+    $year_int = intval($post_year);
+	if ($year_variable !== $post_year && $year_int >= 2012) {
 	    if($count != 0) {
 		    echo '</div>';
 	    }
-        echo '<div class="accordion-header">' . $post_year . '<span class="arrow"></span></div><div class="accordion-content">';
+	    if($year_int == 2012) {
+		    $text = 'and earlier';
+	    }
+        echo '<div class="accordion-header">' . $post_year . ' '.$text.'<span class="arrow"></span></div><div class="accordion-content">';
     }
     $year_variable = $post_year;
 ?>
 		<span><p>
-	<?php $terms = wp_get_object_terms($post->ID, 'work');
+	<?php $terms = get_field('project');
     if($terms) {
 	    foreach($terms as $term) {
-		    echo $term->name;
+		    echo get_the_title($term);
 		}
-		echo ' - ';
-	} ?>
+	} else {
+		echo 'BKSK Architects';
+	} 
+		echo ' - ';?>
 		"<a href="<?php echo $link; ?>"><?php the_title(); ?></a>," <?php echo $source; ?>, <?php the_time('F'); ?> <?php the_time('Y'); ?></p>
 		</span>  
 	<?php $count++; ?>
