@@ -712,14 +712,23 @@ h6 {
     .grid-team .grid-item--partner h3 {
       font-size: 1.3vw !important;
       margin-bottom: 1.5% !important; }
+    .grid-team .grid-item--partner .caption {
+      padding-bottom: 7% !important; }
   .grid-team .caption {
     font-weight: 100 !important;
-    line-height: 120%;
+    line-height: 125%;
     text-align: left;
-    padding-bottom: 11% !important;
+    padding-bottom: 14% !important;
     padding-left: 3% !important; }
   .grid-team .effect-caption h3 {
     transition: transform 0.35s, color 0.35s; }
+
+.grid-team .effect-caption:hover img {
+  opacity: 1;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear; }
 
 .grid-team .text, .grid-work .text {
   bottom: 0;

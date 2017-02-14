@@ -85,9 +85,9 @@ while ($staff_query->have_posts()) : $staff_query->the_post();
 			$img = $partner_image['sizes']['sq500'];
 			$img2 = $partner_image2['sizes']['sq500'];
 			$class = 'grid-item--partner';
-			echo '<div class="grid-item grid-item--partner" data-slide-id="'.$partner_count.'" data-id="'.$partners[$i]->ID.'">';
-			echo '<a href="#" data-name="'.get_the_title($partners[$i]->ID).'" data-title="'.$title.'" data-bio="'.$bio.'" data-largesrc="'.$img.'" data-resume="'.$resume.'"><img src="'.$img.'" />';
-			echo '<div class="text grad-bg"><h3>'.get_the_title($partners[$i]->ID).'</h3></div>';
+			echo '<div class="grid-item grid-item--partner effect-caption" data-slide-id="'.$partner_count.'" data-id="'.$partners[$i]->ID.'">';
+			echo '<a href="#" data-name="'.get_the_title($partners[$i]->ID).'" data-title="'.$title.'" data-bio="'.$bio.'" data-largesrc="'.$img.'" data-resume="'.$resume['url'].'"><img src="'.$img.'" />';
+			echo '<div class="text grad-bg"><h3>'.get_the_title($partners[$i]->ID).'</h3><caption><p class="caption">'.$title.'</p></caption></div>';
 			echo '</a></div>';
 			$i++;
 		}

@@ -39,7 +39,7 @@
 
 <div class="sq1 bw item">
 <a class="" href="<?php echo get_site_url(); ?>/interiors/about">
-	<?php $img = wp_get_attachment_image(4909, 'sq2'); 
+	<?php $img = wp_get_attachment_image(5782, 'sq2'); 
 	echo $img; ?>
 <div class="text grad-bg--top">	
 	<h3>About</h3>

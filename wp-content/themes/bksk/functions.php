@@ -103,9 +103,8 @@ function theme_scripts() {
 	} if(is_singular('work')) {
 		wp_enqueue_script( 'modernizer', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '20170104', true );
 		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ), '20170112', true );
-	} if(is_page(2) || is_page('recognition') || is_home() || is_post_type_archive('work') || is_page('team') || is_single()) {
+	} 
 		wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/theme.min.js', array( 'jquery' ), '20170112', true );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
@@ -221,3 +220,21 @@ function search($array, $key, $value)
 
     return $results; 
 }
+
+function my_nav_wrap() {
+  // default value of 'items_wrap' is <ul id="%1$s" class="%2$s">%3$s</ul>'
+  
+  // open the <ul>, set 'menu_class' and 'menu_id' values
+  $wrap  = '<ul id="%1$s" class="%2$s">';
+  
+  // get nav items as configured in /wp-admin/
+  $wrap .= '%3$s';
+  
+  // the static link 
+  $wrap .= '<li class=""><a class="toplink">Top</a></li>';
+  
+  // close the <ul>
+  $wrap .= '</ul>';
+  // return the result
+  return $wrap;
+ }

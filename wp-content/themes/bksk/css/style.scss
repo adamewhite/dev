@@ -986,12 +986,15 @@ $divider: 12px;
 			font-size: 1.3vw !important;
 			margin-bottom: 1.5% !important;
 		}
+		.caption {
+			padding-bottom: 7% !important;
+		}
 	}
 	.caption {
 		font-weight: 100 !important;
-		line-height: 120%;
+		line-height: 125%;
 		text-align: left;
-		padding-bottom: 11% !important;
+		padding-bottom: 14% !important;
 		padding-left: 3% !important;
 	}
 	.effect-caption h3 {
@@ -1003,7 +1006,11 @@ $divider: 12px;
 	}	
 	
 }
-
+	
+.grid-team .effect-caption:hover img {
+	opacity: 1;
+	@include transition(opacity .3s linear);
+}
 
 .grid-team, .grid-work {
 	.text {

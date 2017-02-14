@@ -11,7 +11,7 @@
 <footer>
 <?php if(!is_home()) { ?>	
 <?php echo '<nav class="footer__subnav" role="navigation">';
-	wp_nav_menu( array('menu' => 'Footer' ));
+	wp_nav_menu( array('menu' => 'Footer', 'items_wrap' => my_nav_wrap() ));
 	echo '</nav>'; ?>
 <?php } ?>
 <?php 

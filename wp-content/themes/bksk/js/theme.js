@@ -1,3 +1,9 @@
+$('.toplink').click(function(e){
+	e.preventDefault();
+		$('html, body').animate({scrollTop : 0},600);
+		return false;
+	});
+
 if($('body').hasClass('home')) {
 	var $grid = $('.grid');
 	$grid.imagesLoaded(function(){
@@ -70,10 +76,16 @@ function overlay(slideID) {
 	var bio = $(slide).find('a').data('bio');
 	var img = $(slide).find('a').data('largesrc');
 	var resume = $(slide).find('a').data('resume');
+	var resumeText;
+	if(resume == '') {
+		resumeText = '';
+	} else {
+		resumeText = '<a target="_blank" href="'+resume+'">Resume</a>';
+	}
 	console.log(id);
 	partnerSub(id);
 	$('.overlay').addClass('open');
-	$('.overlay .content').html('<header><h2>'+name+'</h2><h3>'+title+'</h3></header><article><div class="left">'+bio+'<a href="'+resume+'">Resume</a></div><div class="right"><img src="'+img+'" /></div><div class="sub"></div></article>');
+	$('.overlay .content').html('<header><h2>'+name+'</h2><h3>'+title+'</h3></header><article><div class="left">'+bio+resumeText+'</div><div class="right"><img src="'+img+'" /></div><div class="sub"></div></article>');
 }
 
 $('.close').on('click', function(){
@@ -271,7 +283,7 @@ $('#slides').slick({
   ]
 });
 	
-} else {
+} else if($('body').hasClass('post-type-archive-work')) {
 
 // init Isotope
 /*
