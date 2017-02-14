@@ -252,7 +252,7 @@ body.home {
 	margin: 0 auto;
 	width: 64%;
 // 	min-width: 600px;
-	max-width: 1500px;
+	max-width: 1600px;
 	&:after { 
    content: " ";
    display: block; 
@@ -957,13 +957,13 @@ $divider: 12px;
 	opacity: 0;
 	width: 100%;
 	.grid-sizer, .grid-item {
-		width: 23.3%;
+		width: 18.8%;
 		h3 {
-			font-size: 1.1vw !important;
+			font-size: 13px !important;
 		}
 	}
 	.gutter-sizer {
-		width: 2%;
+		width: 1.5%;
 	}
 	.grid-item {
 		float: left;
@@ -978,12 +978,12 @@ $divider: 12px;
 		}
 	}
 	.grid-item--partner {
-		width: 48.7%;
+		width: 39%;
 		.text {
 			padding-top: 8%;
 		}
 		h3 {
-			font-size: 1.3vw !important;
+			font-size: 15px !important;
 			margin-bottom: 1.5% !important;
 		}
 		.caption {
@@ -995,7 +995,7 @@ $divider: 12px;
 		line-height: 125%;
 		text-align: left;
 		padding-bottom: 14% !important;
-		padding-left: 3% !important;
+		padding-left: 4% !important;
 	}
 	.effect-caption h3 {
 		transition: transform 0.35s, color 0.35s;
@@ -2638,7 +2638,7 @@ footer {
 	-moz-animation-delay: .2s;
 	animation-delay: .2s;
 }
-
+	
 @media only screen and (max-width: 1250px) {
 .nav__menu ul li {
 	padding: 0 1%;
@@ -2654,13 +2654,44 @@ footer {
 
 }
 
+@media only screen and (max-width: 1100px) {
+.grid-work, .grid-team {
+	.grid-sizer, .grid-item {
+		width: 23.5%;
+	}
+	.grid-item--block {
+		padding-bottom: 23.5%;
+	}
+	.text h3, .grid-work .grid-item--featured .text h3 {
+		font-size: 12px !important;
+	}
+	.grid-item--partner {
+		width: 48.7%;
+	}
+}
+
+}
+
 @media only screen and (max-width: 767px) {	
 
 #wrapper {
 	width: 86%;
 }
 
+.page__subnav {
+	margin-top: 3%;
+}
+
+.page__header {
+	font-size: 20px;
+}
+
+.work__search .fourcol {
+	width: 47% !important;
+}
+
 .twocol, .threecol, .fourcol, .fivecol {
+	margin-bottom: 2% !important;
 	width: 98% !important;
 }
 
@@ -2668,9 +2699,43 @@ footer {
 	margin-bottom: 5%;
 }
 
+.grid-work, .grid-team {
+	.grid-sizer, .grid-item {
+		width: 32%;
+	}
+	.grid-item--block {
+		padding-bottom: 32%;
+	}
+	.text h3, .grid-work .grid-item--featured .text h3 {
+		font-size: 11px !important;
+	}
+	.grid-item--featured, .grid-item--partner {
+		width: 65.5%;
+	}
 }
 
+
+} 
+
 @media only screen and (max-width: 490px) {
+.page__header {
+	font-size: 18px;
+}
+
+.grid-work, .grid-team {
+	.grid-sizer, .grid-item {
+		width: 49%;
+	}
+	.grid-item--block {
+		padding-bottom: 49%;
+	}
+	.text h3, .grid-work .grid-item--featured .text h3 {
+		font-size: 10px !important;
+	}
+	.grid-item--featured, .grid-item--partner {
+		width: 100%;
+	}
+}
 
 }
 
@@ -2684,4 +2749,4 @@ footer {
 
 @media screen and (min-aspect-ratio: 16/9) {
 
-}
+}  

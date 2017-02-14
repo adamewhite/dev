@@ -3,6 +3,15 @@ $('.toplink').click(function(e){
 		$('html, body').animate({scrollTop : 0},600);
 		return false;
 	});
+	
+/*
+$( window ).resize(function() {
+	if($('body').hassClass('post-type-archive-work')) {
+		if(window >= 1200) {
+			$('.item')
+		}
+	}
+*/
 
 if($('body').hasClass('home')) {
 	var $grid = $('.grid');
