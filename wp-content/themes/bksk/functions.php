@@ -231,7 +231,7 @@ function my_nav_wrap() {
   $wrap .= '%3$s';
   
   // the static link 
-  $wrap .= '<li class=""><a class="toplink">Top</a></li>';
+  $wrap .= '<li class=""><a class="toplink">Back to Top &uarr;</a></li>';
   
   // close the <ul>
   $wrap .= '</ul>';

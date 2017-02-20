@@ -605,6 +605,8 @@ h6 {
         font-size: 14px;
         font-weight: 100;
         text-decoration: none; }
+  .nav__menu #pull {
+    display: none; }
 
 .menu-item-4975 {
   padding-right: .5% !important; }
@@ -1628,18 +1630,18 @@ a.active {
 .back {
   transform: rotateY(180deg); }
 
-.page-template-page-inspiration .menu-item-4971 a {
+.page-template-page-inspiration .menu-item-4971 a, .page-template-page-instagram .menu-item-4971 a {
   font-weight: 500; }
 
-.page-template-page-inspiration .page__subnav {
+.page-template-page-inspiration .page__subnav, .page-template-page-instagram .page__subnav {
   margin-bottom: 3%; }
 
-.page-template-page-inspiration .page__header {
+.page-template-page-inspiration .page__header, .page-template-page-instagram .page__header {
   border-bottom: none;
   padding-top: 0%;
   margin: 2% 0 1.5%; }
 
-.page-template-page-inspiration .fourcol {
+.page-template-page-inspiration .item, .page-template-page-instagram .item {
   margin-bottom: 2%; }
 
 /*-----------------------------------------------------------------------------------*
@@ -1913,6 +1915,8 @@ a.active {
       display: block;
       height: 0;
       clear: both; }
+    #sidebar .sidebar-box a:hover {
+      font-weight: 500; }
   #sidebar .archive {
     margin-top: 4%; }
     #sidebar .archive a {
@@ -1994,6 +1998,14 @@ a.active {
   .fourcol:nth-child(4n + 4) {
     margin-right: 0; }
 
+.fivecol {
+  float: left;
+  margin-right: 2%;
+  width: 18%;
+  vertical-align: top; }
+  .fivecol:nth-child(5n+5) {
+    margin-right: 0; }
+
 .clearfix {
   zoom: 1; }
 
@@ -2001,6 +2013,8 @@ footer {
   border-top: 1px solid #bfbfbf;
   margin-top: 6%;
   padding: 3% 0 5%; }
+  footer a {
+    cursor: pointer; }
   footer .social {
     float: right;
     margin: 0% 0 4%;
@@ -2015,6 +2029,8 @@ footer {
   border: none;
   margin-top: 0%;
   padding: 0; }
+  .home footer .footer__subnav {
+    display: none; }
   .home footer .social img {
     height: auto;
     width: 20px; }
@@ -2112,18 +2128,62 @@ footer {
   .page .text h3 {
     font-size: 12px; } }
 
+@media only screen and (max-width: 870px) {
+  .nav__search {
+    display: none; }
+  /*
+.nav__menu {
+	width: 100%;
+}
+*/
+  .nav__menu ul {
+    background-color: #FFFFFF;
+    display: none;
+    height: auto;
+    width: 120%; }
+  .nav__menu a#pull {
+    display: block;
+    background-color: #FFFFFF;
+    font-size: 24px;
+    font-weight: light;
+    float: right;
+    position: relative;
+    right: 1%; }
+  .nav__menu a#pull:after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 10px; } }
+
 @media only screen and (max-width: 767px) {
   #wrapper {
     width: 86%; }
+  #post, #sidebar {
+    width: 98%; }
+  #sidebar {
+    display: none; }
+  #sidebar {
+    border-top: 1px solid #cccccc;
+    float: left;
+    margin-top: 5%;
+    padding-top: 3%; }
+    #sidebar .instagram .twocol {
+      width: 48% !important; }
   .page__subnav {
     margin-top: 3%; }
   .page__header {
     font-size: 20px; }
   .work__search .fourcol {
     width: 47% !important; }
-  .twocol, .threecol, .fourcol, .fivecol {
+  .threecol, .fivecol {
     margin-bottom: 2% !important;
     width: 98% !important; }
+  .twocol, .fourcol {
+    margin-bottom: 2% !important;
+    width: 48% !important; }
   .work-box {
     margin-bottom: 6%; }
   .grid-work .grid-sizer, .grid-work .grid-item, .grid-team .grid-sizer, .grid-team .grid-item {
@@ -2147,4 +2207,7 @@ footer {
   .grid-work .text h3, .grid-work .grid-work .grid-item--featured .text h3, .grid-team .text h3, .grid-team .grid-work .grid-item--featured .text h3 {
     font-size: 10px !important; }
   .grid-work .grid-item--featured, .grid-work .grid-item--partner, .grid-team .grid-item--featured, .grid-team .grid-item--partner {
-    width: 100%; } }
+    width: 100%; }
+  .twocol, .threecol, .fourcol, .fivecol {
+    margin-bottom: 2% !important;
+    width: 98% !important; } }

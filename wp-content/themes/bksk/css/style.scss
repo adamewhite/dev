@@ -839,6 +839,9 @@ $divider: 12px;
 			}
 		}
 	}
+	#pull {
+		display: none;
+	}
 }
 
 .menu-item-4975 {
@@ -2089,12 +2092,11 @@ $slick-opacity-not-active: 0.25 !default;
     	padding-bottom: 100%;
 		margin-bottom: 8%;
 	}
+	&.last {
+		margin-right: 0;
+	}
 }
 
-.fourcol.last {
-// 	margin-left: -5px;
-	margin-right: 0;
-}
 
 .twocol.last {
 	margin-right: 0;
@@ -2144,7 +2146,7 @@ $slick-opacity-not-active: 0.25 !default;
 	transform: rotateY(180deg);
 }
 
-.page-template-page-inspiration {
+.page-template-page-inspiration, .page-template-page-instagram {
 	.menu-item-4971 a {
 		font-weight: 500;
 	}
@@ -2156,7 +2158,7 @@ $slick-opacity-not-active: 0.25 !default;
 		padding-top: 0%;
 		margin: 2% 0 1.5%;
 	}
-	.fourcol {
+	.item {
 		margin-bottom: 2%;
 	}
 }
@@ -2431,6 +2433,9 @@ $slick-opacity-not-active: 0.25 !default;
 		   height: 0; 
 		   clear: both;
 		}
+		a:hover {
+			font-weight: 500;
+		}
 	}
 	.archive {
 		margin-top: 4%;
@@ -2556,6 +2561,16 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 
+.fivecol {
+	float: left;
+	margin-right: 2%;
+	width: 18%;
+	vertical-align: top;
+	&:nth-child(5n+5) {
+		margin-right: 0;
+	}
+}
+
 .clearfix {
 	zoom: 1;
 }
@@ -2565,6 +2580,9 @@ footer {
 	border-top: 1px solid #bfbfbf;
 	margin-top: 6%;
 	padding: 3% 0 5%;
+	a {
+		cursor: pointer;
+	}
 	.social {
 		float: right;
 		margin: 0% 0 4%;
@@ -2582,6 +2600,9 @@ footer {
 	border: none;
 	margin-top: 0%;
 	padding: 0;
+	.footer__subnav {
+		display: none;
+	}
 	.social {
 		img {
 			height: auto;
@@ -2698,10 +2719,71 @@ footer {
 
 }
 
+@media only screen and (max-width: 870px) {	
+.nav__search {
+	display: none;
+}
+
+/*
+.nav__menu {
+	width: 100%;
+}
+*/
+
+  .nav__menu ul {
+	  background-color: #FFFFFF;
+    display: none;
+    height: auto;
+    width: 120%;
+	li {
+// 		display: block;
+	}
+}
+
+  .nav__menu a#pull {
+    display: block;
+    background-color: #FFFFFF;
+    font-size: 24px;
+    font-weight: light;
+    float: right;
+    position: relative;
+    right: 1%;
+  }
+  .nav__menu a#pull:after {
+    content:"";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+}
+
 @media only screen and (max-width: 767px) {	
 
 #wrapper {
 	width: 86%;
+}
+
+#post, #sidebar {
+	width: 98%;
+}
+
+#sidebar {
+	display: none;
+}
+
+#sidebar {
+	border-top: 1px solid $gray;
+	float: left;
+	margin-top: 5%;
+	padding-top: 3%;
+	.instagram {
+		.twocol {
+			width: 48% !important;
+		}
+	}
 }
 
 .page__subnav {
@@ -2716,9 +2798,14 @@ footer {
 	width: 47% !important;
 }
 
-.twocol, .threecol, .fourcol, .fivecol {
+.threecol, .fivecol {
 	margin-bottom: 2% !important;
 	width: 98% !important;
+}
+
+.twocol, .fourcol {
+	margin-bottom: 2% !important;
+	width: 48% !important;
 }
 
 .work-box {
@@ -2765,6 +2852,11 @@ footer {
 	.grid-item--featured, .grid-item--partner {
 		width: 100%;
 	}
+}
+
+.twocol, .threecol, .fourcol, .fivecol {
+	margin-bottom: 2% !important;
+	width: 98% !important;
 }
 
 }

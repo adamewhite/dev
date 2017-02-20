@@ -17,83 +17,60 @@
 </div>
 
 <div class="item float sq2">
-<?php echo disciplineImage('specialty', 'sustainability','sustainability','projects we\'ve done'); ?>
-<!--
-<div class="text">	
-	<h3>projects we've done</h3>
-</div>	
--->
+	<?php $img = wp_get_attachment_image(5795, 'sq500');
+	echo '<a href="'.get_site_url().'/lab">'.$img; ?>
+	<div class="text grad-bg">	
+		<h3>what we're thinking</h3>
+	</div></a>	
 </div>
 
 </div>
 
 <div class="twocol">
 	<div class="item sq2">
-<?php $args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-/*
-	'tax_query' => array(
-		'relation' => 'AND',
-		array(
-			'taxonomy' => 'project_type',
-			'field'    => 'slug',
-			'terms'    => array( 'cultural-civic' )
-		)
-	),
-*/
-	'meta_query' => array(
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
-	echo '<a href="'.get_site_url().'/lab"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /></a>';
-	}
-} ?>
-<div class="text grad-bg">	
-	<h3>what we're thinking</h3>
-</div>	
-</div>
+	<?php echo disciplineImage('specialty', 'sustainability','sustainability','projects we\'ve done'); ?>
+	</div>
 
-<div class="sq1 bw">
-<a href="<?php get_site_url(); ?>/lab/about"><?php $img = wp_get_attachment_image(4909, 'sq2'); 
-	echo $img; ?>
-<div class="text grad-bg--top">	
-	<h3>About</h3>
-</div></a>
-</div>
-
-<div class="block sq1 last">
+	<div class="item sq1 bw">
+		<?php $img = get_field('about', 4964);
+		if($img != '') {
+			$img = $img['sizes'][ 'sq2' ];
+			echo '<a href="'.get_site_url().'/lab/about"><img src="'.$img.'" />';
+		} ?>
+		<div class="text grad-bg--top">	
+			<h3>About</h3>
+		</div></a>
+	</div>
+	
+	<div class="block sq1 last"></div>
 
 </div>
-</div>
 
-<!-- <div class="clearfix"></div> -->
+
 <div class="twocol first">
 
-<div class="rect1 historic item block item--strategy">
+<div class="rect1 item--strategy item block">	
 <a href="http://www.bkskarch.com/lab/strategy/map.php">
+	<? $img = wp_get_attachment_image(5804, 'full');
+		echo $img; ?>
 <div class="text top">	
 	<h3>NYC Design Strategy Tool</h3>
 </div></a>	
 </div>
 
-<div class="block float sq1"></div>
+<div class="block sq1"></div>
 
-<div class="float sq1 last bw flip-container">
+<div class="sq1 last bw flip-container">
 	<div class="flip">
 	<div class="front">
-	<?php $img = wp_get_attachment_image(4992, 'sq1'); 
-		echo $img; ?>
+	<?php $img = get_field('contact', 4964); 
+		if($img == '') {
+			$img = wp_get_attachment_image(4992, 'sq1');
+			echo $img;
+		} else {
+			$img = $img['sizes'][ 'sq2' ];
+			echo '<img src="'.$img.'" />';
+		} ?>
 	<div class="text grad-bg--top">	
 		<h3>Contact</h3>
 	</div>
@@ -104,9 +81,6 @@ if ( $the_query->have_posts() ) {
 		28 West 25th Street, 4th Fl<br />
 		New York, NY 10010<br />
 		Phone:  212.807.9600<br /></p>
-<!-- 		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p> -->
-		<p><a href="mailto:lab@bksk.com" target="_blank">lab@bksk.com</a></p>
-<!-- 		<p><a href="twitter.com/bksk_lab" target="_blank">twitter.com/bksk_lab</a></p> -->
 	</div>
 	</div>
 </div>
@@ -115,8 +89,8 @@ if ( $the_query->have_posts() ) {
 
 
 <div class="twocol last">
-	<div class="sq2 block tools">
-<?php $img = wp_get_attachment_image(5065, 'sq2'); 
+	<div class="item sq2">
+<?php $img = wp_get_attachment_image(5793, 'sq2'); 
 	echo $img; ?>
 <div class="text grad-bg">	
 	<h3>tools we use</h3>

@@ -27,7 +27,7 @@
 	$json = file_get_contents($jsonurl,0,null,null);
 	$json_output = json_decode($json, true);
 
-	echo '<div class="sidebar-box instagram"><h3>Instagram</h3>';
+	echo '<div class="sidebar-box instagram"><a href="'.get_site_url().'/instagram"><h3>Instagram</h3></a>';
 	foreach($json_output['data'] as $item) {
 		$title = str_replace(' & ', ' &amp; ', $item['caption']['text']);
 	    $link = $item['link'];

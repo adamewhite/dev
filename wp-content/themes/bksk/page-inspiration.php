@@ -24,7 +24,7 @@
 		$title = str_replace(' & ', ' &amp; ', $item['caption']['text']);
 	    $link = $item['link'];
 	    $image = $item['images']['low_resolution']['url']; 
-		echo '<div class="fourcol"><a href="'.$link.'" target="_blank"><img src="'.$image.'" alt="'.$title.'" /></div>';
+		echo '<div class="item fourcol"><a href="'.$link.'" target="_blank"><img src="'.$image.'" alt="'.$title.'" /></div>';
 	} ?>
 </article>
 

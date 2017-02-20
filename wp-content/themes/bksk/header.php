@@ -51,6 +51,7 @@
 		</div>
 		<?php if(!is_home()) { 
 			echo '<nav class="nav__menu" role="navigation">';
+			echo '<a href="#" id="pull">&#9776;</a>';
 			wp_nav_menu( array('menu' => 'Navigation' )); 
 			echo '</nav>';
 		} ?>

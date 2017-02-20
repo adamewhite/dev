@@ -5,15 +5,11 @@
  */
 ?>
 </div><!-- /main -->
-<!-- <?php if(!is_page(5361)) { ?> -->
 <div class="clearfix"></div>
-<!-- <?php } ?> -->
 <footer>
-<?php if(!is_home()) { ?>	
 <?php echo '<nav class="footer__subnav" role="navigation">';
 	wp_nav_menu( array('menu' => 'Footer', 'items_wrap' => my_nav_wrap() ));
 	echo '</nav>'; ?>
-<?php } ?>
 <?php 
 	query_posts('page_id=2'); 
 	if(have_posts()) : while (have_posts ()): the_post(); 
@@ -27,7 +23,7 @@
 	endwhile; echo '</div>'; endif;
 endwhile; endif; ?>
 <div class="clearfix"></div>
-<!-- ©2016 BKSK ARCHITECTS. ALL RIGHTS RESERVED. TERMS & CONDITIONS. PRIVACY POLICY. -->
+
 </footer>
 </div><!-- wrapper --> 
 <?php 
