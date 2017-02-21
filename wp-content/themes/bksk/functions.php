@@ -120,6 +120,8 @@ add_image_size( 'sq2', 260, 260, true );
 add_image_size( 'sq500', 500, 500, true );
 add_image_size( 'loop', 1024, 512, true );
 
+add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
+
 function work_url($slug) {
 	return get_site_url().'/work/#.'.$slug;
 }

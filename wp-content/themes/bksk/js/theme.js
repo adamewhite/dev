@@ -113,20 +113,21 @@ function overlay(slideID) {
 	var id = $(slide).data('id');
 	var name = $(slide).find('a').data('name');
 	var title = $(slide).find('a').data('title');
-	var subtitle = $(slide).find('a').data('subtitle');
+	var credentials = $(slide).find('a').data('credentials');
 	var bio = $(slide).find('a').data('bio');
 	var img = $(slide).find('a').data('largesrc');
 	var resume = $(slide).find('a').data('resume');
+	var link = $(slide).find('a').data('link');
 	var resumeText;
 	if(resume == '') {
 		resumeText = '';
 	} else {
 		resumeText = '<a target="_blank" href="'+resume+'">Resume</a>';
 	}
-	console.log(id);
-	partnerSub(id);
+	console.log(id, link);
+	partnerSub(id, link);
 	$('.overlay').addClass('open');
-	$('.overlay .content').html('<header><h2>'+name+', '+title+'</h2><h3>'+subtitle+'</h3></header><article><div class="left">'+bio+resumeText+'</div><div class="right"><img src="'+img+'" /></div><div class="sub"></div></article>');
+	$('.overlay .content').html('<header><h2>'+name+', <span class="small">'+credentials+'</span></h2><h3>'+title+'</h3></header><article><div class="left">'+bio+resumeText+'</div><div class="right"><img src="'+img+'" /></div><div class="sub"></div></article>');
 }
 
 $('.close').on('click', function(){
@@ -134,16 +135,18 @@ $('.close').on('click', function(){
 	$('.overlay').removeClass('open');
 });
 
-function partnerSub(currentID) {
+function partnerSub(currentID, link) {
     $.ajax({
         type: "POST",
-        url: "/overlay.php",
+        url: "/overlay-team.php",
         data: {
             id: currentID
-        }
-    }).done(function(msg) {
-	    $('.sub').append(msg);
-	});
+        },
+        success: function(data) {
+	        console.log(data);
+	        $('.sub').append(data);
+	    }
+    });
 }
 
 $(".prev, .next").click(function() {
