@@ -43,8 +43,16 @@ $(window).resize(function() {
     menu.slideToggle();
   });
   
+if($('body').hasClass('page-template-page-interiors')) {
+	var section1 = $('.section1').html();
+	console.log(section1);
+	var w = $(window).width();
+// 	if(w >= 1200) {
+		$('.twocol.container').append(section1);
+// 		$('.fourcol .section1').remove();
+// 	}
 
-if($('body').hasClass('home')) {
+} else if($('body').hasClass('home')) {
 	var $grid = $('.grid');
 	$grid.imagesLoaded(function(){
 		$('.grid').masonry({

@@ -1584,6 +1584,12 @@ a.active {
   margin-bottom: 8%;
   width: 100%; }
 
+.twocol.container .section1 {
+  display: none; }
+
+.twocol .sq1:last-child {
+  margin-right: 0; }
+
 .bg {
   background: #000; }
   .bg img {
@@ -2158,7 +2164,13 @@ footer {
   -moz-animation-delay: .2s;
   animation-delay: .2s; }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (min-width: 1200px) {
+  .fourcol .section1 {
+    display: none; }
+  .twocol.container .section1 {
+    display: block; } }
+
+@media only screen and (max-width: 1200px) {
   .nav__menu ul li {
     padding: 0 1%; } }
 

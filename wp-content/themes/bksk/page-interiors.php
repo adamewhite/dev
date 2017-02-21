@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="twocol">
+<div class="twocol container">
 <div class="block rect1">
 	<div class="text">
 	<h1><?php the_title(); ?></h1>
@@ -53,6 +53,8 @@
 </div>
 
 <div class="fourcol">
+
+<div class="section1">
 <div class="block sq1"></div>
 
 <div class="sq1 bw flip-container" onclick="this.classList.toggle('hover');">
@@ -76,6 +78,8 @@
 	</div>
 </div>
 </div>
+</div>
+
 </div>
 
 <div class="twocol first">
