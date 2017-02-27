@@ -737,7 +737,7 @@ h6 {
   padding-top: 5%;
   padding-left: 3% !important; }
   .grid-team .text h3, .grid-work .text h3 {
-    font-size: 1.2vw;
+    font-size: 13px !important;
     text-align: left !important;
     margin-bottom: 4%;
     padding-left: 0%;
@@ -780,6 +780,10 @@ h6 {
       max-width: 100%; }
   .overlay header h2 {
     margin-bottom: 10px; }
+    .overlay header h2 .comma::after {
+      content: ", "; }
+  .overlay header img {
+    display: none; }
   .overlay .small, .overlay h3 {
     font-size: 16px;
     font-weight: 300; }
@@ -807,7 +811,8 @@ h6 {
     height: 50px;
     width: 50px;
     z-index: 100;
-    stroke-width: 20; }
+    stroke-width: 20;
+    cursor: pointer; }
   .overlay .prev, .overlay .next {
     top: 40%;
     height: 40px;
@@ -2255,7 +2260,11 @@ footer {
   .grid-work .text h3, .grid-work .grid-work .grid-item--featured .text h3, .grid-team .text h3, .grid-team .grid-work .grid-item--featured .text h3 {
     font-size: 11px !important; }
   .grid-work .grid-item--featured, .grid-work .grid-item--partner, .grid-team .grid-item--featured, .grid-team .grid-item--partner {
-    width: 65.5%; } }
+    width: 65.5%; }
+  .overlay .prev {
+    left: 4%; }
+  .overlay .next {
+    right: 4%; } }
 
 @media only screen and (max-width: 490px) {
   #main {
@@ -2276,6 +2285,33 @@ footer {
     font-size: 10px !important; }
   .grid-work .grid-item--featured, .grid-work .grid-item--partner, .grid-team .grid-item--featured, .grid-team .grid-item--partner {
     width: 100%; }
+  .overlay header {
+    vertical-align: bottom; }
+    .overlay header img {
+      display: block;
+      float: left;
+      width: 30%; }
+    .overlay header h2 {
+      font-size: 26px;
+      vertical-align: bottom; }
+      .overlay header h2 .comma::after {
+        content: ""; }
+  .overlay .content {
+    padding-top: 10%; }
+  .overlay .close {
+    top: 2%;
+    height: 40px;
+    width: 40px; }
+  .overlay .left {
+    width: 100%; }
+  .overlay .right img {
+    display: none; }
+  .overlay .prev {
+    left: 2%; }
+  .overlay .next {
+    right: 2%; }
+  .overlay .fourcol {
+    width: 48% !important; }
   .twocol, .threecol, .fourcol, .fivecol {
     margin-bottom: 2% !important;
     width: 98% !important; }

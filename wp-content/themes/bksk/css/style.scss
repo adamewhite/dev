@@ -1076,6 +1076,9 @@ $divider: 12px;
     header {
 	    h2 {
 		    margin-bottom: 10px;
+		    .comma::after {
+			    content: ", ";
+		    }
 	    }
 	    img {
 		    display: none;
@@ -2968,9 +2971,30 @@ footer {
 
 .overlay {
 	header {
+		vertical-align: bottom;
 		img {
 			display: block;
+			float: left;
+			width: 30%;
 		}
+		h2 {
+			font-size: 26px;
+			vertical-align: bottom;
+			.comma::after {
+				content: "";
+			}
+		}
+	}
+	.content {
+		padding-top: 10%;
+	}
+	.close {
+		top: 2%;
+		height: 40px;
+		width: 40px;
+	}
+	.left {
+		width: 100%;
 	}
 	.right {
 		img {
@@ -2982,6 +3006,9 @@ footer {
     }
     .next {
 	    right: 2%;
+    }
+    .fourcol {
+	    width: 48% !important;
     }
 }
 
