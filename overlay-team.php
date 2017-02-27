@@ -11,7 +11,9 @@ $id = $_POST['id'];
     if( have_rows('posts', $id) ):
       echo '<br /><br /><h3>On My Mind</h3>';
       echo '<div class="items">';
+      $count = 1;
      while( have_rows('posts', $id) ): the_row(); 
+     if($count <= 12) {
       $text   = get_sub_field("text");
       $size   = get_sub_field("size");
       $thumb  = get_sub_field("image");
@@ -26,6 +28,8 @@ $id = $_POST['id'];
         }
         echo '</div>';
       }
+      }
+      $count++;
     endwhile;
 	echo '</div>';
 endif; ?> 

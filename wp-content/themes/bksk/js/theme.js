@@ -135,7 +135,7 @@ function overlay(slideID) {
 	console.log(id, link);
 	partnerSub(id, link);
 	$('.overlay').addClass('open');
-	$('.overlay .content').html('<header><h2>'+name+', <span class="small">'+credentials+'</span></h2><h3>'+title+'</h3></header><article><div class="left">'+bio+resumeText+'</div><div class="right"><img src="'+img+'" /></div><div class="sub"></div></article>');
+	$('.overlay .content').html('<header><img class="header-img" src="'+img+'" /><h2>'+name+', <span class="small">'+credentials+'</span></h2><h3>'+title+'</h3></header><article><div class="left">'+bio+resumeText+'</div><div class="right"><img src="'+img+'" /></div><div class="sub"></div></article>');
 }
 
 $('.close').on('click', function(){

@@ -1022,7 +1022,7 @@ $divider: 12px;
 	    padding-top: 5%;
 		padding-left: 3% !important;
 		h3 {
-			font-size: 1.2vw;
+			font-size: 13px !important;
 			text-align: left !important;
 			margin-bottom: 4%;
 			padding-left: 0%;
@@ -1077,6 +1077,9 @@ $divider: 12px;
 	    h2 {
 		    margin-bottom: 10px;
 	    }
+	    img {
+		    display: none;
+	    }
     }
     .small, h3 {
 	    font-size: 16px;
@@ -1110,6 +1113,7 @@ $divider: 12px;
 	    width: 50px;
 	    z-index: 100;
 	     stroke-width: 20;
+	     cursor: pointer;
     }
     .prev, .next {
 	    top: 40%;
@@ -2914,6 +2918,15 @@ footer {
 	}
 }
 
+.overlay {
+	.prev {
+	    left: 4%;
+    }
+    .next {
+	    right: 4%;
+    }
+}
+
 
 } 
 
@@ -2951,6 +2964,25 @@ footer {
 	.grid-item--featured, .grid-item--partner {
 		width: 100%;
 	}
+}
+
+.overlay {
+	header {
+		img {
+			display: block;
+		}
+	}
+	.right {
+		img {
+			display: none;
+		}
+	}
+	.prev {
+	    left: 2%;
+    }
+    .next {
+	    right: 2%;
+    }
 }
 
 .twocol, .threecol, .fourcol, .fivecol {
