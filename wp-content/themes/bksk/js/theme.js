@@ -48,7 +48,7 @@ if($('body').hasClass('page-template-page-interiors')) {
 	console.log(section1);
 	var w = $(window).width();
 // 	if(w >= 1200) {
-		$('.twocol.container').append(section1);
+// 		$('.twocol.container').append(section1);
 // 		$('.fourcol .section1').remove();
 // 	}
 

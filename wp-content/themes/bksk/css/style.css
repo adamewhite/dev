@@ -180,6 +180,9 @@ a {
 strong {
   font-weight: 500; }
 
+em {
+  font-style: italic; }
+
 .bw img {
   -webkit-filter: grayscale(100%);
   /* Safari 6.0 - 9.0 */
@@ -1530,7 +1533,6 @@ a.active {
   color: #FFF;
   display: block;
   position: relative;
-  padding: 9% 4% 18% 8%;
   height: auto;
   width: 100%;
   overflow: hidden;
@@ -1541,9 +1543,18 @@ a.active {
 		top: 0;
 	}
 */ }
-  .back.back--lab {
-    padding-bottom: 18%;
-    padding-top: 9%; }
+  .back:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%; }
+  .back .content {
+    position: absolute;
+    padding: 8% 4% 2%;
+    width: 100%;
+    height: 100%; }
+  .back .instagram {
+    width: 8%;
+    vertical-align: text-top; }
   .back span {
     background: #cccccc;
     padding-bottom: 50%;
@@ -1701,10 +1712,12 @@ a.active {
     margin-top: 0;
     vertical-align: top; }
 
+/*
 .content > p {
   -webkit-margin-before: 0;
-  -webkit-margin-after: 0; }
-
+  -webkit-margin-after: 0;
+}
+*/
 /*-----------------------------------------------------------------------------------*
 /* = Page
 /*-----------------------------------------------------------------------------------*/
@@ -1773,12 +1786,14 @@ a.active {
   width: 70%; }
   #post .loop-entry {
     border-bottom: 1px solid #cccccc;
-    padding-bottom: 4%;
-    margin-bottom: 7%; }
+    padding-bottom: 3%;
+    margin-bottom: 6%; }
     #post .loop-entry .date {
-      text-transform: uppercase; }
-    #post .loop-entry h2 {
-      font-size: 22px;
+      text-transform: uppercase;
+      margin-bottom: 1%; }
+    #post .loop-entry h2, #post .loop-entry h2 a {
+      font-size: 24px;
+      font-weight: 300;
       line-height: 140%;
       margin: 0 0 2%;
       text-transform: none; }
@@ -1795,11 +1810,11 @@ a.active {
       height: auto;
       margin: 1% 0 3%;
       width: 98%; }
-    #post .loop-entry p a {
+    #post .loop-entry p a, #post .loop-entry a {
       font-weight: 500; }
     #post .loop-entry p {
       line-height: 175%;
-      margin-bottom: 3%; }
+      margin-bottom: 2%; }
     #post .loop-entry .read-more {
       text-transform: uppercase; }
     #post .loop-entry .read-more:hover {
@@ -2170,8 +2185,11 @@ footer {
   animation-delay: .2s; }
 
 @media only screen and (min-width: 1200px) {
-  .fourcol .section1 {
-    display: none; }
+  /*
+.fourcol .section1 {
+	display: none;
+}
+*/
   .twocol.container .section1 {
     display: block; } }
 

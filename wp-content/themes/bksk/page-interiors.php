@@ -67,14 +67,15 @@
 	</div>
 	</div>
 	<div class="back">
-		<h3>Contact</h3>
-		<p>BKSK Architects LLP<br />
-		28 West 25th Street, 4th Fl<br />
-		New York, NY 10010<br />
-		Phone:  212.807.9600<br /></p>
-<!-- 		<p>General/Press: <a href="mailto:bkskinfo@bksk.com" target="_blank">bkskinfo@bksk.com</a></p> -->
-		<p><a href="mailto:interiors@bksk.com" target="_blank">interiors@bksk.com</a></p>
-		<p><a href="https://instagram.com/bkskinteriors" target="_blank">instagram.com/bkskinteriors</a></p>
+		<div class="content">
+			<h3>Contact</h3>
+			<p>BKSK Architects LLP<br />
+			28 West 25th Street, 4th Fl<br />
+			New York, NY 10010<br />
+			Phone:  212.807.9600<br /></p>
+			<p><a href="mailto:interiors@bksk.com" target="_blank">interiors@bksk.com</a></p>
+			<p><a href="https://instagram.com/bkskinteriors" target="_blank"><img class="instagram" src="<?php echo get_template_directory_uri(); ?>/img/instagram.svg" />/bkskinteriors</a></p>
+		</div>
 	</div>
 </div>
 </div>

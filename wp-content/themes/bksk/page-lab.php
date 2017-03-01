@@ -76,11 +76,13 @@
 	</div>
 	</div>
 	<div class="back back--lab">
-		<h3>Contact</h3>
-		<p>BKSK Architects LLP<br />
-		28 West 25th Street, 4th Fl<br />
-		New York, NY 10010<br />
-		Phone:  212.807.9600<br /></p>
+		<div class="content">
+			<h3>Contact</h3>
+			<p>BKSK Architects LLP<br />
+			28 West 25th Street, 4th Fl<br />
+			New York, NY 10010<br />
+			Phone:  212.807.9600<br /></p>
+		</div>
 	</div>
 	</div>
 </div>

@@ -6,7 +6,7 @@
 ?>
 <aside id="sidebar" class="clearfix">
 
-<?php if(is_page(5361) || is_post_type_archive('post')) { 
+<?php if(is_page(5361) || is_post_type_archive('post') || is_singular('post')) { 
 
 // (Po)st Categories 
 	echo '<div class="sidebar-box"><h3>Tags</h3>';

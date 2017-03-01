@@ -35,8 +35,8 @@
 <aside id="post">
 		<?php get_template_part( 'loop' , 'entry') ?>   
 
-<div class="nav-previous alignleft"><?php next_posts_link( 'Older (Po)sts' ); ?></div>
-<div class="nav-next alignright"><?php previous_posts_link( 'Newer (Po)sts' ); ?></div>
+<div class="nav-previous alignleft"><?php previous_posts_link( 'Newer (Po)sts' ); ?></div>
+<div class="nav-next alignright"><?php next_posts_link( 'Older (Po)sts' ); ?></div>
 
 </aside>
 
