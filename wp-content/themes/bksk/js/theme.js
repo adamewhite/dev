@@ -64,13 +64,13 @@ $(window).resize(function() {
 	var w = $(window).width();
 	if(w > 900) {
 		if($('.home--mobile').is(':visible')) {
-		  $('.home--mobile').animate({opacity:0},100);
+		  $('.home--mobile').animate({opacity:0});
 		  $('#message').animate({opacity:1});
 		}
 	} else {
 // 		if($('#main').is(':hidden')) {
+			$('#message').animate({opacity:0});
 			$('.home--mobile').animate({opacity:1});
-			$('#message').animate({opacity:0},100);
 // 		}
 	}
 });
@@ -506,7 +506,7 @@ $( "input" ).on( "click", function() {
     
     var classSelector = classFilters.join(',');
 	var class = classSelector.replace(/A\./g, '');
-    console.log(class);
+    console.log('class'+class);
 	$(class).addClass('grid-item--featured');	
     
     if ( $grid.data('isotope') ) {
@@ -624,6 +624,7 @@ function debounce( fn, threshold ) {
 	buttonFilter = '';
 	qsRegex = '';
 	window.location.hash = '';
+	filters = {};
 	$grid.isotope();
 	if(all == false) {
 		$('.filter a').find(':input').prop('checked', false);
@@ -656,7 +657,7 @@ $grid.imagesLoaded(function(){
 });
 
 $grid.on( 'arrangeComplete', function( event, filteredItems ) {
-	console.log(filter);
+// 	console.log('arrangecomplete'+filter);
 if (filteredItems.length <= 0) {
   	$('#empty').fadeIn();
 } else {

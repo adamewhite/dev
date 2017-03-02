@@ -538,7 +538,8 @@ h6 {
   opacity: 0;
   position: absolute;
   top: 15%;
-  width: 100%; }
+  width: 100%;
+  z-index: -1; }
   #message h1 {
     color: #5f5d5f;
     text-align: center; }
