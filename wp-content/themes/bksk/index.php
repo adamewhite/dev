@@ -11,6 +11,8 @@ $iPhone  = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
 $iPod    = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
 $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 
+<div class="home--browser">
+
 <?php $exclude_array = array(); ?>
 <div class="col30">
 <div class="item block rect2">
@@ -436,5 +438,9 @@ if ( $the_query->have_posts() ) {
 </div>
 
 </div>
+
+</div> <!-- home-browser -->
+
+<?php mobileMessage('smaller'); ?>
 
 <?php get_footer(); ?>

@@ -240,3 +240,19 @@ function my_nav_wrap() {
   // return the result
   return $wrap;
  }
+ 
+ function mobileBox($link, $text) {
+	 echo '<div class="item block dark-gray">
+		<div class="vertical-align-wrap">
+			<div class="vertical-align">
+				<a href="'.get_site_url().'/'.$link.'">
+					<h3>'.$text.'</h3>
+				</a>
+			</div>
+		</div>
+	</div>';
+ }
+ 
+ function mobileMessage($text) {
+	 echo '<div id="message"><h1>Please refresh for '.$text.' screen experience</h1></div>';
+ }
