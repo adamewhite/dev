@@ -252,8 +252,10 @@ body.home {
 #wrapper {
 	margin: 0 auto;
 	width: 64%;
+// 	width: 100%;
 // 	min-width: 600px;
 	max-width: 1600px;
+// 	max-width:1398px;
 	position: relative;
 	&:after { 
    content: " ";
@@ -2079,7 +2081,8 @@ $slick-opacity-not-active: 0.25 !default;
 		width: 100%;
 		h3 {
 			color: #FFF;
-			font-size: 1.3vw;
+// 			font-size: 1.3vw;
+			font-size: 16px;
 			text-align: center;
 		}
 	}
@@ -2136,7 +2139,8 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 	h3 {
 		color: #FFF;
-		font-size: 1.2vw;
+// 		font-size: 1.2vw;
+		font-size: 13px;
 		margin-bottom: 4%;
 		text-align: left;
 	}
@@ -2185,8 +2189,18 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 }
 
-.twocol.container .section1 {
+.resp-lg.section1, .resp-lg.section2 {
 	display: none;
+}
+
+.resp-lg.about {
+	display: none;
+}
+
+.discipline {
+	.resp-col1, .resp-col2 {
+		width: 49%;
+	}
 }
 
 .twocol .sq1:last-child {
@@ -2860,15 +2874,76 @@ footer {
 }
 
 @media only screen and (min-width: 1200px) {
-/*
-.fourcol .section1 {
+.resp-hack {
+	margin-top: -.9%;
+}
+
+.resp-sm.section1, .resp-sm.section2, .resp-fourcol {
 	display: none;
 }
-*/
 
-.twocol.container .section1 {
+.resp-lg.section1, .resp-lg.section2 {
 	display: block;
 }
+
+.discipline {
+	.resp-col1, .resp-col2 {
+// 		margin-right: 1% !important;
+		overflow: hidden;
+	}
+}
+
+.resp-lg.about {
+	display: block;
+}
+
+.resp-sm.about {
+	display: none;
+}
+
+.page .rect1 h1 {
+	font-size: 3.4vw;
+}
+
+.discipline .resp-col1 {
+	margin-right: 1.5% !important;
+	width: 38.8%;
+}
+
+.discipline .resp-col2 {
+	margin-right: 0 !important;
+	width: 59.65% !important;
+	.sq2 {
+		float: left;
+		margin-bottom: 3%;
+		width: 65%;
+	}
+	.sq2:first-of-type {
+		margin-right: 2.5%;
+	}
+	.sq1 {
+		margin-right: 0;
+		margin-bottom: 3%;
+		width: 31%;
+	}
+	.block {
+		padding-bottom: 31%;
+	}
+	.resp-lg.section2 {
+		margin-right: 3% !important;
+		width: 31% !important;
+		.sq1 {
+			width: 100%;
+		}
+		.sq1:first-of-type {
+			margin-bottom: 8%;
+		}
+		.block {
+			padding-bottom: 100%;
+		}
+	}
+}
+
 }
 	
 @media only screen and (max-width: 1200px) {
@@ -2993,10 +3068,12 @@ footer {
 	width: 98% !important;
 }
 
+/*
 .twocol, .fourcol {
 	margin-bottom: 2% !important;
 	width: 48% !important;
 }
+*/
 
 .work-box {
 	margin-bottom: 6%;
@@ -3030,6 +3107,10 @@ footer {
 } 
 
 @media only screen and (max-width: 490px) {
+body {
+	font-size: 11px;
+}
+
 #main {
 	padding-top: 4%;
 }
@@ -3115,8 +3196,30 @@ footer {
 }
 
 .twocol, .threecol, .fourcol, .fivecol {
-	margin-bottom: 2% !important;
+	margin-bottom: 3% !important;
 	width: 98% !important;
+}
+
+.discipline {
+	.block {
+		margin-bottom: 3%;
+	}
+	.twocol, .sq2 {
+		margin-right: 0 !important;
+	}
+	.twocol {
+		margin-bottom: 0 !important;
+	}
+	.fourcol .sq1 {
+		width: 48%;
+		&:first-of-type {
+			margin-right: 4%;
+			margin-bottom: 0;
+		}
+	}
+	.sq1.block {
+		padding-bottom: 48% !important;
+	}
 }
 
 .footer__subnav, footer .social {

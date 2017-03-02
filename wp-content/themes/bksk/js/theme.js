@@ -64,37 +64,38 @@ $(window).resize(function() {
 	var w = $(window).width();
 	if(w > 900) {
 		if($('.home--mobile').is(':visible')) {
-		  $('.home--mobile').animate({opacity:0});
+		  $('.home--mobile').animate({opacity:0},100);
 		  $('#message').animate({opacity:1});
 		}
 	} else {
 // 		if($('#main').is(':hidden')) {
 			$('.home--mobile').animate({opacity:1});
-			$('#message').animate({opacity:0});
+			$('#message').animate({opacity:0},100);
 // 		}
 	}
 });
 
 } else if($('body').hasClass('home')) {
-
+$(document).ready(function(){
 	var w = $(window).width();
 	if (w <= 900) {
 		document.location = "mobile";
 	} else {
 		$('#main').delay(0).animate({opacity: 1});
 	}
+});
 
 $(window).resize(function() {
 	var w = $(window).width();
 	if(w < 900) {
 		if($('.home--browser').is(':visible')) {
 		  $('.home--browser').animate({opacity:0});
-		  $('#message').animate({opacity:1});
+			 $('#message').animate({opacity:1}); 
 		}
 	} else {
 // 		if($('#main').is(':hidden')) {
-			$('.home--browser').animate({opacity:1});
 			$('#message').animate({opacity:0});
+			$('.home--browser').animate({opacity:1});
 // 		}
 	}
 });
