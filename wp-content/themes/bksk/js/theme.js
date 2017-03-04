@@ -413,7 +413,6 @@ $( "input" ).on( "click", function() {
     	selected = $(this),
         name = $this.attr('data-filter-name'),
         value = $this.attr('data-filter-value'),
-        type = $this.attr('data-filter-type'),
         isoFilters = [],
         filterName, prop;
 	
@@ -443,6 +442,7 @@ $( "input" ).on( "click", function() {
   	if($this.parents('ul').hasClass('specialty')) {
 	  	$.each( filters, function(key, value){
 		  	if(key.indexOf('type') != -1) {
+			  	console.log('delete key');
 				delete filters[ key ]; 
 				$('.project_type li').removeClass('selected');
 		  	}
@@ -460,25 +460,32 @@ $( "input" ).on( "click", function() {
   	//regular filters
 	if($this.parents('li').hasClass('selected') && !$this.parents('li').hasClass('discipline') && !$this.parents('ul').hasClass('specialty')) {
 		console.log('delete');
+		if(name == 'int_type' && filters['int_type'] != undefined) {
+		}
 		delete filters[ name ];
 		$this.parents('li').removeClass('selected');
 	} else if($this.parents('li').hasClass('selected') && $this.parents('li').hasClass('discipline')) {
-		if(value == '.Architecture') {
-			value = '.Interiors';
+		if(value == '.architecture') {
+			value = '.interiors';
 		} else {
-			value = '.Architecture';
+			value = '.architecture';
 		}
 		filters[ name ] = value;	
 		$this.parents('li').removeClass('selected');
 	} else if($this.parents('li').hasClass('selected') && $this.parents('ul').hasClass('specialty')) {
-		console.log('remove');
+		console.log('delete2');
 		delete filters[ name ];
 		$('.specialty').find('.selected').removeClass('selected');
 		$('.specialty').find('input:checked').prop('checked', false);
 	} else {
 // 		console.log('add');
-		console.log(filters);
+// 		console.log(filters);
+
+		if(name == 'int_type' && filters['int_type'] != undefined) {
+			value = value+','+filters['int_type'];
+		}
 		filters[ name ] = value;
+// 		console.log(filters);
 		if($('ul.specialty .selected').length != 0) {
 			$('.specialty').find('.selected').removeClass('selected');
 			$('.specialty').find('input:checked').prop('checked', false);
@@ -493,10 +500,11 @@ $( "input" ).on( "click", function() {
     var classFilters = isoFilters.map(function(el) {
 	    return '.featured_A'+el;
 	}); 
+	console.log(isoFilters);
     
     var filterSelector = isoFilters.join('');
     
-    if(value == '.Architecture' || value == '.Interiors') {
+    if(value == '.architecture' || value == '.interiors') {
 	    newDiscipline = true;
 	    filterDisplay(filterSelector, newDiscipline, $this);
     } else {
@@ -562,52 +570,51 @@ function debounce( fn, threshold ) {
 	var selectedClass = selected.attr('class');
 // 	console.log('selected: '+selectedClass);
 	if(newDiscipline == true) {
-	if(filterValue == '.Architecture') {
-		console.log('filterDisplay: Architecture');
+	if(filterValue == '.architecture') {
+// 		console.log('filterDisplay: architecture');
 		$('.filter').fadeOut();
 		$('.filter'+filterValue).delay(100).fadeIn();
   	} else {
-	  	if($('ul.Interiors').is(':hidden')) {
-		  	console.log('ya');
+	  	if($('ul.interiors').is(':hidden')) {
 			$('.filter').fadeOut();
 			$('.filter'+filterValue).fadeIn();
 		}
 	}
 	} else {
-	if(selected.parents('ul').hasClass('Architecture')) {
-		console.log('true');
-		if($('ul.Architecture').is(':visible')) {
+	if(selected.parents('ul').hasClass('architecture')) {
+// 		console.log('true');
+		if($('ul.architecture').is(':visible')) {
 			
 		} else {
-			console.log('arch');
+// 			console.log('arch');
 			$('.filter').fadeOut();
-			$('.filter.Architecture').delay(100).fadeIn();	
+			$('.filter.architecture').delay(100).fadeIn();	
 		}
 	} else if(filterValue.search('interiors') != -1 || filterValue.search('environments') != -1) {
-		if($('.filter.Interiors').is(':visible')) {
+		if($('.filter.interiors').is(':visible')) {
 		} else {
-			console.log('ya1');
+// 			console.log('ya1');
 			$('.filter').fadeOut();
-			$('.filter.Interiors').fadeIn();	
+			$('.filter.interiors').fadeIn();	
 		}
-		if(!$('a.Interiors').hasClass('selected')) {
-			$('a.Interiors input').prop('checked', true);
-			$('a.Interiors').parents('li').addClass('selected');
+		if(!$('a.interiors').hasClass('selected')) {
+			$('a.interiors input').prop('checked', true);
+			$('a.interiors').parents('li').addClass('selected');
 		}
 	} else if(filterValue.search('.sustainability') != -1) {
 		$('.filter--three').fadeOut(100);
-	  	$('a.sustainability input, a.Architecture input').prop('checked', true);
-		$('a.sustainability, a.Architecture').parent('li').addClass('selected');
-		$('.filter--two.Architecture').delay(100).fadeIn();
+	  	$('a.sustainability input, a.architecture input').prop('checked', true);
+		$('a.sustainability, a.architecture').parent('li').addClass('selected');
+		$('.filter--two.architecture').delay(100).fadeIn();
   	} else if(filterValue.search('.preservation') != -1) {
-		console.log('filterDisplay: Preservation');
-		$('a.preservation input, a.Architecture input').prop('checked', true);
-// 		$('a.preservation, a.Architecture').parent('li').addClass('selected');
-		$('.filter.Interiors, .filter--three.Architecture').fadeOut(0);
-		$('.filter--two.Architecture,.filter--three.Preservation').delay(400).fadeIn();
-	} else if(filterValue.search('.sustainability') == -1 && filterValue.search('.preservation') == -1 && !selected.parents('ul').hasClass('Interiors')) {
+// 		console.log('filterDisplay: Preservation');
+		$('a.preservation input, a.architecture input').prop('checked', true);
+// 		$('a.preservation, a.architecture').parent('li').addClass('selected');
+		$('.filter.interiors, .filter--three.architecture').fadeOut(0);
+		$('.filter--two.architecture,.filter--three.Preservation').delay(400).fadeIn();
+	} else if(filterValue.search('.sustainability') == -1 && filterValue.search('.preservation') == -1 && !selected.parents('ul').hasClass('interiors')) {
 		$('.filter--three').fadeOut(100);
-		$('.filter--three.Architecture').delay(400).fadeIn();
+		$('.filter--three.architecture').delay(400).fadeIn();
 	} 
 
 	}
@@ -643,6 +650,7 @@ $grid.imagesLoaded(function(){
 		itemSelector: '.grid-item',
 		layoutMode: 'packery',
 // 		filter: filterSelector,
+// 		filter: '.work-environments,.community-environments',
 		filter: function() {
 	    	var $this = $(this);
 			var searchResult = qsRegex ? $this.find('h3').text().match( qsRegex ) : true;

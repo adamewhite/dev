@@ -123,56 +123,76 @@ add_image_size( 'loop', 1024, 512, true );
 add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
 
 function work_url($slug) {
-	return get_site_url().'/work/#.'.$slug;
+	return get_site_url().'/work/#'.$slug;
 }
 
-function disciplineImage($type, $slug, $url, $title) { 
-	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'meta_query' => array(
-		'relation' => 'AND',
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		),
-		array(
-			'key' => $type,
-			'compare'    => 'LIKE',
-			'value'    => $slug
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
-	return '<a href="'.work_url($url).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /><div class="text grad-bg"><h3>'.$title.'</h3></div></a>';
+function homeImage($type, $img, $nav, $url, $title) { 
+	if($nav == 'work') {
+		$link = work_url($url);
+	} else {
+		$link = get_site_url().'/'.$url;
 	}
-} 	
+	$ids = array();
+	$feat_types = get_field('featured_'.$type, 5376);
+	if($feat_types) {
+		foreach($feat_types as $feat_type) {
+			array_push($ids, $feat_type->ID);
+		}
+	}
+	shuffle($ids);
+	$args = array(
+		'post_type' => 'work',
+		'orderby' => 'rand',
+		'post__in' => $ids,
+		'posts_per_page' => 1
+	);
+	$the_query = new WP_Query( $args );
+	if ( $the_query->have_posts() ) {
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
+			$interiors_feat_img = get_field('interiors_feat_img');
+			if($img == 'interiors' && $interiors_feat_img != '') {
+				$feat_img = get_field('interiors_feat_img');
+				$feat_img = $feat_img['sizes']['sq500'];
+			} else {
+				$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');	
+				$feat_img = $feat_img[0];
+			}
+			return '<a href="'.$link.'"><img src="'.$feat_img.'" alt="'.get_the_title().'" /><div class="text  grad-bg--top"><h3>'.$title.'</h3></div></a>';
+		}
+	} 	
 }
 
-function disciplineImageFeat($type, $slug, $url, $title) { 
-	if($slug == 'featured_adaptive') {
-		$ids = array(3324, 1221,1682);
+function disciplineImage($type, $img, $url, $title) { 
+	$ids = array();
+	$feat_types = get_field('featured_'.$type, 5376);
+	if($feat_types) {
+		foreach($feat_types as $feat_type) {
+			array_push($ids, $feat_type->ID);
+		}
 	}
+	shuffle($ids);
 	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'post__in' => $ids,
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-		$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
-	return '<a href="'.work_url($url).'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" /><div class="text grad-bg"><h3>'.$title.'</h3></div></a>';
-	}
-} 	
+		'post_type' => 'work',
+		'orderby' => 'rand',
+		'post__in' => $ids,
+		'posts_per_page' => 1
+	);
+	$the_query = new WP_Query( $args );
+	if ( $the_query->have_posts() ) {
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
+			$interiors_feat_img = get_field('interiors_feat_img');
+			if($img == 'interiors' && $interiors_feat_img != '') {
+				$feat_img = get_field('interiors_feat_img');
+				$feat_img = $feat_img['sizes']['sq500'];
+			} else {
+				$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');	
+				$feat_img = $feat_img[0];
+			}
+			return '<a href="'.work_url($url).'"><img src="'.$feat_img.'" alt="'.get_the_title().'" /><div class="text grad-bg"><h3>'.$title.'</h3></div></a>';
+		}
+	} 	
 }
 
 function set_custom_post_types_admin_order($wp_query) {  

@@ -17,24 +17,14 @@
 </div>
 
 <div class="item float sq2">
-<?php echo disciplineImageFeat('preservation_project_type', 'featured_adaptive','preservation.adaptive','adaptive reuse/restoration'); ?>
-<!--
-<div class="text">	
-	<h3>adaptive reuse/restoration</h3>
-</div>
--->	
+<?php echo disciplineImage('adaptive-reuse', 'architecture', '.adaptive-reuse','adaptive reuse/restoration'); ?>
 </div>
 
 </div>
 
 <div class="twocol">
 	<div class="item sq2">
-<?php echo disciplineImage('preservation_project_type', 'new','preservation.new','new buildings in landmark districts'); ?>
-<!--
-<div class="text">	
-	<h3>new buildings in landmark</h3>
-</div>
--->	
+<?php echo disciplineImage('landmark-districts', 'architecture', '.landmark-districts','new buildings in landmark districts'); ?>
 </div>
 
 <div class="item sq1 bw">
@@ -55,7 +45,6 @@
 </div>
 </div>
 
-<!-- <div class="clearfix"></div> -->
 <div class="twocol first">
 
 <div class="block float sq1"></div>
@@ -72,28 +61,16 @@
 </div>
 
 <div class="item rect1 historic block">
-<?php echo disciplineImage('preservation_project_type', 'historic','preservation.historic','historic resource analyses'); ?>
-<!--
-<div class="text">	
-	<h3>historic resource analyses</h3>
-</div>
--->	
+<?php echo disciplineImage('historic-resource', 'architecture', '.historic-resource','historic resource analysis'); ?>
 </div>
 
 </div>
 
 <div class="twocol last">
 	<div class="item sq2">
-	<?php echo disciplineImage('preservation_project_type', 'extending','preservation.extending','expanding our preservation ethos'); ?>
-<!--
-<div class="text">	
-	<h3>expanding our preservation ethos</h3>
-</div>	
--->
+	<?php echo disciplineImage('preservation-ethos', 'architecture', '.preservation-ethos','expanding our preservation ethos'); ?>
 </div>
 </div>
 	
-
-
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

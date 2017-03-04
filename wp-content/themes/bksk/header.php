@@ -23,7 +23,8 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.2.1.1.min.js"></script>
 	<meta property="og:type" content="website" />       
 	<meta property="og:image" content="<?php the_field('logo',30); ?>" />      
 	<meta property="og:url" content="<?php echo get_site_url(); ?>" />

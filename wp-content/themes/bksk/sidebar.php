@@ -4,7 +4,7 @@
  * @subpackage BKSK
  */
 ?>
-<aside id="sidebar" class="clearfix">
+<aside id="sidebar">
 
 <?php if(is_page(5361) || is_post_type_archive('post') || is_singular('post')) { 
 	get_search_form();

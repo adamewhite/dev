@@ -28,7 +28,7 @@
 
 <div class="twocol">
 	<div class="item sq2">
-	<?php echo disciplineImage('specialty', 'sustainability','sustainability','projects we\'ve done'); ?>
+	<?php echo disciplineImage('sustainability', 'architecture', '.sustainability', 'projects we\'ve done'); ?>
 	</div>
 
 	<div class="item sq1 bw">

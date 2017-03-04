@@ -39,80 +39,13 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 
 <div class="col lg last">
 <div class="item bg work-link sq2">
-<?php $args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'tax_query' => array(
-		'relation' => 'AND',
-		array(
-			'taxonomy' => 'project_type',
-			'field'    => 'slug',
-			'terms'    => array( 'cultural-civic' )
-		)
-	),
-	'meta_query' => array(
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	array_push($exclude_array, $post->ID);
-	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('cultural-civic').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
-	}
-} ?>
-<div class="text  grad-bg--top">	
-	<h3>cultural & civic</h3>
-</div>	
-</a>
+	<?php echo homeImage('cultural-civic', 'architecture', 'work', '.cultural-civic', 'Cultural & Civic'); ?>	
 </div>
 </div>
 
 <div class="col lg first">
 <div class="item work-link sq2">
-<?php 
-	$exclude_ids = array(implode(",", $exclude_array));
-	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'post__not_in' => $exclude_array,
-	'tax_query' => array(
-		'relation' => 'AND',
-		array(
-			'taxonomy' => 'project_type',
-			'field'    => 'slug',
-			'terms'    => array( 'commercial' )
-		)
-	),
-	'meta_query' => array(
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	array_push($exclude_array, $post->ID);
-	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('commercial').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
-	}
-} ?>
-<div class="text  grad-bg--top">	
-	<h3>commercial</h3>
-</div>
-</a>
+	<?php echo homeImage('commercial', 'architecture', 'work', '.commercial', 'Commercial'); ?>
 </div>
 </div>
 
@@ -138,42 +71,11 @@ if ( $the_query->have_posts() ) {
 		<div class="grid-sizer"></div>
 		<div class="gutter-sizer"></div>
 <div class="item grid-item--med grid-item work-link sq2">
-<?php 
-	$exclude_ids = array(implode(",", $exclude_array));
-	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'post__not_in' => $exclude_array,
-	'tax_query' => array(
-		'relation' => 'AND',
-		array(
-			'taxonomy' => 'project_type',
-			'field'    => 'slug',
-			'terms'    => array( 'multi-family', 'traditional-home' )
-		)
-	),
-	'meta_query' => array(
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	array_push($exclude_array, $post->ID);
-	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('living-environments').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
-	}
-} ?>
-<div class="text grad-bg--top">	
-	<h3>residential</h3>
-</div>
-</a>
+	
+	<?php 
+		$options = array('multi-family', 'modern-home', 'traditional-home');
+		shuffle($options);
+		echo homeImage($options[0], 'architecture', 'work', '.multi-family,.modern-home,.traditional-home', 'Residential'); ?>
 </div>
 
 <div class="item grid-item--med grid-item block h1-small rect2">
@@ -205,40 +107,7 @@ if ( $the_query->have_posts() ) {
 </div>
 
 <div class="item grid-item--med work-link sq2">
-<?php 
-	$exclude_ids = array(implode(",", $exclude_array));
-	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'post__not_in' => $exclude_array,
-	'meta_query' => array(
-		'relation' => 'AND',
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		),
-		array(
-			'key' => 'specialty',
-			'compare' => 'LIKE',
-			'value' => 'preservation'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	array_push($exclude_array, $post->ID);
-	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.get_site_url().'/preservation"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
-	}
-} ?>
-<div class="text grad-bg--top">	
-	<h3>preservation+</h3>
-</div>
-</a>
+	<?php echo homeImage('preservation', 'architecture', 'discipline', 'preservation', 'Preservatino+'); ?>
 </div>
 
 <div class="item grid-item--lg block clear rect2">
@@ -256,39 +125,7 @@ if ( $the_query->have_posts() ) {
 <div class="col lg first">
 
 <div class="item grid-item work-link sq2">
-<?php 
-	$exclude_ids = array(implode(",", $exclude_array));
-	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'post__not_in' => $exclude_array,
-	'meta_query' => array(
-		'relation' => 'AND',
-		array(
-			'key' => 'discipline',
-			'compare' => 'LIKE',
-			'value' => 'Interiors'
-		),
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.get_site_url().'/interiors"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
-	}
-} ?>
-<div class="text grad-bg--top">	
-	<h3>interiors</h3>
-</div>
-</a>
+	<?php echo homeImage('interiors', 'interiors', 'discipline', 'interiors', 'Interiors'); ?>
 </div>
 </div>
 
@@ -307,40 +144,7 @@ if ( $the_query->have_posts() ) {
 
 <div class="col lg last">
 <div class="item work-link sq2">
-<?php 
-	$exclude_ids = array(implode(",", $exclude_array));
-	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'post__not_in' => $exclude_array,
-	'meta_query' => array(
-		'relation' => 'AND',
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		),
-		array(
-			'key' => 'specialty',
-			'compare' => 'LIKE',
-			'value' => 'Sustainability'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	array_push($exclude_array, $post->ID);
-	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('sustainability').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
-	}
-} ?>
-<div class="text grad-bg--top">	
-	<h3>sustainability</h3>
-</div>
-</a>
+	<?php echo homeImage('sustainability', 'architecture', 'discipline', 'lab', 'Sustainability'); ?>
 </div>
 </div>
 
@@ -349,81 +153,11 @@ if ( $the_query->have_posts() ) {
 
 <div class="col20">
 <div class="item work-link sq2">
-<?php 
-	$exclude_ids = array(implode(",", $exclude_array));
-	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'post__not_in' => $exclude_array,
-	'tax_query' => array(
-		'relation' => 'AND',
-		array(
-			'taxonomy' => 'project_type',
-			'field'    => 'slug',
-			'terms'    => array( 'education' )
-		)
-	),
-	'meta_query' => array(
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	array_push($exclude_array, $post->ID);
-	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('education').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
-	}
-} ?>
-<div class="text grad-bg--top">	
-	<h3>education</h3>
-</div>
-</a>
+	<?php echo homeImage('education', 'architecture', 'work', '.education', 'Education'); ?>
 </div>
 
 <div class="item work-link sq2">
-<?php 
-	$exclude_ids = array(implode(",", $exclude_array));
-	$args = array(
-	'post_type' => 'work',
-	'orderby' => 'rand',
-	'post__not_in' => $exclude_array,
-	'tax_query' => array(
-		'relation' => 'AND',
-		array(
-			'taxonomy' => 'project_type',
-			'field'    => 'slug',
-			'terms'    => array( 'community' )
-		)
-	),
-	'meta_query' => array(
-		array(
-			'key' => 'featured',
-			'compare' => '==',
-			'value' => '1'
-		)
-	),
-	'posts_per_page' => 1
-);
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) {
-	$the_query->the_post();
-	array_push($exclude_array, $post->ID);
-	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('community').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
-	}
-} ?>
-<div class="text grad-bg--top">	
-	<h3>community</h3>
-</div>
-</a>
+	<?php echo homeImage('community', 'architecture', 'work', '.community', 'Community'); ?>
 </div>
 
 <div class="item block med">

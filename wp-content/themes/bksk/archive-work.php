@@ -14,20 +14,20 @@
 	<div class="fourcol">
 		<h3>Discipline</h3>
 		<ul class="discipline">
-			<li class="discipline"><a href="#filter=.Architecture" class="Architecture" data-filter-name="discipline1" data-filter-value=".Architecture" data-filter=".Architecture"><label class="control control--checkbox">Architecture<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
-			<li class="discipline"><a href="#filter=.Interiors" class="Interiors" data-filter-name="discipline2" data-filter-value=".Interiors" data-filter=".Interiors"><label class="control control--checkbox">Interiors<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+			<li class="discipline"><a href="#filter=.architecture" class="architecture" data-filter-name="discipline1" data-filter-value=".architecture" data-filter=".Architecture"><label class="control control--checkbox">Architecture<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+			<li class="discipline"><a href="#filter=.interiors" class="interiors" data-filter-name="discipline2" data-filter-value=".interiors" data-filter=".interiors"><label class="control control--checkbox">Interiors<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 		</ul>
 	</div>
 	<div class="fourcol">
-		<div class="project_type filter filter--two Interiors">
+		<div class="project_type filter filter--two interiors">
 			<h3>Project Type</h3>
-			<ul id="project_type" class="project_type Interiors">			
-				<li><a href="#filter=.living-environments" data-filter-name="int_type1" class="interiors-living" data-filter-value=".living-environments" data-filter=".living-environments"><label class="control control--checkbox">Living Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
-				<li><a href="#filter=.work-environments" class="interiors-work" data-filter-name="int_type2" data-filter-value=".work-environments" data-filter=".work-environments"><label class="control control--checkbox">Work Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
-				<li><a href="#filter=.community-environments" class="interiors-community" data-filter-name="int_type3" data-filter-value=".community-environments" data-filter=".community-environments"><label class="control control--checkbox">Community Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+			<ul id="project_type" class="project_type interiors">		
+				<li><a href="#filter=.living-environments" data-filter-name="int_type" class="interiors-living" data-filter-value=".living-environments" data-filter=".living-environments"><label class="control control--checkbox">Living Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+				<li><a href="#filter=.work-environments" class="interiors-work" data-filter-name="int_type" data-filter-value=".work-environments" data-filter=".work-environments"><label class="control control--checkbox">Work Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
+				<li><a href="#filter=.community-environments" class="interiors-community" data-filter-name="int_type" data-filter-value=".community-environments" data-filter=".community-environments"><label class="control control--checkbox">Community Environments<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
 			</ul>
 		</div>
-		<div class="filter filter--two Architecture">
+		<div class="filter filter--two architecture">
 			<h3>Specialty</h3>
 			<ul id="filter" class="specialty">
 				<li><a href="#filter=.preservation" class="preservation" data-filter-name="specialty" data-filter-value=".preservation" data-filter=".preservation"><label class="control control--checkbox">Preservation+<input type="checkbox"/><div class="control__indicator"></div></label></a></li>
@@ -36,9 +36,9 @@
 		</div>
 	</div>
 	<div class="fourcol">
-	<div class="project_type filter filter--three Architecture">
+	<div class="project_type filter filter--three architecture">
 		<h3>Project Type</h3>
-	<ul id="filter" class="project_type Architecture">
+	<ul id="filter" class="project_type architecture">
 	<?php $terms = get_terms( array(
 		'taxonomy' => 'project_type',
 		'hide_empty' => false,
@@ -54,14 +54,15 @@
 	<div class="project_type filter filter--three Preservation">
 		<h3>Project Type</h3>
 	<ul id="project_type" class="project_type">
-	<?php 
-		$count = 0;
-		$field_key = 'field_586675d92359a';
-		$field = get_field_object($field_key);
-		$preservations = $field['choices'];
-	foreach($field['choices'] as $k => $v) {
-		$count++;
-		echo '<li><a href="#filter=.'.$k.'" class="'.$k.'" data-filter-name="type'.$count.'" data-filter-value=".'.$k.'" data-filter=".'.$k.'"><label class="control control--checkbox">'.$v.'<input type="checkbox"/><div class="control__indicator"></div></label></a></li>';
+	<?php $terms = get_terms( array(
+		'taxonomy' => 'specialty',
+		'hide_empty' => false,
+		'exclude' => array(184,17)
+	)); 
+	$term_count = 0;
+	foreach($terms as $term) {
+		$term_count++;
+		echo '<li><a href="#filter=.'.$term->slug.'" class="'.$term->slug.'" data-filter-name="type'.$term_count.'" data-filter-value=".'.$term->slug.'" data-filter=".'.$term->slug.'"><label class="control control--checkbox">'.$term->name.'<input type="checkbox"/><div class="control__indicator"></div></label></a></li>';
 	} ?>
 	</ul>
 	</div>	
@@ -102,6 +103,22 @@ foreach($types as $type) {
 	}
 }
 
+	$feat_archs = get_field('featured_architecture', 5376);
+	if($feat_archs) {
+		foreach($feat_archs as $feat_arch) {
+			echo $feat_arch->ID;
+			array_push($f_types, array('id' => $feat_arch->ID, 'type' => 'architecture'));
+		}
+	}
+	
+	$feat_interiors = get_field('featured_interiors', 5376);
+	if($feat_interiors) {
+		foreach($feat_interiors as $feat_interior) {
+			array_push($f_types, array('id' => $feat_interior->ID, 'type' => 'interiors'));
+		}
+	}
+	
+
 // var_dump($f_types);
 	
 $count = 0;
@@ -122,15 +139,16 @@ $featured = get_post_meta(get_the_ID(), 'featured', true);
 $count++;
 //get featured img
 $disciplines = get_field('discipline');
-$specialties = get_field('specialty');
-$interiors = get_field('interiors_project_type');
-$preservations = get_field('preservation_project_type');
+
 // $feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq1');
 // $feat_img2 = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
+$keywords = get_field('keywords');
 $feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq500');
-// $feat_img = 'http://localhost:8888/wp-content/uploads/2017/01/Reactive-Digital-Wall-500x500.jpg';
+
 //get terms
-$terms = get_the_terms( get_the_ID(), 'project_type' );
+$project_terms = get_the_terms( get_the_ID(), 'project_type' );
+$interior_terms = get_the_terms( get_the_ID(), 'interior_project_type' );
+$specialty_terms = get_the_terms( get_the_ID(), 'specialty' );
 $types = array();
 	if(search($f_types, 'id', $post->ID) != '') {
 		$values = search($f_types, 'id', $post->ID);
@@ -147,12 +165,12 @@ $types = array();
 ?>  
 <?php if($feat_img) { ?>
 
-	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; if($specialties) foreach($specialties as $specialty) echo strtolower($specialty).' '; if($interiors) foreach($interiors as $interior) echo $interior.'-environments '; if($preservations) foreach($preservations as $preservation) echo ''.$preservation.' '; if($terms) foreach ($terms as $term) echo $term->slug .' '; if($featured == 1) : echo 'featured_Architecture '; endif; if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
+	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; if($project_terms) foreach ($project_terms as $p_term) echo $p_term->slug .' '; if($interior_terms) foreach ($interior_terms as $i_term) echo $i_term->slug .' '; if($specialty_terms) foreach ($specialty_terms as $s_term) echo $s_term->slug .' ';  if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
 
 	    <a href="<?php the_permalink(); ?>">
 		    <img src="<?php echo $feat_img[0]; ?>" alt="<?php echo the_title(); ?>" />
 		<div class="text grad-bg">
-			<h3><?php the_title(); ?></h3>		  	
+			<h3><?php the_title(); ?><?php if($keywords) echo '<span class="keywords">'.$keywords.'</span>'; ?></h3>		  	
 		</div>
 	    </a>
 	    

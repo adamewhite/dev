@@ -19,7 +19,7 @@
 </div>
 
 <div class="float item sq2">
-<?php echo disciplineImage('interiors_project_type', 'living','living-environments','living environments'); ?>
+<?php echo disciplineImage('living-environments', 'interiors', '.living-environments','living environments'); ?>
 </div>
 
 <div class="resp-lg section1">
@@ -55,7 +55,7 @@
 
 <div class="twocol resp-col2">
 	<div class="sq2 item">
-	<?php echo disciplineImage('interiors_project_type', 'work','work-environments','work environments'); ?>
+	<?php echo disciplineImage('work-environments', 'interiors', '.work-environments','work environments'); ?>
 </div>
 
 <div class="sq1 bw item resp-sm about">
@@ -138,7 +138,7 @@
 
 
 <div class="sq2 item resp-hack">
-	<?php echo disciplineImage('interiors_project_type', 'community', 'community-environments','community environments'); ?>
+	<?php echo disciplineImage('community-environments', 'interiors', '.community-environments', 'community environments'); ?>
 </div>
 
 </div><!-- twocol -->

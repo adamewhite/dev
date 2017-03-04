@@ -1174,6 +1174,8 @@ a.active {
     .grid-work .text h3 {
       color: #FFF;
       font-size: .9vw; }
+      .grid-work .text h3 .keywords {
+        display: none; }
   .grid-work .grid-item--featured {
     width: 39%; }
     .grid-work .grid-item--featured .text h3 {
@@ -1504,7 +1506,7 @@ a.active {
       opacity: 0.75; }
 
 /*-----------------------------------------------------------------------------------*
-/* = Interiors
+/* = interiors
 /*-----------------------------------------------------------------------------------*/
 .page-id-4964 .rect1 h2 {
   font-size: 2.6vw !important;
@@ -1757,6 +1759,9 @@ a.active {
 
 .grid-community .last .twocol:nth-child(3) {
   margin-right: 0; }
+
+.grid-community img {
+  width: 100%; }
 
 .column-2 {
   -moz-column-count: 2;

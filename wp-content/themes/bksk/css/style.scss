@@ -1531,6 +1531,9 @@ a.active {
 		h3 {
 			color: #FFF;
 			font-size: .9vw;
+			.keywords {
+				display: none;
+			}
 		}
 	}
 	.grid-item--featured {
@@ -1995,7 +1998,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 
 /*-----------------------------------------------------------------------------------*
-/* = Interiors
+/* = interiors
 /*-----------------------------------------------------------------------------------*/
 .page-id-4964 .rect1 h2 {
 	font-size: 2.6vw!important;
@@ -2318,6 +2321,9 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 	.last .twocol:nth-child(3) {
 		margin-right: 0;
+	}
+	img {
+		width: 100%;
 	}
 }
 
