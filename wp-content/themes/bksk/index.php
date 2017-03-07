@@ -107,7 +107,7 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 </div>
 
 <div class="item grid-item--med work-link sq2">
-	<?php echo homeImage('preservation', 'architecture', 'discipline', 'preservation', 'Preservatino+'); ?>
+	<?php echo homeImage('preservation', 'architecture', 'discipline', 'preservation', 'Preservation+'); ?>
 </div>
 
 <div class="item grid-item--lg block clear rect2">
