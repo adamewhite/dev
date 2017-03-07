@@ -276,3 +276,13 @@ function my_nav_wrap() {
  function mobileMessage($text) {
 	 echo '<div id="message"><h1>Please refresh for '.$text.' screen experience</h1></div>';
  }
+
+function filter_images($content){
+	if(is_page(5361) || is_archive()) {
+		$new_content = preg_replace('/<img (.*) \/>\s*/iU', '<span class="className"><b><img \1 /></b></span>', $content);
+	} else {
+		$new_content = $content;
+	}
+    	return $new_content;
+}
+add_filter('the_content', 'filter_images');
