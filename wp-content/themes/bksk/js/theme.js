@@ -627,6 +627,7 @@ function debounce( fn, threshold ) {
   
   function reset(all) {
 	console.log('reset & all: '+all);
+	$('.featured_default').addClass('grid-item--featured');
 	$('.quicksearch').val('');
 	buttonFilter = '';
 	qsRegex = '';
@@ -645,6 +646,7 @@ function debounce( fn, threshold ) {
 
 $grid.imagesLoaded(function(){
 	$('.grid-work').animate({opacity: 1});
+	$('.featured_default').addClass('grid-item--featured');
 	$grid.isotope({
 		percentPosition: true,
 		itemSelector: '.grid-item',

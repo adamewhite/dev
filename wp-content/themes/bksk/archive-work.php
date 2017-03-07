@@ -118,6 +118,13 @@ foreach($types as $type) {
 		}
 	}
 	
+	$feat_defaults = get_field('featured', 5376);
+	if($feat_defaults) {
+		foreach($feat_defaults as $feat_default) {
+			array_push($f_types, array('id' => $feat_default->ID, 'type' => 'default'));
+		}
+	}
+	
 
 // var_dump($f_types);
 	
@@ -165,7 +172,7 @@ $types = array();
 ?>  
 <?php if($feat_img) { ?>
 
-	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; if($project_terms) foreach ($project_terms as $p_term) echo $p_term->slug .' '; if($interior_terms) foreach ($interior_terms as $i_term) echo $i_term->slug .' '; if($specialty_terms) foreach ($specialty_terms as $s_term) echo $s_term->slug .' ';  if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
+	<div class="grid-item <?php if($disciplines) foreach($disciplines as $discipline) echo strtolower($discipline).' '; if($project_terms) foreach ($project_terms as $p_term) echo $p_term->slug .' '; if($interior_terms) foreach ($interior_terms as $i_term) echo $i_term->slug .' '; if($specialty_terms) foreach ($specialty_terms as $s_term) echo $s_term->slug .' ';  if($types) foreach($types as $type) echo 'featured_'.$type.' ' ;?>">
 
 	    <a href="<?php the_permalink(); ?>">
 		    <img src="<?php echo $feat_img[0]; ?>" alt="<?php echo the_title(); ?>" />
@@ -179,7 +186,7 @@ $types = array();
 <?php if($featured == 0) {
 	$small_count++;
 } if($small_count == 4 || $small_count == 12 || $small_count == 20 || $small_count == 28) {
-	echo '<div class="grid-item grid-item--block ';if($disciplines) foreach($disciplines as $discipline) echo $discipline.' '; echo '"></div>';
+	echo '<div class="grid-item grid-item--block ';if($disciplines) foreach($disciplines as $discipline) echo strtolower($discipline).' '; echo '"></div>';
 	$small_count++;
 } ?>
 <?php } ?>
