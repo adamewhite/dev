@@ -66,7 +66,7 @@
 
 <div class="rect1 item--strategy item block resp-sm">	
 <a href="http://www.bkskarch.com/lab/strategy/map.php">
-	<? $img = wp_get_attachment_image(5804, 'full');
+	<?php $img = wp_get_attachment_image(5804, 'full');
 		echo $img; ?>
 <div class="text top">	
 	<h3>NYC Design Strategy Tool</h3>

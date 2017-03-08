@@ -301,6 +301,7 @@ h6 {
     margin-top: 0;
     width: 110% !important; }
   .home .item {
+    cursor: pointer;
     float: left;
     position: relative;
     overflow: hidden;
@@ -310,7 +311,7 @@ h6 {
     .home .item h1 {
       color: #F2F2F2;
       font-size: 3vw;
-      line-height: 60%; }
+      line-height: 55%; }
     .home .item h2, .home .item h3 {
       color: #FFFFFF;
       text-align: center; }
@@ -474,7 +475,7 @@ h6 {
 .med h2 {
   color: #F2F2F2;
   font-size: 1.8vw;
-  line-height: 62% !important;
+  line-height: 60% !important;
   text-transform: none; }
 
 .home .grid-sizer, .home .grid-item--sm {
@@ -2272,7 +2273,9 @@ footer {
   .h1-small h1 {
     font-size: 37px !important; }
   .home .item .text h3 {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .med h2 {
+    font-size: 34px; } }
 
 @media only screen and (min-width: 1800px) {
   .discipline .text h3 {

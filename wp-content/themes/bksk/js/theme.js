@@ -527,6 +527,10 @@ $( "input" ).on( "click", function() {
     return false;
 
   });
+  
+  function load(){
+	  
+  }
 
   // quick search regex
 	var qsRegex;
@@ -555,10 +559,16 @@ function debounce( fn, threshold ) {
 
   // if there was a filter, trigger click on corresponding option
   if ( filterSelector ) {
-// 	  console.log(filterSelector);
 	buttonFilter = filterSelector;
-    var selectorClasses = filterSelector.split('.').slice(1);
+    var selectorClasses = filterSelector.split('.');
+    console.log(length);
+    if(selectorClasses.length > 2) {
+	    selectorClasses = filterSelector.split('.');
+    } else {
+	    selectorClasses = filterSelector.split('.').slice(1);
+    }
     $.each( selectorClasses, function( i, selectorClass ) {
+	    console.log('click');
       $('#filters a[data-filter-value=".' + selectorClass + '"]').click();
     });
   }
