@@ -47,7 +47,7 @@
 	$term_count = 0;
 	foreach($terms as $term) {
 		$term_count++;
-		echo '<li><a href="#filter=.'.$term->slug.'" class="'.$term->slug.'" data-filter-name="type'.$term_count.'" data-filter-value=".'.$term->slug.'" data-filter=".'.$term->slug.'"><label class="control control--checkbox">'.$term->name.'<input type="checkbox"/><div class="control__indicator"></div></label></a></li>';
+		echo '<li><a href="#filter=.'.$term->slug.'" class="'.$term->slug.'" data-filter-name="type" data-filter-value=".'.$term->slug.'" data-filter=".'.$term->slug.'"><label class="control control--checkbox">'.$term->name.'<input type="checkbox"/><div class="control__indicator"></div></label></a></li>';
 	} ?>
 	</ul>
 	</div>	

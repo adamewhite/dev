@@ -287,6 +287,10 @@ function filter_images($content){
 }
 add_filter('the_content', 'filter_images');
 
-function disciplineBlockImage() {
-	
+function disciplineBlockImage($id) {
+	$images = get_field('images', $id);
+	$rand_row = $images[ array_rand( $images ) ];
+	$rand_image = $rand_row['image'];
+	$image = wp_get_attachment_image_src( $rand_image['ID'], 'sq2' );
+	return '<img src="'.$image[0].'" />';
 }

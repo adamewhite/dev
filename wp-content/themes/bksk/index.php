@@ -76,7 +76,7 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 		$options = array('multi-family', 'modern-home');
 		shuffle($options);
 		$type = $options[0];
-		echo homeImage($type, 'architecture', 'work', '.multi-family,.modern-home,.traditional-home', 'Residential'); ?>
+		echo homeImage($type, 'architecture', 'work', '.architecture.multi-family,.modern-home,.traditional-home', 'Residential'); ?>
 </div>
 
 <div class="item grid-item--med grid-item block h1-small rect2">

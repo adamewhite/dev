@@ -7,7 +7,9 @@
 ?>
 
 <?php get_header(); ?>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); 
+	$id = get_the_ID();
+?>
 
 <div class="discipline">
 
@@ -29,8 +31,7 @@
 <div class="sq1 bw flip-container" onclick="this.classList.toggle('hover');">
 <div class="flip">
 	<div class="front">
-	<?php $img = wp_get_attachment_image(5536, 'sq2'); 
-		echo $img; ?>
+	<?php echo disciplineBlockImage(4966); ?>
 	<div class="text grad-bg--top">	
 		<h3>Contact</h3>
 	</div>
@@ -61,8 +62,7 @@
 
 <div class="sq1 bw item resp-sm about">
 	<a class="" href="<?php echo get_site_url(); ?>/interiors/about">
-		<?php $img = wp_get_attachment_image(5782, 'sq2'); 
-		echo $img; ?>
+	<?php echo disciplineBlockImage(4966); ?>
 	<div class="text grad-bg--top">	
 		<h3>About</h3>
 	</div>
@@ -73,8 +73,7 @@
 
 <div class="sq1 bw item resp-lg about">
 <a class="" href="<?php echo get_site_url(); ?>/interiors/about">
-	<?php $img = wp_get_attachment_image(5782, 'sq2'); 
-	echo $img; ?>
+	<?php echo disciplineBlockImage(4966); ?>
 <div class="text grad-bg--top">	
 	<h3>About</h3>
 </div>
@@ -92,8 +91,7 @@
 <div class="sq1 bw flip-container" onclick="this.classList.toggle('hover');">
 <div class="flip">
 	<div class="front">
-	<?php $img = wp_get_attachment_image(5536, 'sq2'); 
-		echo $img; ?>
+	<?php echo disciplineBlockImage(4966); ?>
 	<div class="text grad-bg--top">	
 		<h3>Contact</h3>
 	</div>
