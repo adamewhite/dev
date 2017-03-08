@@ -11,7 +11,7 @@
 
 <div class="discipline">
 
-<div class="twocol container resp-col1">
+<div class="twocol resp-col1">
 <div class="block rect1">
 	<div class="text small">
 		<h2><?php the_title(); ?></h2>
@@ -144,7 +144,7 @@
 
 </div>
 	
-<div class="item sq2">
+<div class="item sq2 resp-hack">
 	<?php $img = wp_get_attachment_image(5793, 'sq2'); 
 	echo $img; ?>
 	<div class="text grad-bg">	

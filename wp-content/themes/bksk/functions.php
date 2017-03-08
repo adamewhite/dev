@@ -286,3 +286,7 @@ function filter_images($content){
     	return $new_content;
 }
 add_filter('the_content', 'filter_images');
+
+function disciplineBlockImage() {
+	
+}

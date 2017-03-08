@@ -117,6 +117,7 @@
 </div>
 
 <div class="twocol first resp-col2">
+	
 <div class="fourcol last resp-lg section2">
 <div class="sq1 bw item">
 <?php $jsonurl = "https://api.instagram.com/v1/users/self/media/recent/?access_token=3323346110.1677ed0.8bdb4bc04ff14e0793eac97a159dddb2&count=1";	
