@@ -2001,7 +2001,7 @@ $slick-opacity-not-active: 0.25 !default;
 /* = interiors
 /*-----------------------------------------------------------------------------------*/
 .page-id-4964 .rect1 h2 {
-	font-size: 2.6vw!important;
+	font-size: 2.6vw;
 	letter-spacing: 0px !important;
 	padding-left: 0px;
 	line-height: 60%;
@@ -2009,7 +2009,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .page-id-4968 .rect1 h2 {
-	font-size: 3.2vw !important;
+	font-size: 3.2vw;
 	margin-bottom: 0% !important;
 	line-height: 60%;
 }
@@ -2885,12 +2885,13 @@ footer {
 	margin-top: -.9%;
 }
 
-.resp-sm.section1, .resp-sm.section2, .resp-fourcol {
+.resp-sm.section1, .resp-sm.section2, .resp-fourcol, .resp-sm.item--strategy {
 	display: none;
 }
 
 .resp-lg.section1, .resp-lg.section2 {
 	display: block;
+// 	float: left;
 }
 
 .discipline {
@@ -2910,6 +2911,10 @@ footer {
 
 .page .rect1 h1 {
 	font-size: 3.4vw;
+}
+
+.page-id-4964 .rect1 h2 {
+	font-size: 2vw;
 }
 
 .discipline .resp-col1 {
@@ -2937,8 +2942,12 @@ footer {
 		padding-bottom: 31%;
 	}
 	.resp-lg.section2 {
+		float: left;
 		margin-right: 3% !important;
 		width: 31% !important;
+		.flip-container {
+			margin-bottom: 109% !important;
+		}
 		.sq1 {
 			width: 100%;
 		}
@@ -2950,6 +2959,13 @@ footer {
 		}
 	}
 }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
+.back p {
+	font-size: 10px;
+}	
 
 }
 	
@@ -2986,7 +3002,8 @@ footer {
 }
 
 .page .text h3 {
-	font-size: 12px;
+// 	font-size: 12px;
+	font-size: 14px;
 }
 
 }
@@ -3131,11 +3148,11 @@ body {
 }
 
 .page-id-4968 .rect1 h2 {
-	font-size: 8.1vw !important;
+	font-size: 8.1vw;
 }
 
 .page-id-4964 .rect1 h2 {
-	font-size: 6.9vw !important;
+	font-size: 6.9vw;
 }
 
 .grid-work, .grid-team {
@@ -3207,10 +3224,16 @@ body {
 	width: 98% !important;
 }
 
+.page .block, .page .sq1, .page .sq2 {
+	margin-bottom: 3%;
+}
+
 .discipline {
+/*
 	.block {
 		margin-bottom: 3%;
 	}
+*/
 	.twocol, .sq2 {
 		margin-right: 0 !important;
 	}
@@ -3232,6 +3255,10 @@ body {
 .footer__subnav, footer .social {
 	text-align: center;
 	width: 100%;
+}
+
+.page .text h3 {
+	font-size: 13px;
 }
 
 }

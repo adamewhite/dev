@@ -14,11 +14,11 @@
 <div class="twocol container resp-col1">
 <div class="block rect1">
 	<div class="text">
-	<h1><?php the_title(); ?></h1>
+		<h1><?php the_title(); ?></h1>
 	</div>
 </div>
 
-<div class="float item sq2">
+<div class="item sq2">
 <?php echo disciplineImage('living-environments', 'interiors', '.living-environments','living environments'); ?>
 </div>
 
@@ -54,18 +54,19 @@
 </div><!-- twocol -->
 
 <div class="twocol resp-col2">
-	<div class="sq2 item">
+
+<div class="sq2 item">
 	<?php echo disciplineImage('work-environments', 'interiors', '.work-environments','work environments'); ?>
 </div>
 
 <div class="sq1 bw item resp-sm about">
-<a class="" href="<?php echo get_site_url(); ?>/interiors/about">
-	<?php $img = wp_get_attachment_image(5782, 'sq2'); 
-	echo $img; ?>
-<div class="text grad-bg--top">	
-	<h3>About</h3>
-</div>
-</a>
+	<a class="" href="<?php echo get_site_url(); ?>/interiors/about">
+		<?php $img = wp_get_attachment_image(5782, 'sq2'); 
+		echo $img; ?>
+	<div class="text grad-bg--top">	
+		<h3>About</h3>
+	</div>
+	</a>
 </div>
 
 <div class="block sq1 last"></div>
