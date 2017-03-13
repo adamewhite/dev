@@ -11,7 +11,7 @@
 	$id = get_the_ID();
 ?>
 
-<div class="discipline">
+<div class="page__content discipline">
 
 <div class="twocol container resp-col1">
 <div class="block rect1">

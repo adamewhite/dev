@@ -537,7 +537,9 @@ $( "input" ).on( "click", function() {
   
 function load(selectorClasses) {
 	$.each( selectorClasses, function( i, selectorClass ) {
-		var $this = $('#filters a[data-filter-value=".' + selectorClass + '"]');
+		setTimeout( function() {
+			$('#filters a[data-filter-value=".' + selectorClass + '"]').delay(500*i).click();
+		},500		);
 		var checkBox = $(this).find(':input');
 		if ($(checkBox).is(':checked')) {
 			$(checkBox).prop('checked', false);
@@ -580,14 +582,14 @@ function debounce( fn, threshold ) {
     if(selectorClasses.length > 2) {
 	    selectorClasses.shift();
 	    console.log(selectorClasses);
-// 	    load(selectorClasses);
+	    load(selectorClasses);
     } else {
 	    selectorClasses = filterSelector.split('.').slice(1);
-    }
-    	$.each( selectorClasses, function( i, selectorClass ) {
+        	$.each( selectorClasses, function( i, selectorClass ) {
 	    	console.log('click');
-			$('#filters a[data-filter-value=".' + selectorClass + '"]')delay(200).click();
+			$('#filters a[data-filter-value=".' + selectorClass + '"]').delay(200).click();
     	});
+    }
   }
 
   

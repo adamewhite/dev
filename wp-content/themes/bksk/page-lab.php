@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="discipline">
+<div class="page__content discipline">
 
 <div class="twocol resp-col1">
 <div class="block rect1">
@@ -50,7 +50,7 @@
 	<?php $img = get_field('about', 4964);
 	if($img != '') {
 		$img = $img['sizes'][ 'sq2' ];
-		echo '<a href="'.get_site_url().'/lab/about"><img src="'.$img.'" />';
+		echo '<a href="'.get_site_url().'/sustainability-lab/about"><img src="'.$img.'" />';
 	} ?>
 	<div class="text grad-bg--top">	
 		<h3>About</h3>

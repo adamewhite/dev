@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="discipline">
+<div class="page__content discipline">
 
 <div class="twocol resp-col1">
 

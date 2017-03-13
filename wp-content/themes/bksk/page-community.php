@@ -21,15 +21,20 @@
 
 <?php if( have_rows('photographs') ):
 	$count = 0;
-	echo '<div class="grid-community">';
+	echo '<div class="page__content grid-community">';
     while ( have_rows('photographs') ) : the_row();
       $img = get_sub_field('image');
+      $caption = get_sub_field('caption');
       if($count == 0) {
-		  echo '<div class="container twocol">';
+		  echo '<div class="container twocol resp-col1">';
 	  }
 	  
 	  if($count == 3) {
-		  echo '<div class="container twocol last">';
+		  echo '<div class="container twocol resp-col2">';
+	  }
+	  
+	  if($count == 6) {
+		  echo '<div class="container resp-col3">';
 	  }
 	  
 	  if($count == 0 || $count == 1 || $count == 4 || $count == 5) {
@@ -43,9 +48,16 @@
 	} else {
 	  $img = $img['sizes']['sq500'];
 	}
-		echo '<div class="item '.$class.'"><img src="'.$img.'" /></div>';
+		echo '<div class="item effect-caption '.$class.'"><img src="'.$img.'" />';
+		echo '<caption><h3 class="caption">';
+		if($caption) {
+			echo $caption;
+		} else {
+			echo 'Caption';
+		} 
+		echo '</h3></caption></div>';
 	
-	if($count == 2 || $count == 5) {
+	if($count == 2 || $count == 5 || $count == 8) {
 	  echo '</div>';
 	}
 	$count++;
@@ -54,10 +66,12 @@
 endif; ?>
 
 <?php 
-		echo '<div class="clearfix"></div>';
-		echo '<div class="column-2">';
-		the_content();
-		echo '</div>';
-		 ?>
+	echo '<div class="clearfix"></div>';
+	echo '<div class="text--column">';
+	the_content();
+	echo '</div>';
+ ?>
+		 
 <?php endwhile; endif; ?>
+
 <?php get_footer(); ?>

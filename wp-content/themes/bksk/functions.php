@@ -114,11 +114,12 @@ function remove_menus(){
 
 add_action( 'admin_menu', 'remove_menus' );
 add_theme_support('post-thumbnails');
-add_image_size( 'sq1', 125, 125, true );
+// add_image_size( 'sq1', 125, 125, true );
 // add_image_size( 'sq250', 250, 250, true );
 add_image_size( 'sq2', 260, 260, true );
 add_image_size( 'sq500', 500, 500, true );
 add_image_size( 'loop', 1024, 512, true );
+// add_image_size( 'tall', 300, 600, true );
 
 add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
 
