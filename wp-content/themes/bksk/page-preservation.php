@@ -20,7 +20,7 @@
 </div>
 
 <div class="item sq2">
-	<?php echo disciplineImage('adaptive-reuse', 'architecture', '.adaptive-reuse','adaptive reuse/restoration'); ?>
+	<?php echo disciplineImage('adaptive-reuse', 'architecture', '.preservation.adaptive-reuse','adaptive reuse/restoration'); ?>
 </div>
 
 <div class="resp-lg section1">
@@ -52,7 +52,7 @@
 <div class="resp-sm section1">
 
 <div class="item rect1 historic block">
-	<?php echo disciplineImage('historic-resource', 'architecture', '.historic-resource','historic resource analysis'); ?>
+	<?php echo disciplineImage('historic-resource', 'architecture', '.preservation.historic-resource','historic resource analysis'); ?>
 </div>
 
 </div>
@@ -62,7 +62,7 @@
 <div class="twocol resp-col2">
 
 <div class="item sq2">
-	<?php echo disciplineImage('landmark-districts', 'architecture', '.landmark-districts','new buildings in landmark districts'); ?>
+	<?php echo disciplineImage('landmark-districts', 'architecture', '.preservation.landmark-districts','new buildings in landmark districts'); ?>
 </div>
 
 <div class="item sq1 bw resp-sm about">
@@ -115,7 +115,7 @@
 </div>	
 
 <div class="item sq2 resp-hack">
-	<?php echo disciplineImage('preservation-ethos', 'architecture', '.preservation-ethos','expanding our preservation ethos'); ?>
+	<?php echo disciplineImage('preservation-ethos', 'architecture', '.preservation.preservation-ethos','expanding our preservation ethos'); ?>
 </div>
 
 </div><!-- twocol -->

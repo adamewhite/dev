@@ -38,13 +38,13 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 </div>
 
 <div class="col lg last">
-<div class="item bg work-link sq2">
+<div class="item bg sq2">
 	<?php echo homeImage('cultural-civic', 'architecture', 'work', '.cultural-civic', 'Cultural & Civic'); ?>	
 </div>
 </div>
 
 <div class="col lg first">
-<div class="item work-link sq2">
+<div class="item sq2">
 	<?php echo homeImage('commercial', 'architecture', 'work', '.commercial', 'Commercial'); ?>
 </div>
 </div>
@@ -70,7 +70,7 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 	<div class="grid">
 		<div class="grid-sizer"></div>
 		<div class="gutter-sizer"></div>
-<div class="item grid-item--med grid-item work-link sq2">
+<div class="item grid-item--med grid-item sq2">
 	
 	<?php 
 		$options = array('multi-family', 'modern-home');
@@ -107,8 +107,8 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 </a>
 </div>
 
-<div class="item grid-item--med work-link sq2">
-	<?php echo homeImage('preservation', 'architecture', 'discipline', 'preservation', 'Preservation+'); ?>
+<div class="item grid-item--med sq2">
+	<?php echo homeImage('preservation', 'architecture', 'work', '.preservation', 'Preservation+'); ?>
 </div>
 
 <div class="item grid-item--lg block clear rect2">
@@ -125,8 +125,8 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 <div class="clearfix"></div>
 <div class="col lg first">
 
-<div class="item grid-item work-link sq2">
-	<?php echo homeImage('interiors', 'interiors', 'discipline', 'interiors', 'Interiors'); ?>
+<div class="item grid-item sq2">
+	<?php echo homeImage('interiors', 'interiors', 'work', '.interiors', 'Interiors'); ?>
 </div>
 </div>
 
@@ -144,8 +144,8 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 </div>
 
 <div class="col lg last">
-<div class="item work-link sq2">
-	<?php echo homeImage('sustainability', 'architecture', 'discipline', 'lab', 'Sustainability'); ?>
+<div class="item sq2">
+	<?php echo homeImage('sustainability', 'architecture', 'work', '.sustainability', 'Sustainability'); ?>
 </div>
 </div>
 
@@ -153,11 +153,11 @@ $Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android"); ?>
 </div>
 
 <div class="col20">
-<div class="item work-link sq2">
+<div class="item sq2">
 	<?php echo homeImage('education', 'architecture', 'work', '.education', 'Education'); ?>
 </div>
 
-<div class="item work-link sq2">
+<div class="item sq2">
 	<?php echo homeImage('community', 'architecture', 'work', '.community', 'Community'); ?>
 </div>
 

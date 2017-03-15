@@ -39,7 +39,7 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('work').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
+	echo '<a href="'.work_url().'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg">	
@@ -89,7 +89,7 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.get_site_url().'/interiors"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
+	echo '<a href="'.work_url('.interiors').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg">	
@@ -128,7 +128,7 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('sustainability').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
+	echo '<a href="'.work_url('.sustainability').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg">	
@@ -171,11 +171,11 @@ if ( $the_query->have_posts() ) {
 	$the_query->the_post();
 	array_push($exclude_array, $post->ID);
 	$feat_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sq2');
-	echo '<a href="'.work_url('preservation').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
+	echo '<a href="'.work_url('.preservation').'"><img src="'.$feat_img[0].'" alt="'.get_the_title().'" />';
 	}
 } ?>
 <div class="text grad-bg">	
-	<h3>Preservation</h3>
+	<h3>Preservation+</h3>
 </div>
 </a>
 </div>	

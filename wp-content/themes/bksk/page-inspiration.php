@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <nav class="page__subnav" role="navigation">
-	<a href="<?php echo get_site_url(); ?>/interiors">Back to Interiors</a>
+	<a href="<?php echo get_site_url(); ?>/interiors">&larr; Back to Interiors</a>
 </nav>
 	
 <header class="page__header">	

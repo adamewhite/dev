@@ -226,7 +226,7 @@ h3 {
   font-size: 16px;
   font-weight: 300;
   line-height: 140%;
-  margin: 0px 0 2%; }
+  margin: 0px 0 1em; }
 
 h4 {
   font-size: 14px;
@@ -272,7 +272,9 @@ h6 {
 .block {
   background-color: #cccccc; }
   .block h1, .block h2 {
-    margin-bottom: 0; }
+    color: #F2F2F2;
+    margin-bottom: 0;
+    text-transform: uppercase; }
   .block:hover a {
     background-color: #bcbcbc;
     -webkit-transition: background-color .1s linear;
@@ -283,68 +285,67 @@ h6 {
 
 .block, .sq1, .sq2 {
   float: left; }
-  .block h1, .block h2, .block h3, .sq1 h1, .sq1 h2, .sq1 h3, .sq2 h1, .sq2 h2, .sq2 h3 {
-    color: #F2F2F2; }
-  .block h2, .block h3, .sq1 h2, .sq1 h3, .sq2 h2, .sq2 h3 {
-    text-align: center; }
 
-.home {
-  /*
-	.masonry {
-		column-count: 3;
-		column-gap: 0;
+/*
+	h1, h2, h3 {
+		color: #F2F2F2;
+// 		margin-bottom: 0;
 	}
-*/ }
-  .home #main {
-    opacity: 0; }
-  .home .grid {
-    margin-top: 0;
-    width: 110% !important; }
-  .home .item {
-    cursor: pointer;
-    float: left;
-    position: relative;
-    overflow: hidden;
-    vertical-align: top; }
-    .home .item h1, .home .item h2, .home .item h3 {
-      margin-bottom: 0; }
-    .home .item h1 {
-      color: #F2F2F2;
-      font-size: 3vw;
-      line-height: 55%; }
-    .home .item h2, .home .item h3 {
-      color: #FFFFFF;
-      text-align: center; }
-    .home .item:hover img {
-      -webkit-transform: scale(1.05);
-      transform: scale(1.05); }
-    .home .item .link {
-      position: absolute;
-      height: 100%;
-      width: 100%; }
-    .home .item img {
-      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-      transition: opacity 0.35s, transform 0.35s;
-      vertical-align: top;
-      width: 100%; }
-    .home .item .text {
-      position: absolute;
-      width: 100%; }
-      .home .item .text h3 {
-        text-align: center !important;
-        font-size: 1vw; }
+	h2, h3 {
+		text-align: center;
+	}
+*/
+.home #main {
+  opacity: 0; }
 
-.sq1 .grad-bg {
+.home .grid {
+  margin-top: 0;
+  width: 110% !important; }
+
+.home .item {
+  cursor: pointer;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top; }
+  .home .item h1, .home .item h2, .home .item h3 {
+    margin-bottom: 0; }
+  .home .item h1 {
+    font-size: 3vw;
+    line-height: 55%; }
+  .home .item:hover img {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05); }
+  .home .item .link {
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+  .home .item img {
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    vertical-align: top;
+    width: 100%; }
+  .home .item .text {
+    position: absolute;
+    width: 100%; }
+    .home .item .text h3 {
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 1em; }
+
+.text.grad-bg {
   bottom: 0px;
   padding-top: 4%; }
-  .sq1 .grad-bg h3 {
-    padding-bottom: 2%; }
+  .text.grad-bg h3 {
+    margin-bottom: 0;
+    padding-bottom: .5em; }
 
-.sq1 .grad-bg--top {
+.text.grad-bg--top {
   top: 0;
   padding-bottom: 6%; }
-  .sq1 .grad-bg--top h3 {
-    padding-top: 6%; }
+  .text.grad-bg--top h3 {
+    margin-bottom: 0;
+    padding-top: .5em; }
 
 .rect2 .text {
   bottom: 0 !important; }
@@ -436,12 +437,21 @@ h6 {
     padding-bottom: 53.4%;
     width: 100%; }
 
-.home .work-link .text {
-  top: 0px;
-  padding-bottom: 12%; }
-  .home .work-link .text h3 {
-    padding-top: 2.5%; }
-
+/*
+.home {
+	.work-link {
+		.text {
+			top: 0px;
+			padding-bottom: 12%;
+			h3 {
+				padding-top: 2.5%;
+// 				text-align: center !important;
+// 				font-size: 1.1vw;
+			}
+		}
+	}
+}
+*/
 .col {
   float: left;
   margin-right: 2%; }
@@ -461,9 +471,6 @@ h6 {
   .col .block {
     padding-bottom: 100%; }
 
-.h1-small .text {
-  bottom: 0px !important; }
-
 .h1-small h1 {
   font-size: 1.92vw !important;
   letter-spacing: 0;
@@ -473,10 +480,8 @@ h6 {
   bottom: 0 !important; }
 
 .med h2 {
-  color: #F2F2F2;
-  font-size: 1.8vw;
-  line-height: 60% !important;
-  text-transform: none; }
+  font-size: 1.5vw;
+  line-height: 60% !important; }
 
 .home .grid-sizer, .home .grid-item--sm {
   float: left;
@@ -704,6 +709,10 @@ h6 {
   .page__header h2 {
     font-size: 32px;
     text-transform: none; }
+
+.tag .page__header {
+  border-bottom: none;
+  padding: .5em 0 0; }
 
 .page__intro {
   width: 95%; }
@@ -1571,12 +1580,6 @@ a.active {
 
 .page .rect1.historic {
   overflow: hidden; }
-  .page .rect1.historic .text {
-    bottom: 0px; }
-    .page .rect1.historic .text h3 {
-      text-align: center;
-      text-transform: none;
-      margin-bottom: 2%; }
   .page .rect1.historic img {
     margin-top: -100px; }
 
@@ -1912,11 +1915,6 @@ a.active {
 .archive .page__subnav {
   margin-bottom: 3%; }
 
-.archive .page__header {
-  border-bottom: none;
-  padding: 2% 0 0;
-  margin: 2% 0 0%; }
-
 .tag .menu-item-5363 a {
   font-weight: 500; }
 
@@ -1928,6 +1926,7 @@ a.active {
     padding-bottom: 3%;
     margin-bottom: 6%; }
     #post .loop-entry .date {
+      line-height: 140%;
       text-transform: uppercase;
       margin-bottom: 1%; }
     #post .loop-entry h2, #post .loop-entry h2 a {
@@ -1939,7 +1938,7 @@ a.active {
     #post .loop-entry h3 {
       font-size: 18px;
       line-height: 140%;
-      margin: 4% 0 5%;
+      margin: .8em 0 1em;
       text-transform: none; }
     #post .loop-entry figure {
       height: auto;
@@ -1955,6 +1954,7 @@ a.active {
       line-height: 175%;
       margin-bottom: 2%; }
     #post .loop-entry .read-more {
+      font-weight: 300;
       text-transform: uppercase; }
     #post .loop-entry .read-more:hover {
       color: #ff6600; }
@@ -2101,7 +2101,7 @@ a.active {
 
 .accordion-content {
   display: none;
-  margin: 2% 0; }
+  margin: 1em 0; }
 
 .accordion-content span {
   margin-bottom: 3%; }
@@ -2122,6 +2122,8 @@ a.active {
       display: block;
       height: 0;
       clear: both; }
+    #sidebar .sidebar-box a {
+      font-weight: 100; }
     #sidebar .sidebar-box a:hover {
       font-weight: 500; }
   #sidebar .archive {
@@ -2153,21 +2155,49 @@ a.active {
   #sidebar .twitter .gray, #sidebar .twitter .gray a {
     color: #afafaf; }
 
-.grid-lab .threecol {
-  margin-bottom: 10%; }
-  .grid-lab .threecol img {
-    margin-bottom: 2%; }
-
-.grid-lab .lab-quote {
-  background: #cccccc;
-  color: #FFF;
-  font-size: 130%;
-  padding: 4% 2% 0; }
-  .grid-lab .lab-quote span {
-    font-size: 65%;
-    margin-top: 6%;
-    display: block;
+.grid-lab {
+  opacity: 0; }
+  .grid-lab .grid-item, .grid-lab .grid-sizer {
+    float: left;
+    width: 31%;
+    vertical-align: top; }
+  .grid-lab .grid-item--featured {
+    width: 100%; }
+    .grid-lab .grid-item--featured .lab-img {
+      float: left;
+      width: 65%; }
+    .grid-lab .grid-item--featured .lab-text {
+      float: right;
+      width: 30%; }
+    .grid-lab .grid-item--featured h3 {
+      margin-top: 0 !important; }
+  .grid-lab .loop-entry {
+    margin-bottom: 0% !important; }
+    .grid-lab .loop-entry p, .grid-lab .loop-entry .lab-text, .grid-lab .loop-entry .lab-cat {
+      color: #999;
+      font-size: 12px;
+      font-weight: 100; }
+    .grid-lab .loop-entry h3 {
+      color: #595959;
+      margin: .3em 0 !important; }
+    .grid-lab .loop-entry:hover h3, .grid-lab .loop-entry:hover .read-more {
+      color: #ff6600; }
+  .grid-lab .lab-cat {
+    color: #999;
+    font-weight: 300 !important;
     text-transform: uppercase; }
+  .grid-lab .gutter-sizer {
+    width: 3.5%; }
+  .grid-lab .lab-quote {
+    background: #cccccc;
+    color: #FFF;
+    font-size: 130%;
+    padding: 4% 2% 0; }
+    .grid-lab .lab-quote span {
+      font-size: 65%;
+      margin-top: 6%;
+      display: block;
+      text-transform: uppercase; }
 
 /* Alignment */
 .alignleft {
@@ -2189,12 +2219,12 @@ a.active {
   .twocol:nth-child(2n+2) {
     margin-right: 0; }
 
-.threecol, .grid-lab .grid-sizer {
+.threecol {
   float: left;
   margin-right: 3.5%;
-  width: 29.5%;
+  width: 31%;
   vertical-align: top; }
-  .threecol:nth-child(3n+3), .grid-lab .grid-sizer:nth-child(3n+3) {
+  .threecol:nth-child(3n+3) {
     margin-right: 0; }
 
 .fourcol {

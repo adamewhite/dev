@@ -29,8 +29,8 @@
 <div class="resp-lg section1">
 	
 	<div class="rect1 item--strategy item block">	
-	<a href="http://www.bkskarch.com/lab/strategy/map.php">
-		<? $img = wp_get_attachment_image(5804, 'full');
+	<a href="<?php echo get_site_url(); ?>/lab/introducing-the-nyc-strategy-field/">
+		<? $img = wp_get_attachment_image(5804, 'large');
 			echo $img; ?>
 	<div class="text top">	
 		<h3>NYC Design Strategy Tool</h3>
@@ -57,7 +57,7 @@
 	</div></a>
 </div>
 
-<div class="block sq1 last"></div>
+<div class="item block sq1 last"></div>
 
 </div><!-- twocol -->
 
@@ -75,7 +75,7 @@
 
 <div class="resp-sm section2">
 	
-<div class="block sq1"></div>
+<div class="item block sq1"></div>
 
 <div class="sq1 last bw flip-container">
 	<div class="flip">
@@ -99,6 +99,7 @@
 			28 West 25th Street, 4th Fl<br />
 			New York, NY 10010<br />
 			Phone:  212.807.9600<br /></p>
+			<p><a href="mailto:lab@bksk.com" target="_blank">lab@bksk.com</a></p>
 		</div>
 	</div>
 	</div>
@@ -135,12 +136,13 @@
 			28 West 25th Street, 4th Fl<br />
 			New York, NY 10010<br />
 			Phone:  212.807.9600<br /></p>
+			<p><a href="mailto:lab@bksk.com" target="_blank">lab@bksk.com</a></p>
 		</div>
 	</div>
 	</div>
 </div>
 
-<div class="block sq1"></div>
+<div class="item block sq1"></div>
 
 </div>
 	

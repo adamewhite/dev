@@ -89,7 +89,7 @@ function theme_scripts() {
 		wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );	
 		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.4.1.1.min.js', array( ), false, true );
 	}
-	if(is_post_type_archive('work') || is_page('team')) {
+	if(is_post_type_archive('work') || is_page('team') || is_post_type_archive('lab')) {
 		wp_enqueue_script( 'images', get_template_directory_uri() . '/js/imagesloaded.min.js', array( 'jquery' ), '20161201', true );
 		wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.3.0.1.min.js', array( 'jquery' ), '20170102', true );
 			wp_enqueue_script( 'packery', get_template_directory_uri() . '/js/packery.1.3.2.min.js', array( 'jquery', 'isotope', 'images' ), '20170102', true );

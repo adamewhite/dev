@@ -28,6 +28,8 @@
 <div id="content">
 
 <aside id="post">
+
+<div class="grid-lab"><div class="grid-sizer"></div><div class="gutter-sizer"></div>
   <?php
   query_posts(array('post_type' => 'lab', 'showposts' => -1));
   $count = 0;
@@ -74,73 +76,54 @@
 
       $copy = strip_tags(get_the_excerpt());
       if (!$copy) {
-        $copy = strip_tags(get_field('copy'));
+        $copy = strip_tags(get_the_content());
         if (strlen($copy) > 200){
           $copy = substr($copy,0,190) . "...";
         }
       }
       $image = get_field('thumbnail');
       if (!$image) {
-//         $image = get_field('main-image');
 			$image = wp_get_attachment_image(get_post_thumbnail_id(), 'sq2');
       }
-    }
+    } ?>
+
+	<?php if($count == 1) {
+	    $class= 'grid-item--featured';  
+	} else if($quote) {
+	    $class = 'lab-quote';
+	} else {
+	    $class = '';
+	} ?>    
+	<div class="loop-entry grid-item <?php echo $class.' '.$classList; ?>">
+	<?php if($quote) { ?>
+		&ldquo;<?php the_title(); ?>&rdquo;
+		<span><?php the_field('author'); ?></span>
+	<?php } else { ?>
+		<a href="<?php the_permalink(); ?>">
+		<div class="lab-cat"><?php echo $keyword->name; ?></div>
+		<div class="lab-img">
+		<?php if($count == 1) { ?>
+			<img src="<?php echo $image['sizes']['large']; ?>" />
+	    <?php } else { ?>
+	    	<img src="<?php echo $image['sizes']['medium']; ?>" />
+	    <?php } ?>	
+		</div>
+		<div class="lab-text">  
+			<h3><?php the_title(); ?></h3>
+			<?php echo $copy; ?>
+			<span class="read-more">Read More</span>
+		</div>
+	    </a>  
+	<?php } ?>
+	</div>
 
 
-    ?>
-
-    <?php if ($count == 1){ ?>
-      <div class="loop-entry lab-post lab-featured-wrap <?php echo $classList ?>">
-<!--         <div class="lab-cat"><?php var_dump($keyword);?></div> -->
-        <div class="grid-9 lab-featured cf">
-          <img src="<?php echo $image['sizes']['large']; ?>" class="grid-6 left" />
-          <div class="grid-3 right">
-            <h2>
-              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            </h2>
-            <div class="lab-copy">
-              <?php echo $copy; ?>
-              <a href="<?php the_permalink() ?>" class="read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="grid-lab"><div class="grid-sizer"></div>
-    <?php } else {?>
-
-
-
-      <?php
-        if ($quote){
-      ?>
-        <div class="loop-entry threecol lab-post lab-quote <?php echo $classList ?>">
-          &ldquo;<?php the_title(); ?>&rdquo;
-          <span><?php the_field('author') ?></span>
-        </div>
-      <?php
-        } else {
-          if ($count != 1) {
-      ?>
-        <a href="<?php the_permalink(); ?>" class="loop-entry threecol lab-post grid-3 <?php echo $classList ?>">
-<!--           <div class="lab-cat"><?php echo $keyword->name; ?></div> -->
-          <div class="lab-border-container">
-            <img src="<?php echo $image['sizes']['medium']; ?>" class="grid-3" />
-            <div class="lab-border"></div>
-          </div>
-          <h3><?php the_title(); ?></h3>
-          <div class="lab-copy">
-            <?php echo $copy; ?>
-            <span class="read-more">Read More</span>
-          </div>
-        </a>
-      <?php }}} ?>
-
-
-  <?php endwhile; endif; echo wp_reset_query(); ?>
+  <?php $count++; endwhile; endif; echo wp_reset_query(); ?>
       </div>
 </aside>
 
 <?php wp_reset_query(); endif; ?>
 <?php get_sidebar(); ?>
 </div>
+
 <?php get_footer(); ?>

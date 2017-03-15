@@ -29,7 +29,7 @@
 <?php query_posts(
             array(
             'post_type'=> 'post',
-            'posts_per_page' => 15,
+            'posts_per_page' => 10,
             'paged'=>$paged
         )); ?>
 <aside id="post">

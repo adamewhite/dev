@@ -6,7 +6,7 @@
 ?>
 <aside id="sidebar">
 
-<?php if(is_page(5361) || is_post_type_archive('post') || is_singular('post')) { 
+<?php if(is_page(5361) || is_tag() || is_post_type_archive('post') || is_singular('post')) { 
 // 	get_search_form();
 // (Po)st Categories 
 	echo '<div class="sidebar-box"><h3>Tags</h3>';
@@ -109,21 +109,33 @@
 	echo '</div>';
 } ?>
 
-<?php if(is_post_type_archive('lab')) { 
+<?php if(is_post_type_archive('lab') || is_singular('lab')) { 
 	echo '<div class="sidebar-box"><h3>Syntax</h3>';
-	$args = array(  'taxonomy' => 'syntax', 'hide_empty'=> false, 'orderby' => 'title'	);
+	$args = array(  'taxonomy' => 'syntax', 'hide_empty'=> false, 'orderby' => 'title', 'exclude' => array(173)	);
 	$cats = get_terms($args);
 	if($cats) {
-		echo '<ul>';
+		echo '<ul class="filter">';
 		foreach( $cats as $cat ) {    
-			echo '<li><a href="'.get_term_link($cat->term_id).'">'.$cat->name.'</a></li>';
+			echo '<li><a href="'.get_site_url().'/lab/#filter=syntax-'.$cat->slug.'" data-filter="syntax-'.$cat->slug.'">'.$cat->name.'</a></li>';
+		}
+		echo '</ul>';	
+	}
+	echo '</div>';
+	
+	echo '<div class="sidebar-box"><h3>Keywords</h3>';
+	$args = array(  'taxonomy' => 'keywords', 'hide_empty'=> false, 'orderby' => 'title'	);
+	$cats = get_terms($args);
+	if($cats) {
+		echo '<ul class="filter">';
+		foreach( $cats as $cat ) {    
+			echo '<li><a data-filter="keyword-'.$cat->slug.'">'.$cat->name.'</a></li>';
 		}
 		echo '</ul>';	
 	}
 	echo '</div>';
 
 	echo '<div class="sidebar-box"><h3>Tools</h3>';
-	echo '<a href="http://www.bkskarch.com/lab/strategy/map.php">NYC Strategy Field</a>';
+	echo '<a href="'.get_site_url().'/lab/introducing-the-nyc-strategy-field/">NYC Strategy Field</a>';
 	echo '</div>';
 
 } ?>
