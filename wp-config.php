@@ -23,13 +23,13 @@
 define('DB_NAME', 'wp_bksk_2017');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'bksk');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'Wz6BXfrPZqhQntr5');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'bksk.cfghketbmem3.us-west-2.rds.amazonaws.com:3306');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
@@ -77,8 +77,8 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
-// define( 'WP_DEBUG_DISPLAY', true);
+define('WP_DEBUG', true);
+define( 'WP_DEBUG_DISPLAY', true);
 
 /* That's all, stop editing! Happy blogging. */
 

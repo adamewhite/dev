@@ -295,3 +295,8 @@ function disciplineBlockImage($id) {
 	$image = wp_get_attachment_image_src( $rand_image['ID'], 'sq2' );
 	return '<img src="'.$image[0].'" />';
 }
+
+add_filter( 'wp_image_editors', 'change_graphic_lib' );
+function change_graphic_lib($array) {
+return array( 'WP_Image_Editor_GD', 'WP_Image_Editor_Imagick' );
+}
