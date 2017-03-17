@@ -19,7 +19,7 @@
 !*
 !wp-content/
 !wp-content/uploads/
-wp-config.php
+#wp-config.php
 wp-content/themes/bksk/node_modules/
 wp-content/themes/twentysixteen/
 .DS_Store
